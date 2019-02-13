@@ -31,5 +31,16 @@ namespace Divine_Hotel_Management_System.Properties {
                 return ((string)(this["connectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LENOVO-PC\\SQLEXPRESS;Initial Catalog=DHMSdatabase;Integrated Security" +
+            "=True")]
+        public string DHMSdatabaseConnectionString {
+            get {
+                return ((string)(this["DHMSdatabaseConnectionString"]));
+            }
+        }
     }
 }

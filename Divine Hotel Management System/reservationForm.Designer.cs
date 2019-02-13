@@ -39,13 +39,15 @@
             this.resCheckinDT = new System.Windows.Forms.DateTimePicker();
             this.resCheckoutDT = new System.Windows.Forms.DateTimePicker();
             this.resB = new System.Windows.Forms.Button();
+            this.resSelectRoomL = new System.Windows.Forms.Label();
+            this.resSelectRoomCB = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // resFirstNameL
             // 
             this.resFirstNameL.AutoSize = true;
             this.resFirstNameL.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.resFirstNameL.Location = new System.Drawing.Point(267, 113);
+            this.resFirstNameL.Location = new System.Drawing.Point(265, 78);
             this.resFirstNameL.Name = "resFirstNameL";
             this.resFirstNameL.Size = new System.Drawing.Size(92, 21);
             this.resFirstNameL.TabIndex = 0;
@@ -55,7 +57,7 @@
             // 
             this.resLastNameL.AutoSize = true;
             this.resLastNameL.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.resLastNameL.Location = new System.Drawing.Point(269, 148);
+            this.resLastNameL.Location = new System.Drawing.Point(267, 113);
             this.resLastNameL.Name = "resLastNameL";
             this.resLastNameL.Size = new System.Drawing.Size(90, 21);
             this.resLastNameL.TabIndex = 1;
@@ -65,21 +67,21 @@
             // 
             this.resCheckinL.AutoSize = true;
             this.resCheckinL.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.resCheckinL.Location = new System.Drawing.Point(245, 183);
+            this.resCheckinL.Location = new System.Drawing.Point(241, 183);
             this.resCheckinL.Name = "resCheckinL";
-            this.resCheckinL.Size = new System.Drawing.Size(113, 21);
+            this.resCheckinL.Size = new System.Drawing.Size(116, 21);
             this.resCheckinL.TabIndex = 2;
-            this.resCheckinL.Text = "Check-in date";
+            this.resCheckinL.Text = "Check-in Date";
             // 
             // resCheckoutL
             // 
             this.resCheckoutL.AutoSize = true;
             this.resCheckoutL.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.resCheckoutL.Location = new System.Drawing.Point(234, 218);
+            this.resCheckoutL.Location = new System.Drawing.Point(230, 218);
             this.resCheckoutL.Name = "resCheckoutL";
-            this.resCheckoutL.Size = new System.Drawing.Size(124, 21);
+            this.resCheckoutL.Size = new System.Drawing.Size(127, 21);
             this.resCheckoutL.TabIndex = 3;
-            this.resCheckoutL.Text = "Check-out date";
+            this.resCheckoutL.Text = "Check-out Date";
             // 
             // resPhoneL
             // 
@@ -93,7 +95,7 @@
             // 
             // resFirstNameTB
             // 
-            this.resFirstNameTB.Location = new System.Drawing.Point(357, 113);
+            this.resFirstNameTB.Location = new System.Drawing.Point(357, 78);
             this.resFirstNameTB.Name = "resFirstNameTB";
             this.resFirstNameTB.Size = new System.Drawing.Size(179, 20);
             this.resFirstNameTB.TabIndex = 5;
@@ -101,7 +103,7 @@
             // 
             // resLastNameTB
             // 
-            this.resLastNameTB.Location = new System.Drawing.Point(357, 148);
+            this.resLastNameTB.Location = new System.Drawing.Point(357, 113);
             this.resLastNameTB.Name = "resLastNameTB";
             this.resLastNameTB.Size = new System.Drawing.Size(179, 20);
             this.resLastNameTB.TabIndex = 6;
@@ -117,6 +119,7 @@
             // 
             // resCheckinDT
             // 
+            this.resCheckinDT.CustomFormat = "";
             this.resCheckinDT.Location = new System.Drawing.Point(357, 183);
             this.resCheckinDT.Name = "resCheckinDT";
             this.resCheckinDT.Size = new System.Drawing.Size(179, 20);
@@ -124,6 +127,7 @@
             // 
             // resCheckoutDT
             // 
+            this.resCheckoutDT.CustomFormat = "";
             this.resCheckoutDT.Location = new System.Drawing.Point(357, 218);
             this.resCheckoutDT.Name = "resCheckoutDT";
             this.resCheckoutDT.Size = new System.Drawing.Size(179, 20);
@@ -133,16 +137,37 @@
             // 
             this.resB.Location = new System.Drawing.Point(367, 296);
             this.resB.Name = "resB";
-            this.resB.Size = new System.Drawing.Size(137, 31);
+            this.resB.Size = new System.Drawing.Size(133, 28);
             this.resB.TabIndex = 9;
             this.resB.Text = "Confirm Reservation!";
             this.resB.UseVisualStyleBackColor = true;
+            this.resB.Click += new System.EventHandler(this.resB_Click);
+            // 
+            // resSelectRoomL
+            // 
+            this.resSelectRoomL.AutoSize = true;
+            this.resSelectRoomL.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.resSelectRoomL.Location = new System.Drawing.Point(258, 148);
+            this.resSelectRoomL.Name = "resSelectRoomL";
+            this.resSelectRoomL.Size = new System.Drawing.Size(100, 21);
+            this.resSelectRoomL.TabIndex = 10;
+            this.resSelectRoomL.Text = "Room Type";
+            // 
+            // resSelectRoomCB
+            // 
+            this.resSelectRoomCB.FormattingEnabled = true;
+            this.resSelectRoomCB.Location = new System.Drawing.Point(356, 148);
+            this.resSelectRoomCB.Name = "resSelectRoomCB";
+            this.resSelectRoomCB.Size = new System.Drawing.Size(180, 21);
+            this.resSelectRoomCB.TabIndex = 11;
             // 
             // reservationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.resSelectRoomCB);
+            this.Controls.Add(this.resSelectRoomL);
             this.Controls.Add(this.resB);
             this.Controls.Add(this.resCheckoutDT);
             this.Controls.Add(this.resCheckinDT);
@@ -155,7 +180,7 @@
             this.Controls.Add(this.resLastNameL);
             this.Controls.Add(this.resFirstNameL);
             this.Name = "reservationForm";
-            this.Text = "Make a Reservation";
+            this.Text = "Make Reservation";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -174,5 +199,7 @@
         private System.Windows.Forms.DateTimePicker resCheckinDT;
         private System.Windows.Forms.DateTimePicker resCheckoutDT;
         private System.Windows.Forms.Button resB;
+        private System.Windows.Forms.Label resSelectRoomL;
+        private System.Windows.Forms.ComboBox resSelectRoomCB;
     }
 }

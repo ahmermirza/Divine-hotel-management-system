@@ -22,5 +22,11 @@ namespace Divine_Hotel_Management_System
             reservationForm reservationF = new reservationForm();
             reservationF.ShowDialog();
         }
+
+        private void checkinB_Click(object sender, EventArgs e)
+        {
+            checkinForm checkinF = new checkinForm();
+            checkinF.ShowDialog();
+        }
     }
 }
