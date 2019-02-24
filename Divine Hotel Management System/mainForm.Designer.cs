@@ -28,21 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.reservationB = new System.Windows.Forms.Button();
+            this.makeReservationB = new System.Windows.Forms.Button();
             this.checkAvailabilityB = new System.Windows.Forms.Button();
             this.checkinB = new System.Windows.Forms.Button();
             this.checkoutB = new System.Windows.Forms.Button();
+            this.addRoomB = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // reservationB
+            // makeReservationB
             // 
-            this.reservationB.Location = new System.Drawing.Point(86, 127);
-            this.reservationB.Name = "reservationB";
-            this.reservationB.Size = new System.Drawing.Size(117, 28);
-            this.reservationB.TabIndex = 0;
-            this.reservationB.Text = "Make Reservation";
-            this.reservationB.UseVisualStyleBackColor = true;
-            this.reservationB.Click += new System.EventHandler(this.reservationB_Click);
+            this.makeReservationB.Location = new System.Drawing.Point(86, 128);
+            this.makeReservationB.Name = "makeReservationB";
+            this.makeReservationB.Size = new System.Drawing.Size(117, 28);
+            this.makeReservationB.TabIndex = 0;
+            this.makeReservationB.Text = "Make Reservation";
+            this.makeReservationB.UseVisualStyleBackColor = true;
+            this.makeReservationB.Click += new System.EventHandler(this.reservationB_Click);
             // 
             // checkAvailabilityB
             // 
@@ -52,10 +53,11 @@
             this.checkAvailabilityB.TabIndex = 1;
             this.checkAvailabilityB.Text = "Check Availability";
             this.checkAvailabilityB.UseVisualStyleBackColor = true;
+            this.checkAvailabilityB.Click += new System.EventHandler(this.checkAvailabilityB_Click);
             // 
             // checkinB
             // 
-            this.checkinB.Location = new System.Drawing.Point(86, 171);
+            this.checkinB.Location = new System.Drawing.Point(86, 173);
             this.checkinB.Name = "checkinB";
             this.checkinB.Size = new System.Drawing.Size(117, 28);
             this.checkinB.TabIndex = 2;
@@ -65,22 +67,34 @@
             // 
             // checkoutB
             // 
-            this.checkoutB.Location = new System.Drawing.Point(86, 215);
+            this.checkoutB.Location = new System.Drawing.Point(86, 218);
             this.checkoutB.Name = "checkoutB";
             this.checkoutB.Size = new System.Drawing.Size(117, 28);
             this.checkoutB.TabIndex = 3;
             this.checkoutB.Text = "Check-out";
             this.checkoutB.UseVisualStyleBackColor = true;
+            this.checkoutB.Click += new System.EventHandler(this.checkoutB_Click);
+            // 
+            // addRoomB
+            // 
+            this.addRoomB.Location = new System.Drawing.Point(86, 264);
+            this.addRoomB.Name = "addRoomB";
+            this.addRoomB.Size = new System.Drawing.Size(117, 28);
+            this.addRoomB.TabIndex = 6;
+            this.addRoomB.Text = "Add New Room";
+            this.addRoomB.UseVisualStyleBackColor = true;
+            this.addRoomB.Click += new System.EventHandler(this.addRoomB_Click);
             // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.addRoomB);
             this.Controls.Add(this.checkoutB);
             this.Controls.Add(this.checkinB);
             this.Controls.Add(this.checkAvailabilityB);
-            this.Controls.Add(this.reservationB);
+            this.Controls.Add(this.makeReservationB);
             this.Name = "mainForm";
             this.Text = "Divine Hotel Management System (DHMS)";
             this.ResumeLayout(false);
@@ -89,9 +103,10 @@
 
         #endregion
 
-        private System.Windows.Forms.Button reservationB;
+        private System.Windows.Forms.Button makeReservationB;
         private System.Windows.Forms.Button checkAvailabilityB;
         private System.Windows.Forms.Button checkinB;
         private System.Windows.Forms.Button checkoutB;
+        private System.Windows.Forms.Button addRoomB;
     }
 }

@@ -34,7 +34,7 @@ namespace Divine_Hotel_Management_System
                 while (sqlReader.Read())
                 {
                     String temp = sqlReader.GetString(sqlReader.GetOrdinal("Room Type"));
-                    resSelectRoomCB.Items.Add(temp);
+                    resRoomTypeCB.Items.Add(temp);
                 }
             }
             catch (Exception exp)
@@ -51,7 +51,7 @@ namespace Divine_Hotel_Management_System
             //Room r = new Room();
             SqlCommand sqlCom = sqlCon.CreateCommand();
             sqlCom.CommandType = CommandType.Text;
-            sqlCom.CommandText = "insert into resTable([First Name], [Last Name], [Room Type], [Check-in Date], [Check-out Date], [Phone Number])values('" + this.resFirstNameTB.Text+"', '"+this.resLastNameTB.Text+ "', '"+ this.resSelectRoomCB.Text+"', '"+this.resCheckinDT.Value.ToString()+"', '"+this.resCheckoutDT.Value.ToString()+"', '"+this.resPhoneTB.Text+"')";
+            sqlCom.CommandText = "insert into resTable([First Name], [Last Name], [Room Type], [Check-in Date], [Check-out Date], [Phone Number])values('"+this.resFirstNameTB.Text+"', '"+this.resLastNameTB.Text+ "', '"+ this.resRoomTypeCB.Text+"', '"+this.resCheckinDTP.Value.ToString()+"', '"+this.resCheckoutDTP.Value.ToString()+"', '"+this.resPhoneTB.Text+"')";
             sqlCom.ExecuteNonQuery();
             sqlCon.Close();
             MessageBox.Show("Reservation Successful!");

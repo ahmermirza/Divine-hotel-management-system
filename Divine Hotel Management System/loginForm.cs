@@ -17,6 +17,18 @@ namespace Divine_Hotel_Management_System
             InitializeComponent();
         }
 
+        private void loginNameTB_Click(object sender, EventArgs e)
+        {
+            loginNameTB.Text = "";
+            loginNameTB.ForeColor = Color.Black;
+        }
+
+        private void loginPasswordTB_Click(object sender, EventArgs e)
+        {
+            loginPasswordTB.Text = "";
+            loginPasswordTB.ForeColor = Color.Black;
+        }
+
         private void loginB_Click(object sender, EventArgs e)
         {
             if (loginNameTB.Text == "ahmer" && loginPasswordTB.Text == "pakistan")
