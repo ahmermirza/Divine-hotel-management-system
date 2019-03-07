@@ -17,34 +17,41 @@ namespace Divine_Hotel_Management_System
             InitializeComponent();
         }
 
-        private void checkAvailabilityB_Click(object sender, EventArgs e)
+        private void mainAvailCheckB_Click(object sender, EventArgs e)
         {
-            checkRoomAvailability checkAvailabilityF = new checkRoomAvailability();
-            checkAvailabilityF.ShowDialog();
+            availabilityForm availabilityF = new availabilityForm();
+            availabilityF.ShowDialog();
         }
 
-        private void reservationB_Click(object sender, EventArgs e)
+        private void mainResB_Click(object sender, EventArgs e)
         {
             reservationForm reservationF = new reservationForm();
             reservationF.ShowDialog();
         }
 
-        private void checkinB_Click(object sender, EventArgs e)
+        private void mainCheckinB_Click(object sender, EventArgs e)
         {
             checkinForm checkinF = new checkinForm();
             checkinF.ShowDialog();
         }
 
-        private void checkoutB_Click(object sender, EventArgs e)
+        private void mainCheckoutB_Click(object sender, EventArgs e)
         {
-            Checkout checkOutF = new Checkout();
+            checkoutForm checkOutF = new checkoutForm();
             checkOutF.ShowDialog();
         }
 
-        private void addRoomB_Click(object sender, EventArgs e)
+        private void mainAddRoomB_Click(object sender, EventArgs e)
         {
-            Addnewroom addNewRoomF = new Addnewroom();
+            addRoomForm addNewRoomF = new addRoomForm();
             addNewRoomF.ShowDialog();
+        }
+
+        private void mainLogoutB_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            loginForm loginF = new loginForm();
+            loginF.ShowDialog();
         }
     }
 }

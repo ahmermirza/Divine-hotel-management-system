@@ -28,85 +28,129 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.makeReservationB = new System.Windows.Forms.Button();
-            this.checkAvailabilityB = new System.Windows.Forms.Button();
-            this.checkinB = new System.Windows.Forms.Button();
-            this.checkoutB = new System.Windows.Forms.Button();
-            this.addRoomB = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainForm));
+            this.mainResB = new System.Windows.Forms.Button();
+            this.mainCheckinB = new System.Windows.Forms.Button();
+            this.mainCheckoutB = new System.Windows.Forms.Button();
+            this.mainAddRoomB = new System.Windows.Forms.Button();
+            this.mainWelcomeL = new System.Windows.Forms.Label();
+            this.logoPB = new System.Windows.Forms.PictureBox();
+            this.mainAvailCheckB = new System.Windows.Forms.Button();
+            this.mainLogoutB = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.logoPB)).BeginInit();
             this.SuspendLayout();
             // 
-            // makeReservationB
+            // mainResB
             // 
-            this.makeReservationB.Location = new System.Drawing.Point(86, 128);
-            this.makeReservationB.Name = "makeReservationB";
-            this.makeReservationB.Size = new System.Drawing.Size(117, 28);
-            this.makeReservationB.TabIndex = 0;
-            this.makeReservationB.Text = "Make Reservation";
-            this.makeReservationB.UseVisualStyleBackColor = true;
-            this.makeReservationB.Click += new System.EventHandler(this.reservationB_Click);
+            this.mainResB.Location = new System.Drawing.Point(169, 293);
+            this.mainResB.Name = "mainResB";
+            this.mainResB.Size = new System.Drawing.Size(120, 30);
+            this.mainResB.TabIndex = 1;
+            this.mainResB.Text = "Make Reservation";
+            this.mainResB.UseVisualStyleBackColor = true;
+            this.mainResB.Click += new System.EventHandler(this.mainResB_Click);
             // 
-            // checkAvailabilityB
+            // mainCheckinB
             // 
-            this.checkAvailabilityB.Location = new System.Drawing.Point(86, 83);
-            this.checkAvailabilityB.Name = "checkAvailabilityB";
-            this.checkAvailabilityB.Size = new System.Drawing.Size(117, 28);
-            this.checkAvailabilityB.TabIndex = 1;
-            this.checkAvailabilityB.Text = "Check Availability";
-            this.checkAvailabilityB.UseVisualStyleBackColor = true;
-            this.checkAvailabilityB.Click += new System.EventHandler(this.checkAvailabilityB_Click);
+            this.mainCheckinB.Location = new System.Drawing.Point(169, 337);
+            this.mainCheckinB.Name = "mainCheckinB";
+            this.mainCheckinB.Size = new System.Drawing.Size(120, 30);
+            this.mainCheckinB.TabIndex = 2;
+            this.mainCheckinB.Text = "Check-in";
+            this.mainCheckinB.UseVisualStyleBackColor = true;
+            this.mainCheckinB.Click += new System.EventHandler(this.mainCheckinB_Click);
             // 
-            // checkinB
+            // mainCheckoutB
             // 
-            this.checkinB.Location = new System.Drawing.Point(86, 173);
-            this.checkinB.Name = "checkinB";
-            this.checkinB.Size = new System.Drawing.Size(117, 28);
-            this.checkinB.TabIndex = 2;
-            this.checkinB.Text = "Check-in";
-            this.checkinB.UseVisualStyleBackColor = true;
-            this.checkinB.Click += new System.EventHandler(this.checkinB_Click);
+            this.mainCheckoutB.Location = new System.Drawing.Point(169, 381);
+            this.mainCheckoutB.Name = "mainCheckoutB";
+            this.mainCheckoutB.Size = new System.Drawing.Size(120, 30);
+            this.mainCheckoutB.TabIndex = 3;
+            this.mainCheckoutB.Text = "Check-out";
+            this.mainCheckoutB.UseVisualStyleBackColor = true;
+            this.mainCheckoutB.Click += new System.EventHandler(this.mainCheckoutB_Click);
             // 
-            // checkoutB
+            // mainAddRoomB
             // 
-            this.checkoutB.Location = new System.Drawing.Point(86, 218);
-            this.checkoutB.Name = "checkoutB";
-            this.checkoutB.Size = new System.Drawing.Size(117, 28);
-            this.checkoutB.TabIndex = 3;
-            this.checkoutB.Text = "Check-out";
-            this.checkoutB.UseVisualStyleBackColor = true;
-            this.checkoutB.Click += new System.EventHandler(this.checkoutB_Click);
+            this.mainAddRoomB.Location = new System.Drawing.Point(169, 425);
+            this.mainAddRoomB.Name = "mainAddRoomB";
+            this.mainAddRoomB.Size = new System.Drawing.Size(120, 30);
+            this.mainAddRoomB.TabIndex = 4;
+            this.mainAddRoomB.Text = "Add New Room";
+            this.mainAddRoomB.UseVisualStyleBackColor = true;
+            this.mainAddRoomB.Click += new System.EventHandler(this.mainAddRoomB_Click);
             // 
-            // addRoomB
+            // mainWelcomeL
             // 
-            this.addRoomB.Location = new System.Drawing.Point(86, 264);
-            this.addRoomB.Name = "addRoomB";
-            this.addRoomB.Size = new System.Drawing.Size(117, 28);
-            this.addRoomB.TabIndex = 6;
-            this.addRoomB.Text = "Add New Room";
-            this.addRoomB.UseVisualStyleBackColor = true;
-            this.addRoomB.Click += new System.EventHandler(this.addRoomB_Click);
+            this.mainWelcomeL.AutoSize = true;
+            this.mainWelcomeL.Font = new System.Drawing.Font("Segoe Script", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mainWelcomeL.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.mainWelcomeL.Location = new System.Drawing.Point(154, 193);
+            this.mainWelcomeL.Name = "mainWelcomeL";
+            this.mainWelcomeL.Size = new System.Drawing.Size(723, 40);
+            this.mainWelcomeL.TabIndex = 7;
+            this.mainWelcomeL.Text = "WELCOME TO DIVINE HOTEL MANAGEMENT SYSTEM";
+            // 
+            // logoPB
+            // 
+            this.logoPB.Image = ((System.Drawing.Image)(resources.GetObject("logoPB.Image")));
+            this.logoPB.Location = new System.Drawing.Point(122, 28);
+            this.logoPB.Name = "logoPB";
+            this.logoPB.Size = new System.Drawing.Size(812, 150);
+            this.logoPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.logoPB.TabIndex = 8;
+            this.logoPB.TabStop = false;
+            // 
+            // mainAvailCheckB
+            // 
+            this.mainAvailCheckB.Location = new System.Drawing.Point(169, 249);
+            this.mainAvailCheckB.Name = "mainAvailCheckB";
+            this.mainAvailCheckB.Size = new System.Drawing.Size(120, 30);
+            this.mainAvailCheckB.TabIndex = 0;
+            this.mainAvailCheckB.Text = "Check Availability";
+            this.mainAvailCheckB.UseVisualStyleBackColor = true;
+            this.mainAvailCheckB.Click += new System.EventHandler(this.mainAvailCheckB_Click);
+            // 
+            // mainLogoutB
+            // 
+            this.mainLogoutB.Location = new System.Drawing.Point(808, 249);
+            this.mainLogoutB.Name = "mainLogoutB";
+            this.mainLogoutB.Size = new System.Drawing.Size(69, 30);
+            this.mainLogoutB.TabIndex = 9;
+            this.mainLogoutB.Text = "Log out";
+            this.mainLogoutB.UseVisualStyleBackColor = true;
             // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.addRoomB);
-            this.Controls.Add(this.checkoutB);
-            this.Controls.Add(this.checkinB);
-            this.Controls.Add(this.checkAvailabilityB);
-            this.Controls.Add(this.makeReservationB);
+            this.BackColor = System.Drawing.Color.Black;
+            this.ClientSize = new System.Drawing.Size(1070, 606);
+            this.Controls.Add(this.mainLogoutB);
+            this.Controls.Add(this.mainAvailCheckB);
+            this.Controls.Add(this.logoPB);
+            this.Controls.Add(this.mainWelcomeL);
+            this.Controls.Add(this.mainAddRoomB);
+            this.Controls.Add(this.mainCheckoutB);
+            this.Controls.Add(this.mainCheckinB);
+            this.Controls.Add(this.mainResB);
             this.Name = "mainForm";
             this.Text = "Divine Hotel Management System (DHMS)";
+            ((System.ComponentModel.ISupportInitialize)(this.logoPB)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button makeReservationB;
-        private System.Windows.Forms.Button checkAvailabilityB;
-        private System.Windows.Forms.Button checkinB;
-        private System.Windows.Forms.Button checkoutB;
-        private System.Windows.Forms.Button addRoomB;
+        private System.Windows.Forms.PictureBox logoPB;
+        private System.Windows.Forms.Label mainWelcomeL;
+        private System.Windows.Forms.Button mainAvailCheckB;
+        private System.Windows.Forms.Button mainResB;
+        private System.Windows.Forms.Button mainCheckinB;
+        private System.Windows.Forms.Button mainCheckoutB;
+        private System.Windows.Forms.Button mainAddRoomB;
+        private System.Windows.Forms.Button mainLogoutB;
     }
 }

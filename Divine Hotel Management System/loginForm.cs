@@ -17,16 +17,40 @@ namespace Divine_Hotel_Management_System
             InitializeComponent();
         }
 
-        private void loginNameTB_Click(object sender, EventArgs e)
+        private void loginNameTB_Enter(object sender, EventArgs e)
         {
-            loginNameTB.Text = "";
-            loginNameTB.ForeColor = Color.Black;
+            if (loginNameTB.Text == "Enter username here")
+            {
+                loginNameTB.Text = "";
+                loginNameTB.ForeColor = Color.Black;
+            }
         }
 
-        private void loginPasswordTB_Click(object sender, EventArgs e)
+        private void loginNameTB_Leave(object sender, EventArgs e)
         {
-            loginPasswordTB.Text = "";
-            loginPasswordTB.ForeColor = Color.Black;
+            if (loginNameTB.Text == "")
+            {
+                loginNameTB.Text = "Enter username here";
+                loginNameTB.ForeColor = Color.Gray;
+            }
+        }
+
+        private void loginPasswordTB_Enter(object sender, EventArgs e)
+        {
+            if (loginPasswordTB.Text == "Enter password here")
+            {
+                loginPasswordTB.Text = "";
+                loginPasswordTB.ForeColor = Color.Black;
+            }
+        }
+
+        private void loginPasswordTB_Leave(object sender, EventArgs e)
+        {
+            if (loginPasswordTB.Text == "")
+            {
+                loginPasswordTB.Text = "Enter password here";
+                loginPasswordTB.ForeColor = Color.Gray;
+            }
         }
 
         private void loginB_Click(object sender, EventArgs e)
@@ -39,7 +63,7 @@ namespace Divine_Hotel_Management_System
             }
             else
             {
-                MessageBox.Show("User name or password incorrect. Try Again!", "Error!");
+                MessageBox.Show("Username or password incorrect. Try Again!", "Error!");
             }
         }
     }

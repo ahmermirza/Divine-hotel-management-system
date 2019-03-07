@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Divine_Hotel_Management_System
 {
-    public partial class checkRoomAvailability : Form
+    public partial class availabilityForm : Form
     {
-        public checkRoomAvailability()
+        public availabilityForm()
         {
             InitializeComponent();
             availCheckinDTP.MinDate = DateTime.Now;
@@ -38,9 +38,21 @@ namespace Divine_Hotel_Management_System
             }
         }
 
-        private void checkRoomAvailability_Load(object sender, EventArgs e)
+        private void availCheckB_Click(object sender, EventArgs e)
         {
+            if(availRoomTypeCB.SelectedIndex == -1)
+            {
+                MessageBox.Show("Please Select a Room type!", "Error");
+            }
+            else
+            {
+                
+            }
+        }
 
+        private void availRoomTypeCB_TextChanged(object sender, EventArgs e)
+        {
+            availRoomTypeCB.ForeColor = Color.Black;
         }
     }
 }
