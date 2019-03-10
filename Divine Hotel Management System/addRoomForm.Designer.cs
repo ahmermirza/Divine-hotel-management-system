@@ -33,8 +33,8 @@
             this.addFloorNumL = new System.Windows.Forms.Label();
             this.addBedsNumL = new System.Windows.Forms.Label();
             this.addRoomTypeCB = new System.Windows.Forms.ComboBox();
-            this.addRoomPriceL = new System.Windows.Forms.Label();
-            this.addRoomPriceTB = new System.Windows.Forms.TextBox();
+            this.addRoomChargesL = new System.Windows.Forms.Label();
+            this.addRoomChargesTB = new System.Windows.Forms.TextBox();
             this.addRoomB = new System.Windows.Forms.Button();
             this.addRoomNumCB = new System.Windows.Forms.ComboBox();
             this.addFloorNumCB = new System.Windows.Forms.ComboBox();
@@ -99,35 +99,35 @@
             this.addRoomTypeCB.Text = "Select Room Type";
             this.addRoomTypeCB.TextChanged += new System.EventHandler(this.addRoomTypeCB_TextChanged);
             // 
-            // addRoomPriceL
+            // addRoomChargesL
             // 
-            this.addRoomPriceL.AutoSize = true;
-            this.addRoomPriceL.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addRoomPriceL.Location = new System.Drawing.Point(143, 263);
-            this.addRoomPriceL.Name = "addRoomPriceL";
-            this.addRoomPriceL.Size = new System.Drawing.Size(100, 21);
-            this.addRoomPriceL.TabIndex = 9;
-            this.addRoomPriceL.Text = "Room Price";
+            this.addRoomChargesL.AutoSize = true;
+            this.addRoomChargesL.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addRoomChargesL.Location = new System.Drawing.Point(120, 263);
+            this.addRoomChargesL.Name = "addRoomChargesL";
+            this.addRoomChargesL.Size = new System.Drawing.Size(123, 21);
+            this.addRoomChargesL.TabIndex = 9;
+            this.addRoomChargesL.Text = "Room Charges";
             // 
-            // addRoomPriceTB
+            // addRoomChargesTB
             // 
-            this.addRoomPriceTB.ForeColor = System.Drawing.Color.Gray;
-            this.addRoomPriceTB.Location = new System.Drawing.Point(248, 265);
-            this.addRoomPriceTB.Name = "addRoomPriceTB";
-            this.addRoomPriceTB.Size = new System.Drawing.Size(190, 20);
-            this.addRoomPriceTB.TabIndex = 4;
-            this.addRoomPriceTB.Text = "Enter Room Price Here";
-            this.addRoomPriceTB.Enter += new System.EventHandler(this.addRoomPriceTB_Enter);
-            this.addRoomPriceTB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.addRoomPriceTB_KeyPress);
-            this.addRoomPriceTB.Leave += new System.EventHandler(this.addRoomPriceTB_Leave);
+            this.addRoomChargesTB.ForeColor = System.Drawing.Color.Gray;
+            this.addRoomChargesTB.Location = new System.Drawing.Point(248, 265);
+            this.addRoomChargesTB.Name = "addRoomChargesTB";
+            this.addRoomChargesTB.Size = new System.Drawing.Size(190, 20);
+            this.addRoomChargesTB.TabIndex = 4;
+            this.addRoomChargesTB.Text = "Enter Room Charges Here";
+            this.addRoomChargesTB.Enter += new System.EventHandler(this.addRoomPriceTB_Enter);
+            this.addRoomChargesTB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.addRoomPriceTB_KeyPress);
+            this.addRoomChargesTB.Leave += new System.EventHandler(this.addRoomPriceTB_Leave);
             // 
             // addRoomB
             // 
             this.addRoomB.Location = new System.Drawing.Point(248, 302);
             this.addRoomB.Name = "addRoomB";
-            this.addRoomB.Size = new System.Drawing.Size(98, 26);
+            this.addRoomB.Size = new System.Drawing.Size(100, 25);
             this.addRoomB.TabIndex = 5;
-            this.addRoomB.Text = "Add New Room";
+            this.addRoomB.Text = "Add Room";
             this.addRoomB.UseVisualStyleBackColor = true;
             this.addRoomB.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -174,9 +174,9 @@
             // 
             // resetAddRoomB
             // 
-            this.resetAddRoomB.Location = new System.Drawing.Point(381, 302);
+            this.resetAddRoomB.Location = new System.Drawing.Point(363, 302);
             this.resetAddRoomB.Name = "resetAddRoomB";
-            this.resetAddRoomB.Size = new System.Drawing.Size(57, 26);
+            this.resetAddRoomB.Size = new System.Drawing.Size(75, 25);
             this.resetAddRoomB.TabIndex = 6;
             this.resetAddRoomB.Text = "Reset";
             this.resetAddRoomB.UseVisualStyleBackColor = true;
@@ -187,7 +187,7 @@
             this.addRoomL.AutoSize = true;
             this.addRoomL.Font = new System.Drawing.Font("Segoe Script", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addRoomL.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.addRoomL.Location = new System.Drawing.Point(74, 41);
+            this.addRoomL.Location = new System.Drawing.Point(78, 41);
             this.addRoomL.Name = "addRoomL";
             this.addRoomL.Size = new System.Drawing.Size(422, 40);
             this.addRoomL.TabIndex = 21;
@@ -198,22 +198,22 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GrayText;
-            this.ClientSize = new System.Drawing.Size(572, 399);
+            this.ClientSize = new System.Drawing.Size(564, 399);
             this.Controls.Add(this.addRoomL);
             this.Controls.Add(this.resetAddRoomB);
             this.Controls.Add(this.addBedsNumCB);
             this.Controls.Add(this.addFloorNumCB);
             this.Controls.Add(this.addRoomNumCB);
             this.Controls.Add(this.addRoomB);
-            this.Controls.Add(this.addRoomPriceTB);
-            this.Controls.Add(this.addRoomPriceL);
+            this.Controls.Add(this.addRoomChargesTB);
+            this.Controls.Add(this.addRoomChargesL);
             this.Controls.Add(this.addRoomTypeCB);
             this.Controls.Add(this.addBedsNumL);
             this.Controls.Add(this.addFloorNumL);
             this.Controls.Add(this.addRoomTypeL);
             this.Controls.Add(this.addRoomNumL);
             this.Name = "addRoomForm";
-            this.Text = "Add Rooms";
+            this.Text = "Add New Room";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -226,8 +226,8 @@
         private System.Windows.Forms.Label addFloorNumL;
         private System.Windows.Forms.Label addBedsNumL;
         private System.Windows.Forms.ComboBox addRoomTypeCB;
-        private System.Windows.Forms.Label addRoomPriceL;
-        private System.Windows.Forms.TextBox addRoomPriceTB;
+        private System.Windows.Forms.Label addRoomChargesL;
+        private System.Windows.Forms.TextBox addRoomChargesTB;
         private System.Windows.Forms.Button addRoomB;
         private System.Windows.Forms.ComboBox addRoomNumCB;
         private System.Windows.Forms.ComboBox addFloorNumCB;

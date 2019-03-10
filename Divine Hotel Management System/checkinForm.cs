@@ -23,19 +23,19 @@ namespace Divine_Hotel_Management_System
         {
             if(checkinFirstNameTB.Text == "Enter First Name Here" || checkinLastNameTB.Text == "Enter Last Name Here" ||  checkinIDNumTB.Text == "Enter ID Number Here" || checkinPhoneTB.Text == "Enter Phone Number Here")
             {
-                MessageBox.Show("Please fill in the missing field(s) to complete the checkin process!", "Error");
+                MessageBox.Show("Please fill in the missing field(s) to complete the checkin process!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (checkinResNumCB.SelectedIndex == -1)
             {
-                MessageBox.Show("Please select a Reservation Number!", "Error");
+                MessageBox.Show("Please select a Reservation Number!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (checkinRoomTypeCB.SelectedIndex == -1)
             {
-                MessageBox.Show("Please select a Room Type!", "Error");
+                MessageBox.Show("Please select a Room Type!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (checkinRoomNumCB.SelectedIndex == -1)
             {
-                MessageBox.Show("Please select a Room Number!", "Error");
+                MessageBox.Show("Please select a Room Number!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -121,7 +121,7 @@ namespace Divine_Hotel_Management_System
             if(!Char.IsLetter(chr) && chr != 8 && chr != 32)
             {
                 e.Handled = true;
-                MessageBox.Show("This field cannot contain numbers or special characters. Please enter a valid first name!", "Error");
+                MessageBox.Show("This field cannot contain numbers or special characters. Please enter a valid first name!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -131,7 +131,7 @@ namespace Divine_Hotel_Management_System
             if (!Char.IsLetter(chr) && chr != 8 && chr != 32)
             {
                 e.Handled = true;
-                MessageBox.Show("This field cannot contain numbers or special characters. Please enter a valid last name!", "Error");
+                MessageBox.Show("This field cannot contain numbers or special characters. Please enter a valid last name!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -141,7 +141,7 @@ namespace Divine_Hotel_Management_System
             if (!Char.IsNumber(chr) && chr != 8)
             {
                 e.Handled = true;
-                MessageBox.Show("This field cannot contain letters or special characters. Please enter a valid ID Number!", "Error");
+                MessageBox.Show("This field cannot contain letters or special characters. Please enter a valid ID Number!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -151,7 +151,7 @@ namespace Divine_Hotel_Management_System
             if (!Char.IsNumber(chr) && chr != 8)
             {
                 e.Handled = true;
-                MessageBox.Show("This field cannot contain letters or special characters. Please enter a valid Phone Number!", "Error");
+                MessageBox.Show("This field cannot contain letters or special characters. Please enter a valid Phone Number!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -173,19 +173,19 @@ namespace Divine_Hotel_Management_System
         private void resetCheckinB_Click(object sender, EventArgs e)
         {
             checkinResNumCB.Text = "Select Reservation Number";
-            checkinResNumCB.ForeColor = Color.Silver;
+            checkinResNumCB.ForeColor = Color.Gray;
             checkinFirstNameTB.Text = "Enter First Name Here";
-            checkinFirstNameTB.ForeColor = Color.Silver;
+            checkinFirstNameTB.ForeColor = Color.Gray;
             checkinLastNameTB.Text = "Enter Last Name Here";
-            checkinLastNameTB.ForeColor = Color.Silver;
+            checkinLastNameTB.ForeColor = Color.Gray;
             checkinRoomTypeCB.Text = "Select Room Type";
-            checkinRoomTypeCB.ForeColor = Color.Silver;
+            checkinRoomTypeCB.ForeColor = Color.Gray;
             checkinRoomNumCB.Text = "Select Room Number";
-            checkinRoomNumCB.ForeColor = Color.Silver;
+            checkinRoomNumCB.ForeColor = Color.Gray;
             checkinIDNumTB.Text = "Enter ID Number Here";
-            checkinIDNumTB.ForeColor = Color.Silver;
+            checkinIDNumTB.ForeColor = Color.Gray;
             checkinPhoneTB.Text = "Enter Phone Number Here";
-            checkinPhoneTB.ForeColor = Color.Silver;
+            checkinPhoneTB.ForeColor = Color.Gray;
             checkinDTP.MinDate = DateTime.Now;
             checkinDTP.Value = DateTime.Now;
         }

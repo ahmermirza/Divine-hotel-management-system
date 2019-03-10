@@ -43,15 +43,31 @@ namespace Divine_Hotel_Management_System
 
         private void mainAddRoomB_Click(object sender, EventArgs e)
         {
-            addRoomForm addNewRoomF = new addRoomForm();
-            addNewRoomF.ShowDialog();
+            roomsInfoForm roomsF = new roomsInfoForm();
+            roomsF.ShowDialog();
+        }
+
+        private void mainEmployeeB_Click(object sender, EventArgs e)
+        {
+            employeesInfoForm employeesInfoF = new employeesInfoForm();
+            employeesInfoF.ShowDialog();
         }
 
         private void mainLogoutB_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            loginForm loginF = new loginForm();
-            loginF.ShowDialog();
+            DialogResult result = MessageBox.Show("You are about to logout. Do you want to continue?", "Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if(result == DialogResult.Yes)
+            {
+                this.Hide();
+                loginForm loginF = new loginForm();
+                loginF.ShowDialog();
+            }
+        }
+
+        private void mainInventoryB_Click(object sender, EventArgs e)
+        {
+            inventoryInfoForm inventoryInfoF = new inventoryInfoForm();
+            inventoryInfoF.ShowDialog();
         }
     }
 }

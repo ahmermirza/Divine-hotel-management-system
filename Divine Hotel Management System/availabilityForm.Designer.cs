@@ -41,7 +41,7 @@
             // 
             // availCheckoutDTP
             // 
-            this.availCheckoutDTP.Location = new System.Drawing.Point(286, 201);
+            this.availCheckoutDTP.Location = new System.Drawing.Point(290, 201);
             this.availCheckoutDTP.Name = "availCheckoutDTP";
             this.availCheckoutDTP.Size = new System.Drawing.Size(190, 20);
             this.availCheckoutDTP.TabIndex = 2;
@@ -50,7 +50,7 @@
             // availCheckinDTP
             // 
             this.availCheckinDTP.Checked = false;
-            this.availCheckinDTP.Location = new System.Drawing.Point(286, 164);
+            this.availCheckinDTP.Location = new System.Drawing.Point(290, 164);
             this.availCheckinDTP.Name = "availCheckinDTP";
             this.availCheckinDTP.Size = new System.Drawing.Size(190, 20);
             this.availCheckinDTP.TabIndex = 1;
@@ -59,7 +59,7 @@
             // 
             this.availCheckoutL.AutoSize = true;
             this.availCheckoutL.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.availCheckoutL.Location = new System.Drawing.Point(191, 199);
+            this.availCheckoutL.Location = new System.Drawing.Point(195, 199);
             this.availCheckoutL.Name = "availCheckoutL";
             this.availCheckoutL.Size = new System.Drawing.Size(88, 21);
             this.availCheckoutL.TabIndex = 12;
@@ -69,7 +69,7 @@
             // 
             this.availCheckinL.AutoSize = true;
             this.availCheckinL.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.availCheckinL.Location = new System.Drawing.Point(202, 163);
+            this.availCheckinL.Location = new System.Drawing.Point(206, 163);
             this.availCheckinL.Name = "availCheckinL";
             this.availCheckinL.Size = new System.Drawing.Size(77, 21);
             this.availCheckinL.TabIndex = 11;
@@ -79,7 +79,7 @@
             // 
             this.availRoomTypeL.AutoSize = true;
             this.availRoomTypeL.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.availRoomTypeL.Location = new System.Drawing.Point(179, 125);
+            this.availRoomTypeL.Location = new System.Drawing.Point(183, 125);
             this.availRoomTypeL.Name = "availRoomTypeL";
             this.availRoomTypeL.Size = new System.Drawing.Size(100, 21);
             this.availRoomTypeL.TabIndex = 10;
@@ -93,7 +93,7 @@
             "Single Room",
             "Master Room",
             "Suite Room"});
-            this.availRoomTypeCB.Location = new System.Drawing.Point(286, 126);
+            this.availRoomTypeCB.Location = new System.Drawing.Point(290, 126);
             this.availRoomTypeCB.Name = "availRoomTypeCB";
             this.availRoomTypeCB.Size = new System.Drawing.Size(190, 21);
             this.availRoomTypeCB.TabIndex = 0;
@@ -104,14 +104,14 @@
             // 
             this.dateValidityMessageL.AutoSize = true;
             this.dateValidityMessageL.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateValidityMessageL.Location = new System.Drawing.Point(577, 270);
+            this.dateValidityMessageL.Location = new System.Drawing.Point(499, 201);
             this.dateValidityMessageL.Name = "dateValidityMessageL";
             this.dateValidityMessageL.Size = new System.Drawing.Size(0, 20);
             this.dateValidityMessageL.TabIndex = 16;
             // 
             // availCheckB
             // 
-            this.availCheckB.Location = new System.Drawing.Point(329, 238);
+            this.availCheckB.Location = new System.Drawing.Point(333, 238);
             this.availCheckB.Name = "availCheckB";
             this.availCheckB.Size = new System.Drawing.Size(108, 26);
             this.availCheckB.TabIndex = 3;

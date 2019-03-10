@@ -17,6 +17,8 @@ namespace Divine_Hotel_Management_System
             InitializeComponent();
             availCheckinDTP.MinDate = DateTime.Now;
             availCheckinDTP.Value = DateTime.Now;
+            availCheckoutDTP.MinDate = DateTime.Now;
+            availCheckoutDTP.Value = DateTime.Now;
         }
         
         private void availCheckoutDT_CloseUp(object sender, EventArgs e)
@@ -40,13 +42,15 @@ namespace Divine_Hotel_Management_System
 
         private void availCheckB_Click(object sender, EventArgs e)
         {
-            if(availRoomTypeCB.SelectedIndex == -1)
+            if (availRoomTypeCB.SelectedIndex == -1)
             {
-                MessageBox.Show("Please Select a Room type!", "Error");
+                MessageBox.Show("Please Select a Room type!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else
+            DialogResult result = MessageBox.Show("Rooms are available. Would you like to make a reservation?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if(result == DialogResult.Yes)
             {
-                
+                reservationForm reservationF = new reservationForm();
+                reservationF.ShowDialog();
             }
         }
 

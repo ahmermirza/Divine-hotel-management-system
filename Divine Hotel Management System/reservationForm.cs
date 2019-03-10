@@ -55,18 +55,18 @@ namespace Divine_Hotel_Management_System
         {
             if (resFirstNameTB.Text == "Enter First Name Here" || resLastNameTB.Text == "Enter Last Name Here" || resPhoneTB.Text == "Enter Phone Number Here")
             {
-                MessageBox.Show("Please fill in the missing field(s) to complete the reservation process!", "Error");
+                MessageBox.Show("Please fill in the missing field(s) to complete the reservation process!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (resRoomTypeCB.SelectedIndex == -1)
             {
-                MessageBox.Show("Please Select a Room type!", "Error");
+                MessageBox.Show("Please Select a Room type!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (!checkinDateChanged)
             {
-                MessageBox.Show("Please select reservation checkin date!", "Error");
+                MessageBox.Show("Please select a reservation checkin date!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 if (!checkoutDateChanged)
                 {
-                    MessageBox.Show("Please select reservation checkout date!", "Error");
+                    MessageBox.Show("Please select a reservation checkout date!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
@@ -79,7 +79,7 @@ namespace Divine_Hotel_Management_System
                 sqlCom.CommandText = "insert into resTable([First Name], [Last Name], [Room Type], [Check-in Date], [Check-out Date], [Phone Number])values('" + this.resFirstNameTB.Text + "', '" + this.resLastNameTB.Text + "', '" + this.resRoomTypeCB.Text + "', '" + this.resCheckinDTP.Value.ToString() + "', '" + this.resCheckoutDTP.Value.ToString() + "', '" + this.resPhoneTB.Text + "')";
                 sqlCom.ExecuteNonQuery();
                 sqlCon.Close();
-                MessageBox.Show("Reservation Successful!", "Message");
+                MessageBox.Show("Reservation Successful!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -88,7 +88,7 @@ namespace Divine_Hotel_Management_System
             char chr = e.KeyChar;
             if(!Char.IsLetter(chr) && chr != 8 && chr != 32)
             {
-                MessageBox.Show("This field cannot contain numbers or special characters. Please enter a valid first name!", "Error");
+                MessageBox.Show("This field cannot contain numbers or special characters. Please enter a valid first name!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 e.Handled = true;
             }
 
@@ -144,7 +144,7 @@ namespace Divine_Hotel_Management_System
             if (!Char.IsLetter(chr) && chr != 8 && chr != 32)
             {
                 e.Handled = true;
-                MessageBox.Show("This field cannot contain numbers or special characters. Please enter a valid last name!", "Error");
+                MessageBox.Show("This field cannot contain numbers or special characters. Please enter a valid last name!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -154,7 +154,7 @@ namespace Divine_Hotel_Management_System
             if (!Char.IsNumber(chr) && chr != 8)
             {
                 e.Handled = true;
-                MessageBox.Show("This field cannot contain letters or special characters. Please enter a valid phone number!", "Error");
+                MessageBox.Show("This field cannot contain letters or special characters. Please enter a valid phone number!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -194,17 +194,17 @@ namespace Divine_Hotel_Management_System
         private void resetResB_Click(object sender, EventArgs e)
         {
             resFirstNameTB.Text = "Enter First Name Here";
-            resFirstNameTB.ForeColor = Color.Silver;
+            resFirstNameTB.ForeColor = Color.Gray;
             resLastNameTB.Text = "Enter Last Name Here";
-            resLastNameTB.ForeColor = Color.Silver;
+            resLastNameTB.ForeColor = Color.Gray;
             resRoomTypeCB.Text = "Select Room Type";
-            resRoomTypeCB.ForeColor = Color.Silver;
+            resRoomTypeCB.ForeColor = Color.Gray;
             resCheckinDTP.MinDate = DateTime.Now;
             resCheckinDTP.Value = DateTime.Now;
             resCheckoutDTP.MinDate = DateTime.Now;
             resCheckoutDTP.Value = DateTime.Now;
             resPhoneTB.Text = "Enter Phone Number Here";
-            resPhoneTB.ForeColor = Color.Silver;
+            resPhoneTB.ForeColor = Color.Gray;
         }
     }
 }

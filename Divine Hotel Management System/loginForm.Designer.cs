@@ -76,9 +76,10 @@
             this.loginPasswordTB.ForeColor = System.Drawing.Color.Gray;
             this.loginPasswordTB.Location = new System.Drawing.Point(389, 353);
             this.loginPasswordTB.Name = "loginPasswordTB";
+            this.loginPasswordTB.PasswordChar = '*';
             this.loginPasswordTB.Size = new System.Drawing.Size(155, 20);
             this.loginPasswordTB.TabIndex = 1;
-            this.loginPasswordTB.Text = "Enter password here";
+            this.loginPasswordTB.Text = "Enter password";
             this.loginPasswordTB.Enter += new System.EventHandler(this.loginPasswordTB_Enter);
             this.loginPasswordTB.Leave += new System.EventHandler(this.loginPasswordTB_Leave);
             // 

@@ -37,7 +37,7 @@ namespace Divine_Hotel_Management_System
 
         private void loginPasswordTB_Enter(object sender, EventArgs e)
         {
-            if (loginPasswordTB.Text == "Enter password here")
+            if (loginPasswordTB.Text == "Enter password")
             {
                 loginPasswordTB.Text = "";
                 loginPasswordTB.ForeColor = Color.Black;
@@ -48,7 +48,8 @@ namespace Divine_Hotel_Management_System
         {
             if (loginPasswordTB.Text == "")
             {
-                loginPasswordTB.Text = "Enter password here";
+                loginPasswordTB.Text = "Enter password";
+                
                 loginPasswordTB.ForeColor = Color.Gray;
             }
         }
@@ -63,7 +64,7 @@ namespace Divine_Hotel_Management_System
             }
             else
             {
-                MessageBox.Show("Username or password incorrect. Try Again!", "Error!");
+                MessageBox.Show("Username or password incorrect. Try Again!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

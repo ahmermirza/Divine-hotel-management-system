@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="addEmployeesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="addEmployeesForm.Designer.cs">
+      <DependentUpon>addEmployeesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="addInventoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="addInventoryForm.Designer.cs">
+      <DependentUpon>addInventoryForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="checkoutForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,16 +76,28 @@
     <Compile Include="availabilityForm.Designer.cs">
       <DependentUpon>availabilityForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="DHMSdatabaseDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DHMSdatabaseDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="addRoomForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="addRoomForm.Designer.cs">
       <DependentUpon>addRoomForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DHMSdatabaseDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DHMSdatabaseDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="employeesInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="employeesInfoForm.Designer.cs">
+      <DependentUpon>employeesInfoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="inventoryInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="inventoryInfoForm.Designer.cs">
+      <DependentUpon>inventoryInfoForm.cs</DependentUpon>
     </Compile>
     <Compile Include="loginForm.cs">
       <SubType>Form</SubType>
@@ -96,6 +120,18 @@
       <DependentUpon>reservationForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Room.cs" />
+    <Compile Include="roomsInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="roomsInfoForm.Designer.cs">
+      <DependentUpon>roomsInfoForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="addEmployeesForm.resx">
+      <DependentUpon>addEmployeesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="addInventoryForm.resx">
+      <DependentUpon>addInventoryForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="checkoutForm.resx">
       <DependentUpon>checkoutForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -107,6 +143,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="addRoomForm.resx">
       <DependentUpon>addRoomForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="employeesInfoForm.resx">
+      <DependentUpon>employeesInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="inventoryInfoForm.resx">
+      <DependentUpon>inventoryInfoForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="loginForm.resx">
       <DependentUpon>loginForm.cs</DependentUpon>
@@ -125,6 +167,9 @@
     </Compile>
     <EmbeddedResource Include="reservationForm.resx">
       <DependentUpon>reservationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="roomsInfoForm.resx">
+      <DependentUpon>roomsInfoForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="DHMSdatabaseDataSet.xsc">
       <DependentUpon>DHMSdatabaseDataSet.xsd</DependentUpon>

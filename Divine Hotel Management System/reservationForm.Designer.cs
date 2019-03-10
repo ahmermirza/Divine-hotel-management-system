@@ -182,9 +182,9 @@
             // 
             // resetResB
             // 
-            this.resetResB.Location = new System.Drawing.Point(386, 361);
+            this.resetResB.Location = new System.Drawing.Point(374, 361);
             this.resetResB.Name = "resetResB";
-            this.resetResB.Size = new System.Drawing.Size(55, 26);
+            this.resetResB.Size = new System.Drawing.Size(67, 26);
             this.resetResB.TabIndex = 7;
             this.resetResB.Text = "Reset";
             this.resetResB.UseVisualStyleBackColor = true;
@@ -195,7 +195,7 @@
             this.reservationL.AutoSize = true;
             this.reservationL.Font = new System.Drawing.Font("Segoe Script", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.reservationL.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.reservationL.Location = new System.Drawing.Point(83, 41);
+            this.reservationL.Location = new System.Drawing.Point(86, 41);
             this.reservationL.Name = "reservationL";
             this.reservationL.Size = new System.Drawing.Size(436, 40);
             this.reservationL.TabIndex = 18;

@@ -32,17 +32,19 @@
             this.mainResB = new System.Windows.Forms.Button();
             this.mainCheckinB = new System.Windows.Forms.Button();
             this.mainCheckoutB = new System.Windows.Forms.Button();
-            this.mainAddRoomB = new System.Windows.Forms.Button();
             this.mainWelcomeL = new System.Windows.Forms.Label();
             this.logoPB = new System.Windows.Forms.PictureBox();
             this.mainAvailCheckB = new System.Windows.Forms.Button();
             this.mainLogoutB = new System.Windows.Forms.Button();
+            this.mainRoomB = new System.Windows.Forms.Button();
+            this.mainEmployeeB = new System.Windows.Forms.Button();
+            this.mainInventoryB = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.logoPB)).BeginInit();
             this.SuspendLayout();
             // 
             // mainResB
             // 
-            this.mainResB.Location = new System.Drawing.Point(169, 293);
+            this.mainResB.Location = new System.Drawing.Point(175, 293);
             this.mainResB.Name = "mainResB";
             this.mainResB.Size = new System.Drawing.Size(120, 30);
             this.mainResB.TabIndex = 1;
@@ -52,7 +54,7 @@
             // 
             // mainCheckinB
             // 
-            this.mainCheckinB.Location = new System.Drawing.Point(169, 337);
+            this.mainCheckinB.Location = new System.Drawing.Point(175, 337);
             this.mainCheckinB.Name = "mainCheckinB";
             this.mainCheckinB.Size = new System.Drawing.Size(120, 30);
             this.mainCheckinB.TabIndex = 2;
@@ -62,7 +64,7 @@
             // 
             // mainCheckoutB
             // 
-            this.mainCheckoutB.Location = new System.Drawing.Point(169, 381);
+            this.mainCheckoutB.Location = new System.Drawing.Point(175, 381);
             this.mainCheckoutB.Name = "mainCheckoutB";
             this.mainCheckoutB.Size = new System.Drawing.Size(120, 30);
             this.mainCheckoutB.TabIndex = 3;
@@ -70,22 +72,12 @@
             this.mainCheckoutB.UseVisualStyleBackColor = true;
             this.mainCheckoutB.Click += new System.EventHandler(this.mainCheckoutB_Click);
             // 
-            // mainAddRoomB
-            // 
-            this.mainAddRoomB.Location = new System.Drawing.Point(169, 425);
-            this.mainAddRoomB.Name = "mainAddRoomB";
-            this.mainAddRoomB.Size = new System.Drawing.Size(120, 30);
-            this.mainAddRoomB.TabIndex = 4;
-            this.mainAddRoomB.Text = "Add New Room";
-            this.mainAddRoomB.UseVisualStyleBackColor = true;
-            this.mainAddRoomB.Click += new System.EventHandler(this.mainAddRoomB_Click);
-            // 
             // mainWelcomeL
             // 
             this.mainWelcomeL.AutoSize = true;
             this.mainWelcomeL.Font = new System.Drawing.Font("Segoe Script", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mainWelcomeL.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.mainWelcomeL.Location = new System.Drawing.Point(154, 193);
+            this.mainWelcomeL.Location = new System.Drawing.Point(160, 194);
             this.mainWelcomeL.Name = "mainWelcomeL";
             this.mainWelcomeL.Size = new System.Drawing.Size(723, 40);
             this.mainWelcomeL.TabIndex = 7;
@@ -94,7 +86,7 @@
             // logoPB
             // 
             this.logoPB.Image = ((System.Drawing.Image)(resources.GetObject("logoPB.Image")));
-            this.logoPB.Location = new System.Drawing.Point(122, 28);
+            this.logoPB.Location = new System.Drawing.Point(128, 28);
             this.logoPB.Name = "logoPB";
             this.logoPB.Size = new System.Drawing.Size(812, 150);
             this.logoPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -103,7 +95,7 @@
             // 
             // mainAvailCheckB
             // 
-            this.mainAvailCheckB.Location = new System.Drawing.Point(169, 249);
+            this.mainAvailCheckB.Location = new System.Drawing.Point(175, 249);
             this.mainAvailCheckB.Name = "mainAvailCheckB";
             this.mainAvailCheckB.Size = new System.Drawing.Size(120, 30);
             this.mainAvailCheckB.TabIndex = 0;
@@ -113,12 +105,43 @@
             // 
             // mainLogoutB
             // 
-            this.mainLogoutB.Location = new System.Drawing.Point(808, 249);
+            this.mainLogoutB.Location = new System.Drawing.Point(814, 249);
             this.mainLogoutB.Name = "mainLogoutB";
             this.mainLogoutB.Size = new System.Drawing.Size(69, 30);
             this.mainLogoutB.TabIndex = 9;
             this.mainLogoutB.Text = "Log out";
             this.mainLogoutB.UseVisualStyleBackColor = true;
+            this.mainLogoutB.Click += new System.EventHandler(this.mainLogoutB_Click);
+            // 
+            // mainRoomB
+            // 
+            this.mainRoomB.Location = new System.Drawing.Point(175, 513);
+            this.mainRoomB.Name = "mainRoomB";
+            this.mainRoomB.Size = new System.Drawing.Size(120, 30);
+            this.mainRoomB.TabIndex = 4;
+            this.mainRoomB.Text = "Manage Rooms";
+            this.mainRoomB.UseVisualStyleBackColor = true;
+            this.mainRoomB.Click += new System.EventHandler(this.mainAddRoomB_Click);
+            // 
+            // mainEmployeeB
+            // 
+            this.mainEmployeeB.Location = new System.Drawing.Point(175, 469);
+            this.mainEmployeeB.Name = "mainEmployeeB";
+            this.mainEmployeeB.Size = new System.Drawing.Size(120, 30);
+            this.mainEmployeeB.TabIndex = 10;
+            this.mainEmployeeB.Text = "Manage Employees";
+            this.mainEmployeeB.UseVisualStyleBackColor = true;
+            this.mainEmployeeB.Click += new System.EventHandler(this.mainEmployeeB_Click);
+            // 
+            // mainInventoryB
+            // 
+            this.mainInventoryB.Location = new System.Drawing.Point(175, 425);
+            this.mainInventoryB.Name = "mainInventoryB";
+            this.mainInventoryB.Size = new System.Drawing.Size(120, 30);
+            this.mainInventoryB.TabIndex = 11;
+            this.mainInventoryB.Text = "Manage Inventory";
+            this.mainInventoryB.UseVisualStyleBackColor = true;
+            this.mainInventoryB.Click += new System.EventHandler(this.mainInventoryB_Click);
             // 
             // mainForm
             // 
@@ -126,11 +149,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1070, 606);
+            this.Controls.Add(this.mainInventoryB);
+            this.Controls.Add(this.mainEmployeeB);
             this.Controls.Add(this.mainLogoutB);
             this.Controls.Add(this.mainAvailCheckB);
             this.Controls.Add(this.logoPB);
             this.Controls.Add(this.mainWelcomeL);
-            this.Controls.Add(this.mainAddRoomB);
+            this.Controls.Add(this.mainRoomB);
             this.Controls.Add(this.mainCheckoutB);
             this.Controls.Add(this.mainCheckinB);
             this.Controls.Add(this.mainResB);
@@ -150,7 +175,9 @@
         private System.Windows.Forms.Button mainResB;
         private System.Windows.Forms.Button mainCheckinB;
         private System.Windows.Forms.Button mainCheckoutB;
-        private System.Windows.Forms.Button mainAddRoomB;
         private System.Windows.Forms.Button mainLogoutB;
+        private System.Windows.Forms.Button mainRoomB;
+        private System.Windows.Forms.Button mainEmployeeB;
+        private System.Windows.Forms.Button mainInventoryB;
     }
 }

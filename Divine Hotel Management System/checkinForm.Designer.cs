@@ -200,7 +200,7 @@
             // 
             this.checkinB.Location = new System.Drawing.Point(267, 420);
             this.checkinB.Name = "checkinB";
-            this.checkinB.Size = new System.Drawing.Size(72, 26);
+            this.checkinB.Size = new System.Drawing.Size(89, 26);
             this.checkinB.TabIndex = 8;
             this.checkinB.Text = "Check-in";
             this.checkinB.UseVisualStyleBackColor = true;
@@ -229,9 +229,9 @@
             // 
             // resetCheckinB
             // 
-            this.resetCheckinB.Location = new System.Drawing.Point(395, 420);
+            this.resetCheckinB.Location = new System.Drawing.Point(368, 420);
             this.resetCheckinB.Name = "resetCheckinB";
-            this.resetCheckinB.Size = new System.Drawing.Size(62, 26);
+            this.resetCheckinB.Size = new System.Drawing.Size(89, 26);
             this.resetCheckinB.TabIndex = 9;
             this.resetCheckinB.Text = "Reset";
             this.resetCheckinB.UseVisualStyleBackColor = true;
