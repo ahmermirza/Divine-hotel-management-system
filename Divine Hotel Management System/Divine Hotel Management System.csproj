@@ -58,6 +58,12 @@
     <Compile Include="addInventoryForm.Designer.cs">
       <DependentUpon>addInventoryForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="checkinBillingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="checkinBillingForm.Designer.cs">
+      <DependentUpon>checkinBillingForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="checkoutForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,6 +137,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="addInventoryForm.resx">
       <DependentUpon>addInventoryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="checkinBillingForm.resx">
+      <DependentUpon>checkinBillingForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="checkoutForm.resx">
       <DependentUpon>checkoutForm.cs</DependentUpon>

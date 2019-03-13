@@ -20,7 +20,7 @@ namespace Divine_Hotel_Management_System
         }
 
         private void checkinB_Click(object sender, EventArgs e)
-        {
+        {/*
             if(checkinFirstNameTB.Text == "Enter First Name Here" || checkinLastNameTB.Text == "Enter Last Name Here" ||  checkinIDNumTB.Text == "Enter ID Number Here" || checkinPhoneTB.Text == "Enter Phone Number Here")
             {
                 MessageBox.Show("Please fill in the missing field(s) to complete the checkin process!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -39,8 +39,10 @@ namespace Divine_Hotel_Management_System
             }
             else
             {
-
-            }
+                
+            }*/
+            checkinBillingForm checkinBillingF = new checkinBillingForm();
+            checkinBillingF.Show();
         }
 
         private void checkinFirstNameTB_Enter(object sender, EventArgs e)
