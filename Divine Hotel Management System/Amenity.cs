@@ -9,16 +9,18 @@ using System.Windows.Forms;
 
 namespace Divine_Hotel_Management_System
 {
-    class Room
+    class Amenity
     {
-        public int RoomId;
-        public int RoomTypeId;
-        public string FloorNumber;
+        public int AmenityId;
+        public int InventoryId;
+        public int ReservationId;
+        public int Cost;
+        public int Quantity;
 
         public string conString = "Server=LENOVO-PC\\SQLEXPRESS;Database=DHMSdatabase;Integrated Security=True";
         SqlConnection sqlCon;
 
-        public Room()
+        public Amenity()
         {
             sqlCon = new SqlConnection(conString);
 
@@ -27,38 +29,40 @@ namespace Divine_Hotel_Management_System
 
         public DataTable ListAll()
         {
-            DataTable roomsDT = new DataTable();
+            DataTable amenityDT = new DataTable();
             try
             {
-                string queryString = "SELECT * FROM rooms";
+                string queryString = "SELECT * FROM amenities";
 
                 SqlDataAdapter sqlDA = new SqlDataAdapter(queryString, sqlCon);
-                sqlDA.Fill(roomsDT);
+                sqlDA.Fill(amenityDT);
             }
             catch (Exception e)
             {
                 MessageBox.Show(e.Message);
             }
-            return roomsDT;
+            return amenityDT;
         }
 
-        public Room Get(int roomId)
+        public Amenity Get(int amenityId)
         {
-            string queryString = "SELECT * FROM rooms WHERE room_ID = '" + roomId + "'";
+            string queryString = "SELECT * FROM amenities WHERE amenity_ID = '" + amenityId + "'";
 
             SqlDataAdapter sqlDA = new SqlDataAdapter(queryString, sqlCon);
-            DataTable roomsDT = new DataTable();
-            sqlDA.Fill(roomsDT);
+            DataTable amenityDT = new DataTable();
+            sqlDA.Fill(amenityDT);
 
-            RoomTypeId = int.Parse(roomsDT.Rows[0]["room_type_ID"].ToString().Trim());
-            FloorNumber = roomsDT.Rows[0]["floor_number"].ToString().Trim();
-            
+            InventoryId = int.Parse(amenityDT.Rows[0]["inventory_ID"].ToString().Trim());
+            ReservationId = int.Parse(amenityDT.Rows[0]["reservation_ID"].ToString().Trim());
+            Cost = int.Parse(amenityDT.Rows[0]["cost"].ToString().Trim());
+            Quantity = int.Parse(amenityDT.Rows[0]["quantity"].ToString().Trim());
+
             return this;
         }
 
         public void Insert()
         {
-            string queryString = "INSERT INTO rooms (room_ID, room_type_ID, floor_number) VALUES('" + RoomId + "', '" + RoomTypeId + "', '" + FloorNumber + "')";
+            string queryString = "INSERT INTO amenities (inventory_ID, reservation_ID, cost, quantity) VALUES('" + InventoryId + "', '" + ReservationId + "', '" + Cost + "', '" + Quantity + "')";
 
             SqlCommand sqlCom = new SqlCommand(queryString, sqlCon);
             try
@@ -71,9 +75,9 @@ namespace Divine_Hotel_Management_System
             }
         }
 
-        public void Delete(int roomId)
+        public void Delete(int amenityId)
         {
-            string queryString = "DELETE FROM rooms WHERE room_ID = '" + roomId + "'";
+            string queryString = "DELETE FROM amenities WHERE amenity_ID = '" + amenityId + "'";
 
             SqlCommand sqlCom = new SqlCommand(queryString, sqlCon);
             try
@@ -86,9 +90,9 @@ namespace Divine_Hotel_Management_System
             }
         }
 
-        public void Update(int roomId)
+        public void Update(int amenityId)
         {
-            string queryString = "UPDATE rooms SET room_ID = '" + RoomId + "', room_type_ID = '" + RoomTypeId + "', floor_number = '" + FloorNumber + "' WHERE room_ID = '" + roomId + "'";
+            string queryString = "UPDATE amenities SET inventory_ID = '" + InventoryId + "', reservation_ID = '" + ReservationId + "', cost = '" + Cost + "', quantity = '" + Quantity + "' WHERE amenity_ID = '" + amenityId + "'";
 
             SqlCommand sqlCom = new SqlCommand(queryString, sqlCon);
             try

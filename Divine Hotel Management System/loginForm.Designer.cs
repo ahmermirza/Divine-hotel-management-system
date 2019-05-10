@@ -132,7 +132,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.Name = "loginForm";
-            this.Text = "Login";
+            this.Text = "login";
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -9,16 +9,18 @@ using System.Windows.Forms;
 
 namespace Divine_Hotel_Management_System
 {
-    class Room
+    class RoomType
     {
-        public int RoomId;
         public int RoomTypeId;
-        public string FloorNumber;
+        public string RoomTypeName;
+        public string Description;
+        public string NumberOfBeds;
+        public int BasePrice;
 
         public string conString = "Server=LENOVO-PC\\SQLEXPRESS;Database=DHMSdatabase;Integrated Security=True";
         SqlConnection sqlCon;
 
-        public Room()
+        public RoomType()
         {
             sqlCon = new SqlConnection(conString);
 
@@ -27,38 +29,40 @@ namespace Divine_Hotel_Management_System
 
         public DataTable ListAll()
         {
-            DataTable roomsDT = new DataTable();
+            DataTable roomTypesDT = new DataTable();
             try
             {
-                string queryString = "SELECT * FROM rooms";
+                string queryString = "SELECT * FROM room_types";
 
                 SqlDataAdapter sqlDA = new SqlDataAdapter(queryString, sqlCon);
-                sqlDA.Fill(roomsDT);
+                sqlDA.Fill(roomTypesDT);
             }
             catch (Exception e)
             {
                 MessageBox.Show(e.Message);
             }
-            return roomsDT;
+            return roomTypesDT;
         }
 
-        public Room Get(int roomId)
+        public RoomType Get(int roomTypeId)
         {
-            string queryString = "SELECT * FROM rooms WHERE room_ID = '" + roomId + "'";
+            string queryString = "SELECT * FROM room_types WHERE room_type_ID = '" + roomTypeId + "'";
 
             SqlDataAdapter sqlDA = new SqlDataAdapter(queryString, sqlCon);
-            DataTable roomsDT = new DataTable();
-            sqlDA.Fill(roomsDT);
+            DataTable roomTypesDT = new DataTable();
+            sqlDA.Fill(roomTypesDT);
 
-            RoomTypeId = int.Parse(roomsDT.Rows[0]["room_type_ID"].ToString().Trim());
-            FloorNumber = roomsDT.Rows[0]["floor_number"].ToString().Trim();
-            
+            RoomTypeName = roomTypesDT.Rows[0]["room_type_name"].ToString().Trim();
+            Description = roomTypesDT.Rows[0]["description"].ToString().Trim();
+            NumberOfBeds = roomTypesDT.Rows[0]["number_of_beds"].ToString().Trim();
+            BasePrice = int.Parse(roomTypesDT.Rows[0]["base_price"].ToString().Trim());
+
             return this;
         }
 
         public void Insert()
         {
-            string queryString = "INSERT INTO rooms (room_ID, room_type_ID, floor_number) VALUES('" + RoomId + "', '" + RoomTypeId + "', '" + FloorNumber + "')";
+            string queryString = "INSERT INTO room_types (room_type_name, description, number_of_beds, base_price) VALUES('" + RoomTypeName + "', '" + Description + "', '" + NumberOfBeds + "', '" + BasePrice + "')";
 
             SqlCommand sqlCom = new SqlCommand(queryString, sqlCon);
             try
@@ -71,9 +75,9 @@ namespace Divine_Hotel_Management_System
             }
         }
 
-        public void Delete(int roomId)
+        public void Delete(int roomTypeId)
         {
-            string queryString = "DELETE FROM rooms WHERE room_ID = '" + roomId + "'";
+            string queryString = "DELETE FROM room_types WHERE room_type_ID = '" + roomTypeId + "'";
 
             SqlCommand sqlCom = new SqlCommand(queryString, sqlCon);
             try
@@ -86,9 +90,9 @@ namespace Divine_Hotel_Management_System
             }
         }
 
-        public void Update(int roomId)
+        public void Update(int roomTypeId)
         {
-            string queryString = "UPDATE rooms SET room_ID = '" + RoomId + "', room_type_ID = '" + RoomTypeId + "', floor_number = '" + FloorNumber + "' WHERE room_ID = '" + roomId + "'";
+            string queryString = "UPDATE room_types SET room_type_name = '" + RoomTypeName + "', description = '" + Description + "', number_of_beds = '" + NumberOfBeds + "', base_price = '" + BasePrice + "' WHERE room_type_ID = '" + roomTypeId + "'";
 
             SqlCommand sqlCom = new SqlCommand(queryString, sqlCon);
             try

@@ -9,16 +9,16 @@ using System.Windows.Forms;
 
 namespace Divine_Hotel_Management_System
 {
-    class Room
+    class Menu
     {
-        public int RoomId;
-        public int RoomTypeId;
-        public string FloorNumber;
+        public int MenuId;
+        public string ItemName;
+        public int Price;
 
         public string conString = "Server=LENOVO-PC\\SQLEXPRESS;Database=DHMSdatabase;Integrated Security=True";
         SqlConnection sqlCon;
 
-        public Room()
+        public Menu()
         {
             sqlCon = new SqlConnection(conString);
 
@@ -27,38 +27,38 @@ namespace Divine_Hotel_Management_System
 
         public DataTable ListAll()
         {
-            DataTable roomsDT = new DataTable();
+            DataTable menuDT = new DataTable();
             try
             {
-                string queryString = "SELECT * FROM rooms";
+                string queryString = "SELECT * FROM menu";
 
                 SqlDataAdapter sqlDA = new SqlDataAdapter(queryString, sqlCon);
-                sqlDA.Fill(roomsDT);
+                sqlDA.Fill(menuDT);
             }
             catch (Exception e)
             {
                 MessageBox.Show(e.Message);
             }
-            return roomsDT;
+            return menuDT;
         }
 
-        public Room Get(int roomId)
+        public Menu Get(int menuId)
         {
-            string queryString = "SELECT * FROM rooms WHERE room_ID = '" + roomId + "'";
+            string queryString = "SELECT * FROM menu WHERE menu_ID = '" + menuId + "'";
 
             SqlDataAdapter sqlDA = new SqlDataAdapter(queryString, sqlCon);
-            DataTable roomsDT = new DataTable();
-            sqlDA.Fill(roomsDT);
+            DataTable menuDT = new DataTable();
+            sqlDA.Fill(menuDT);
 
-            RoomTypeId = int.Parse(roomsDT.Rows[0]["room_type_ID"].ToString().Trim());
-            FloorNumber = roomsDT.Rows[0]["floor_number"].ToString().Trim();
-            
+            ItemName = menuDT.Rows[0]["menu_item"].ToString().Trim();
+            Price = int.Parse(menuDT.Rows[0]["price"].ToString().Trim());
+
             return this;
         }
 
         public void Insert()
         {
-            string queryString = "INSERT INTO rooms (room_ID, room_type_ID, floor_number) VALUES('" + RoomId + "', '" + RoomTypeId + "', '" + FloorNumber + "')";
+            string queryString = "INSERT INTO menu (menu_item, price) VALUES('" + ItemName + "', '" + Price + "')";
 
             SqlCommand sqlCom = new SqlCommand(queryString, sqlCon);
             try
@@ -71,9 +71,9 @@ namespace Divine_Hotel_Management_System
             }
         }
 
-        public void Delete(int roomId)
+        public void Delete(int menuId)
         {
-            string queryString = "DELETE FROM rooms WHERE room_ID = '" + roomId + "'";
+            string queryString = "DELETE FROM menu WHERE menu_ID = '" + menuId + "'";
 
             SqlCommand sqlCom = new SqlCommand(queryString, sqlCon);
             try
@@ -86,9 +86,9 @@ namespace Divine_Hotel_Management_System
             }
         }
 
-        public void Update(int roomId)
+        public void Update(int menuId)
         {
-            string queryString = "UPDATE rooms SET room_ID = '" + RoomId + "', room_type_ID = '" + RoomTypeId + "', floor_number = '" + FloorNumber + "' WHERE room_ID = '" + roomId + "'";
+            string queryString = "UPDATE menu SET menu_item = '" + ItemName + "', price = '" + Price + "' WHERE menu_ID = '" + menuId + "'";
 
             SqlCommand sqlCom = new SqlCommand(queryString, sqlCon);
             try

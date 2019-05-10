@@ -46,64 +46,52 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="addEmployeesForm.cs">
-      <SubType>Form</SubType>
+    <Compile Include="Amenity.cs" />
+    <Compile Include="AmenityControl.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="addEmployeesForm.Designer.cs">
-      <DependentUpon>addEmployeesForm.cs</DependentUpon>
+    <Compile Include="AmenityControl.Designer.cs">
+      <DependentUpon>AmenityControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="addInventoryForm.cs">
-      <SubType>Form</SubType>
+    <Compile Include="Checkin.cs" />
+    <Compile Include="CheckinControl.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="addInventoryForm.Designer.cs">
-      <DependentUpon>addInventoryForm.cs</DependentUpon>
+    <Compile Include="CheckinControl.Designer.cs">
+      <DependentUpon>CheckinControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="checkinBillingForm.cs">
-      <SubType>Form</SubType>
+    <Compile Include="Checkout.cs" />
+    <Compile Include="CheckoutControl.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="checkinBillingForm.Designer.cs">
-      <DependentUpon>checkinBillingForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="checkoutForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="checkoutForm.Designer.cs">
-      <DependentUpon>checkoutForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="checkinForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="checkinForm.Designer.cs">
-      <DependentUpon>checkinForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="availabilityForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="availabilityForm.Designer.cs">
-      <DependentUpon>availabilityForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="addRoomForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="addRoomForm.Designer.cs">
-      <DependentUpon>addRoomForm.cs</DependentUpon>
+    <Compile Include="CheckoutControl.Designer.cs">
+      <DependentUpon>CheckoutControl.cs</DependentUpon>
     </Compile>
     <Compile Include="DHMSdatabaseDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DHMSdatabaseDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="employeesInfoForm.cs">
-      <SubType>Form</SubType>
+    <Compile Include="Employee.cs" />
+    <Compile Include="EmployeeControl.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="employeesInfoForm.Designer.cs">
-      <DependentUpon>employeesInfoForm.cs</DependentUpon>
+    <Compile Include="EmployeeControl.Designer.cs">
+      <DependentUpon>EmployeeControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="inventoryInfoForm.cs">
-      <SubType>Form</SubType>
+    <Compile Include="Guest.cs" />
+    <Compile Include="GuestControl.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="inventoryInfoForm.Designer.cs">
-      <DependentUpon>inventoryInfoForm.cs</DependentUpon>
+    <Compile Include="GuestControl.Designer.cs">
+      <DependentUpon>GuestControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventory.cs" />
+    <Compile Include="InventoryControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="InventoryControl.Designer.cs">
+      <DependentUpon>InventoryControl.cs</DependentUpon>
     </Compile>
     <Compile Include="loginForm.cs">
       <SubType>Form</SubType>
@@ -117,53 +105,62 @@
     <Compile Include="mainForm.Designer.cs">
       <DependentUpon>mainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Menu.cs" />
+    <Compile Include="MenuControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MenuControl.Designer.cs">
+      <DependentUpon>MenuControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="reservationForm.cs">
-      <SubType>Form</SubType>
+    <Compile Include="Reservation.cs" />
+    <Compile Include="ReservationControl.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="reservationForm.Designer.cs">
-      <DependentUpon>reservationForm.cs</DependentUpon>
+    <Compile Include="ReservationControl.Designer.cs">
+      <DependentUpon>ReservationControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Room.cs" />
-    <Compile Include="roomsInfoForm.cs">
-      <SubType>Form</SubType>
+    <Compile Include="RoomControl.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="roomsInfoForm.Designer.cs">
-      <DependentUpon>roomsInfoForm.cs</DependentUpon>
+    <Compile Include="RoomControl.Designer.cs">
+      <DependentUpon>RoomControl.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="addEmployeesForm.resx">
-      <DependentUpon>addEmployeesForm.cs</DependentUpon>
+    <Compile Include="RoomType.cs" />
+    <Compile Include="RoomTypeControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RoomTypeControl.Designer.cs">
+      <DependentUpon>RoomTypeControl.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AmenityControl.resx">
+      <DependentUpon>AmenityControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="addInventoryForm.resx">
-      <DependentUpon>addInventoryForm.cs</DependentUpon>
+    <EmbeddedResource Include="CheckinControl.resx">
+      <DependentUpon>CheckinControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="checkinBillingForm.resx">
-      <DependentUpon>checkinBillingForm.cs</DependentUpon>
+    <EmbeddedResource Include="CheckoutControl.resx">
+      <DependentUpon>CheckoutControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="checkoutForm.resx">
-      <DependentUpon>checkoutForm.cs</DependentUpon>
+    <EmbeddedResource Include="EmployeeControl.resx">
+      <DependentUpon>EmployeeControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="checkinForm.resx">
-      <DependentUpon>checkinForm.cs</DependentUpon>
+    <EmbeddedResource Include="GuestControl.resx">
+      <DependentUpon>GuestControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="availabilityForm.resx">
-      <DependentUpon>availabilityForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="addRoomForm.resx">
-      <DependentUpon>addRoomForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="employeesInfoForm.resx">
-      <DependentUpon>employeesInfoForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="inventoryInfoForm.resx">
-      <DependentUpon>inventoryInfoForm.cs</DependentUpon>
+    <EmbeddedResource Include="InventoryControl.resx">
+      <DependentUpon>InventoryControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="loginForm.resx">
       <DependentUpon>loginForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="mainForm.resx">
       <DependentUpon>mainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuControl.resx">
+      <DependentUpon>MenuControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -174,11 +171,14 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="reservationForm.resx">
-      <DependentUpon>reservationForm.cs</DependentUpon>
+    <EmbeddedResource Include="ReservationControl.resx">
+      <DependentUpon>ReservationControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="roomsInfoForm.resx">
-      <DependentUpon>roomsInfoForm.cs</DependentUpon>
+    <EmbeddedResource Include="RoomControl.resx">
+      <DependentUpon>RoomControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RoomTypeControl.resx">
+      <DependentUpon>RoomTypeControl.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="DHMSdatabaseDataSet.xsc">
       <DependentUpon>DHMSdatabaseDataSet.xsd</DependentUpon>

@@ -9,16 +9,19 @@ using System.Windows.Forms;
 
 namespace Divine_Hotel_Management_System
 {
-    class Room
+    class Inventory
     {
-        public int RoomId;
-        public int RoomTypeId;
-        public string FloorNumber;
+        public int InventoryId;
+        public string Name;
+        public string Description;
+        public int Quantity;
+        public int Cost;
+        public DateTime PurchaseDate;
 
         public string conString = "Server=LENOVO-PC\\SQLEXPRESS;Database=DHMSdatabase;Integrated Security=True";
         SqlConnection sqlCon;
 
-        public Room()
+        public Inventory()
         {
             sqlCon = new SqlConnection(conString);
 
@@ -27,38 +30,41 @@ namespace Divine_Hotel_Management_System
 
         public DataTable ListAll()
         {
-            DataTable roomsDT = new DataTable();
+            DataTable inventoryDT = new DataTable();
             try
             {
-                string queryString = "SELECT * FROM rooms";
+                string queryString = "SELECT * FROM inventories";
 
                 SqlDataAdapter sqlDA = new SqlDataAdapter(queryString, sqlCon);
-                sqlDA.Fill(roomsDT);
+                sqlDA.Fill(inventoryDT);
             }
             catch (Exception e)
             {
                 MessageBox.Show(e.Message);
             }
-            return roomsDT;
+            return inventoryDT;
         }
 
-        public Room Get(int roomId)
+        public Inventory Get(int inventoryId)
         {
-            string queryString = "SELECT * FROM rooms WHERE room_ID = '" + roomId + "'";
+            string queryString = "SELECT * FROM inventories WHERE inventory_ID = '" + inventoryId + "'";
 
             SqlDataAdapter sqlDA = new SqlDataAdapter(queryString, sqlCon);
-            DataTable roomsDT = new DataTable();
-            sqlDA.Fill(roomsDT);
+            DataTable inventoryDT = new DataTable();
+            sqlDA.Fill(inventoryDT);
 
-            RoomTypeId = int.Parse(roomsDT.Rows[0]["room_type_ID"].ToString().Trim());
-            FloorNumber = roomsDT.Rows[0]["floor_number"].ToString().Trim();
-            
+            Name = inventoryDT.Rows[0]["name"].ToString().Trim();
+            Description = inventoryDT.Rows[0]["description"].ToString().Trim();
+            Quantity = int.Parse(inventoryDT.Rows[0]["quantity"].ToString().Trim());
+            Cost = int.Parse(inventoryDT.Rows[0]["cost"].ToString().Trim());
+            PurchaseDate = DateTime.Parse(inventoryDT.Rows[0]["date"].ToString().Trim());
+
             return this;
         }
 
         public void Insert()
         {
-            string queryString = "INSERT INTO rooms (room_ID, room_type_ID, floor_number) VALUES('" + RoomId + "', '" + RoomTypeId + "', '" + FloorNumber + "')";
+            string queryString = "INSERT INTO inventories (name, description, quantity, cost, date) VALUES('" + Name + "', '" + Description + "', '" + Quantity + "', '" + Cost + "', '" + PurchaseDate + "')";
 
             SqlCommand sqlCom = new SqlCommand(queryString, sqlCon);
             try
@@ -71,9 +77,9 @@ namespace Divine_Hotel_Management_System
             }
         }
 
-        public void Delete(int roomId)
+        public void Delete(int inventoryId)
         {
-            string queryString = "DELETE FROM rooms WHERE room_ID = '" + roomId + "'";
+            string queryString = "DELETE FROM inventories WHERE inventory_ID = '" + inventoryId + "'";
 
             SqlCommand sqlCom = new SqlCommand(queryString, sqlCon);
             try
@@ -86,9 +92,9 @@ namespace Divine_Hotel_Management_System
             }
         }
 
-        public void Update(int roomId)
+        public void Update(int inventoryId)
         {
-            string queryString = "UPDATE rooms SET room_ID = '" + RoomId + "', room_type_ID = '" + RoomTypeId + "', floor_number = '" + FloorNumber + "' WHERE room_ID = '" + roomId + "'";
+            string queryString = "UPDATE inventories SET name = '" + Name + "', description = '" + Description + "', quantity = '" + Quantity + "', cost = '" + Cost + "', date = '" + PurchaseDate + "' WHERE inventory_ID = '" + inventoryId + "'";
 
             SqlCommand sqlCom = new SqlCommand(queryString, sqlCon);
             try

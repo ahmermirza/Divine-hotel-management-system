@@ -9,16 +9,18 @@ using System.Windows.Forms;
 
 namespace Divine_Hotel_Management_System
 {
-    class Room
+    class Checkout
     {
+        public int CheckoutId;
+        public int CheckinId;
         public int RoomId;
-        public int RoomTypeId;
-        public string FloorNumber;
+        public DateTime CheckoutDate;
+        public int AmountPaid;
 
         public string conString = "Server=LENOVO-PC\\SQLEXPRESS;Database=DHMSdatabase;Integrated Security=True";
         SqlConnection sqlCon;
 
-        public Room()
+        public Checkout()
         {
             sqlCon = new SqlConnection(conString);
 
@@ -27,38 +29,40 @@ namespace Divine_Hotel_Management_System
 
         public DataTable ListAll()
         {
-            DataTable roomsDT = new DataTable();
+            DataTable checkoutDT = new DataTable();
             try
             {
-                string queryString = "SELECT * FROM rooms";
+                string queryString = "SELECT * FROM checkouts";
 
                 SqlDataAdapter sqlDA = new SqlDataAdapter(queryString, sqlCon);
-                sqlDA.Fill(roomsDT);
+                sqlDA.Fill(checkoutDT);
             }
             catch (Exception e)
             {
                 MessageBox.Show(e.Message);
             }
-            return roomsDT;
+            return checkoutDT;
         }
 
-        public Room Get(int roomId)
+        public Checkout Get(int checkoutId)
         {
-            string queryString = "SELECT * FROM rooms WHERE room_ID = '" + roomId + "'";
+            string queryString = "SELECT * FROM checkouts WHERE checkout_ID = '" + checkoutId + "'";
 
             SqlDataAdapter sqlDA = new SqlDataAdapter(queryString, sqlCon);
-            DataTable roomsDT = new DataTable();
-            sqlDA.Fill(roomsDT);
+            DataTable checkoutDT = new DataTable();
+            sqlDA.Fill(checkoutDT);
 
-            RoomTypeId = int.Parse(roomsDT.Rows[0]["room_type_ID"].ToString().Trim());
-            FloorNumber = roomsDT.Rows[0]["floor_number"].ToString().Trim();
-            
+            CheckinId = int.Parse(checkoutDT.Rows[0]["checkin_ID"].ToString().Trim());
+            RoomId = int.Parse(checkoutDT.Rows[0]["room_ID"].ToString().Trim());
+            CheckoutDate = DateTime.Parse(checkoutDT.Rows[0]["checkout_time"].ToString().Trim());
+            AmountPaid = int.Parse(checkoutDT.Rows[0]["amount_paid"].ToString().Trim());
+
             return this;
         }
 
         public void Insert()
         {
-            string queryString = "INSERT INTO rooms (room_ID, room_type_ID, floor_number) VALUES('" + RoomId + "', '" + RoomTypeId + "', '" + FloorNumber + "')";
+            string queryString = "INSERT INTO checkouts (checkin_ID, room_ID, checkout_time, amount_paid) VALUES('" + CheckinId + "', '" + RoomId + "', '" + CheckoutDate + "', '" + AmountPaid + "')";
 
             SqlCommand sqlCom = new SqlCommand(queryString, sqlCon);
             try
@@ -71,9 +75,9 @@ namespace Divine_Hotel_Management_System
             }
         }
 
-        public void Delete(int roomId)
+        public void Delete(int checkoutId)
         {
-            string queryString = "DELETE FROM rooms WHERE room_ID = '" + roomId + "'";
+            string queryString = "DELETE FROM checkouts WHERE checkout_ID = '" + checkoutId + "'";
 
             SqlCommand sqlCom = new SqlCommand(queryString, sqlCon);
             try
@@ -86,9 +90,9 @@ namespace Divine_Hotel_Management_System
             }
         }
 
-        public void Update(int roomId)
+        public void Update(int checkoutId)
         {
-            string queryString = "UPDATE rooms SET room_ID = '" + RoomId + "', room_type_ID = '" + RoomTypeId + "', floor_number = '" + FloorNumber + "' WHERE room_ID = '" + roomId + "'";
+            string queryString = "UPDATE checkouts SET checkin_ID = '" + CheckinId + "', room_ID = '" + RoomId + "', checkout_time = '" + CheckoutDate + "', amount_paid = '" + AmountPaid + "' WHERE checkout_ID = '" + checkoutId + "'";
 
             SqlCommand sqlCom = new SqlCommand(queryString, sqlCon);
             try
