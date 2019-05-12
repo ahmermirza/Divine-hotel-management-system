@@ -80,7 +80,7 @@
             this.checkinB.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.checkinB.Location = new System.Drawing.Point(548, 444);
             this.checkinB.Name = "checkinB";
-            this.checkinB.Size = new System.Drawing.Size(90, 25);
+            this.checkinB.Size = new System.Drawing.Size(75, 25);
             this.checkinB.TabIndex = 31;
             this.checkinB.Text = "Check-in";
             this.checkinB.UseVisualStyleBackColor = true;
@@ -115,7 +115,6 @@
             this.checkinAmountPaidTB.Name = "checkinAmountPaidTB";
             this.checkinAmountPaidTB.Size = new System.Drawing.Size(190, 20);
             this.checkinAmountPaidTB.TabIndex = 28;
-            this.checkinAmountPaidTB.Text = "0.00";
             // 
             // checkinResNumL
             // 
@@ -137,6 +136,7 @@
             this.checkinResNumCB.Size = new System.Drawing.Size(190, 21);
             this.checkinResNumCB.TabIndex = 20;
             this.checkinResNumCB.Text = "Select Reservation Number";
+            this.checkinResNumCB.SelectedIndexChanged += new System.EventHandler(this.checkinResNumCB_SelectedIndexChanged);
             // 
             // checkinDTP
             // 
@@ -156,7 +156,6 @@
             this.checkinDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.checkinDGV.Size = new System.Drawing.Size(680, 200);
             this.checkinDGV.TabIndex = 44;
-            this.checkinDGV.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.checkinDGV_MouseDoubleClick);
             // 
             // CheckinControl
             // 

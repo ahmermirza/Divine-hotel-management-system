@@ -30,7 +30,6 @@
         {
             this.roomDGV = new System.Windows.Forms.DataGridView();
             this.roomL = new System.Windows.Forms.Label();
-            this.resetAddRoomB = new System.Windows.Forms.Button();
             this.roomFloorNumCB = new System.Windows.Forms.ComboBox();
             this.addRoomB = new System.Windows.Forms.Button();
             this.roomNumberTB = new System.Windows.Forms.TextBox();
@@ -39,6 +38,8 @@
             this.roomFloorNumL = new System.Windows.Forms.Label();
             this.roomTypeL = new System.Windows.Forms.Label();
             this.roomTypeB = new System.Windows.Forms.Button();
+            this.roomDeleteB = new System.Windows.Forms.Button();
+            this.roomUpdateB = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.roomDGV)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,6 +53,7 @@
             this.roomDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.roomDGV.Size = new System.Drawing.Size(680, 200);
             this.roomDGV.TabIndex = 1;
+            this.roomDGV.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.roomDGV_MouseDoubleClick);
             // 
             // roomL
             // 
@@ -65,26 +67,14 @@
             this.roomL.TabIndex = 32;
             this.roomL.Text = "Room Management";
             // 
-            // resetAddRoomB
-            // 
-            this.resetAddRoomB.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.resetAddRoomB.Location = new System.Drawing.Point(663, 437);
-            this.resetAddRoomB.Name = "resetAddRoomB";
-            this.resetAddRoomB.Size = new System.Drawing.Size(75, 25);
-            this.resetAddRoomB.TabIndex = 29;
-            this.resetAddRoomB.Text = "Reset";
-            this.resetAddRoomB.UseVisualStyleBackColor = true;
-            // 
             // roomFloorNumCB
             // 
             this.roomFloorNumCB.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.roomFloorNumCB.ForeColor = System.Drawing.Color.Gray;
             this.roomFloorNumCB.FormattingEnabled = true;
             this.roomFloorNumCB.Items.AddRange(new object[] {
             "1",
             "2",
-            "3",
-            "4"});
+            "3"});
             this.roomFloorNumCB.Location = new System.Drawing.Point(548, 404);
             this.roomFloorNumCB.Name = "roomFloorNumCB";
             this.roomFloorNumCB.Size = new System.Drawing.Size(190, 21);
@@ -94,22 +84,21 @@
             // addRoomB
             // 
             this.addRoomB.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.addRoomB.Location = new System.Drawing.Point(548, 437);
+            this.addRoomB.Location = new System.Drawing.Point(506, 441);
             this.addRoomB.Name = "addRoomB";
-            this.addRoomB.Size = new System.Drawing.Size(100, 25);
+            this.addRoomB.Size = new System.Drawing.Size(80, 25);
             this.addRoomB.TabIndex = 28;
             this.addRoomB.Text = "Add Room";
             this.addRoomB.UseVisualStyleBackColor = true;
+            this.addRoomB.Click += new System.EventHandler(this.addRoomB_Click);
             // 
             // roomNumberTB
             // 
             this.roomNumberTB.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.roomNumberTB.ForeColor = System.Drawing.Color.Gray;
             this.roomNumberTB.Location = new System.Drawing.Point(184, 402);
             this.roomNumberTB.Name = "roomNumberTB";
             this.roomNumberTB.Size = new System.Drawing.Size(190, 20);
             this.roomNumberTB.TabIndex = 26;
-            this.roomNumberTB.Text = "Enter Room Number Here";
             // 
             // roomNumberL
             // 
@@ -125,7 +114,6 @@
             // roomTypeCB
             // 
             this.roomTypeCB.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.roomTypeCB.ForeColor = System.Drawing.Color.Gray;
             this.roomTypeCB.FormattingEnabled = true;
             this.roomTypeCB.Items.AddRange(new object[] {
             "Single Room",
@@ -173,13 +161,36 @@
             this.roomTypeB.UseVisualStyleBackColor = false;
             this.roomTypeB.Click += new System.EventHandler(this.RoomTypeB_Click);
             // 
+            // roomDeleteB
+            // 
+            this.roomDeleteB.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.roomDeleteB.Location = new System.Drawing.Point(592, 441);
+            this.roomDeleteB.Name = "roomDeleteB";
+            this.roomDeleteB.Size = new System.Drawing.Size(70, 25);
+            this.roomDeleteB.TabIndex = 49;
+            this.roomDeleteB.Text = "Delete";
+            this.roomDeleteB.UseVisualStyleBackColor = true;
+            this.roomDeleteB.Click += new System.EventHandler(this.roomDeleteB_Click);
+            // 
+            // roomUpdateB
+            // 
+            this.roomUpdateB.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.roomUpdateB.Location = new System.Drawing.Point(668, 441);
+            this.roomUpdateB.Name = "roomUpdateB";
+            this.roomUpdateB.Size = new System.Drawing.Size(70, 25);
+            this.roomUpdateB.TabIndex = 50;
+            this.roomUpdateB.Text = "Update";
+            this.roomUpdateB.UseVisualStyleBackColor = true;
+            this.roomUpdateB.Click += new System.EventHandler(this.roomUpdateB_Click);
+            // 
             // RoomControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.roomUpdateB);
+            this.Controls.Add(this.roomDeleteB);
             this.Controls.Add(this.roomTypeB);
             this.Controls.Add(this.roomL);
-            this.Controls.Add(this.resetAddRoomB);
             this.Controls.Add(this.roomFloorNumCB);
             this.Controls.Add(this.addRoomB);
             this.Controls.Add(this.roomNumberTB);
@@ -190,6 +201,7 @@
             this.Controls.Add(this.roomDGV);
             this.Name = "RoomControl";
             this.Size = new System.Drawing.Size(800, 600);
+            this.Load += new System.EventHandler(this.RoomControl_Load);
             ((System.ComponentModel.ISupportInitialize)(this.roomDGV)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -200,7 +212,6 @@
 
         private System.Windows.Forms.DataGridView roomDGV;
         private System.Windows.Forms.Label roomL;
-        private System.Windows.Forms.Button resetAddRoomB;
         private System.Windows.Forms.ComboBox roomFloorNumCB;
         private System.Windows.Forms.Button addRoomB;
         private System.Windows.Forms.TextBox roomNumberTB;
@@ -209,5 +220,7 @@
         private System.Windows.Forms.Label roomFloorNumL;
         private System.Windows.Forms.Label roomTypeL;
         private System.Windows.Forms.Button roomTypeB;
+        private System.Windows.Forms.Button roomDeleteB;
+        private System.Windows.Forms.Button roomUpdateB;
     }
 }

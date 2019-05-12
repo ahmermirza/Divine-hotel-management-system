@@ -18,10 +18,17 @@ namespace Divine_Hotel_Management_System
             checkinDTP.MinDate = DateTime.Now;
             checkinDTP.Value = DateTime.Now;
         }
-        bool recordSelected;
 
         private void CheckinControl_Load(object sender, EventArgs e)
         {
+            checkinRoomNumCB.DisplayMember = "room_ID";
+            checkinRoomNumCB.SelectedItem = null;
+            checkinRoomNumCB.SelectedText = "Select Room Number";
+
+            checkinResNumCB.DisplayMember = "reservation_ID";
+            checkinResNumCB.SelectedItem = null;
+            checkinResNumCB.SelectedText = "Select Reservation Number";
+            checkinResNumCB.ValueMember = "room_type_ID";
             ReloadData();
             checkinDGV.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
@@ -30,18 +37,7 @@ namespace Divine_Hotel_Management_System
         {
             Checkin checkin = new Checkin();
             checkinDGV.DataSource = checkin.ListAll();
-        }
-
-        private void checkinDGV_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-            recordSelected = true;
-            string checkinId = checkinDGV.SelectedRows[0].Cells[0].Value.ToString();
-            Checkin checkin = new Checkin();
-            checkin.Get(int.Parse(checkinId));
-            checkinResNumCB.Text = checkin.ReservationId.ToString().Trim();
-            checkinRoomNumCB.Text = checkin.RoomId.ToString().Trim();
-            checkinDTP.Text = checkin.CheckinDate.ToLongDateString().Trim();
-            checkinAmountPaidTB.Text = checkin.AmountPaid.ToString().Trim();
+            checkinResNumCB.DataSource = checkin.ReservationsComboBox();
         }
 
         private void checkinB_Click(object sender, EventArgs e)
@@ -57,7 +53,7 @@ namespace Divine_Hotel_Management_System
                 checkin.RoomId = int.Parse(checkinRoomNumCB.Text);
                 checkin.CheckinDate = DateTime.Parse(checkinDTP.Text);
                 checkin.AmountPaid = int.Parse(checkinAmountPaidTB.Text);
-                checkin.Insert();
+                checkin.Insert(checkin.RoomId);
                 checkin.CloseConnection();
                 ResetForm();
                 ReloadData();
@@ -71,6 +67,13 @@ namespace Divine_Hotel_Management_System
             checkinDTP.MinDate = DateTime.Now;
             checkinDTP.Value = DateTime.Now;
             checkinAmountPaidTB.Text = "0.00";
+        }
+
+        private void checkinResNumCB_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int resRoomType = int.Parse(checkinResNumCB.SelectedValue.ToString().Trim());
+            Checkin checkin = new Checkin();
+            checkinRoomNumCB.DataSource = checkin.RoomsComboBox(resRoomType);
         }
     }
 }

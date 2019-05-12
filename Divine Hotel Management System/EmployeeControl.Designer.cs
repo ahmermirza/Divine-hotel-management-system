@@ -51,7 +51,6 @@
             // employeeCNICTB
             // 
             this.employeeCNICTB.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.employeeCNICTB.ForeColor = System.Drawing.Color.Gray;
             this.employeeCNICTB.Location = new System.Drawing.Point(548, 406);
             this.employeeCNICTB.Name = "employeeCNICTB";
             this.employeeCNICTB.Size = new System.Drawing.Size(190, 20);
@@ -105,7 +104,6 @@
             // employeeSalaryTB
             // 
             this.employeeSalaryTB.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.employeeSalaryTB.ForeColor = System.Drawing.Color.Gray;
             this.employeeSalaryTB.Location = new System.Drawing.Point(548, 447);
             this.employeeSalaryTB.Name = "employeeSalaryTB";
             this.employeeSalaryTB.Size = new System.Drawing.Size(190, 20);
@@ -125,7 +123,6 @@
             // employeeAddressTB
             // 
             this.employeeAddressTB.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.employeeAddressTB.ForeColor = System.Drawing.Color.Gray;
             this.employeeAddressTB.Location = new System.Drawing.Point(179, 523);
             this.employeeAddressTB.Name = "employeeAddressTB";
             this.employeeAddressTB.Size = new System.Drawing.Size(190, 20);
@@ -145,7 +142,6 @@
             // employeePhoneTB
             // 
             this.employeePhoneTB.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.employeePhoneTB.ForeColor = System.Drawing.Color.Gray;
             this.employeePhoneTB.Location = new System.Drawing.Point(179, 484);
             this.employeePhoneTB.Name = "employeePhoneTB";
             this.employeePhoneTB.Size = new System.Drawing.Size(190, 20);
@@ -165,7 +161,6 @@
             // employeeLastNameTB
             // 
             this.employeeLastNameTB.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.employeeLastNameTB.ForeColor = System.Drawing.Color.Gray;
             this.employeeLastNameTB.Location = new System.Drawing.Point(179, 445);
             this.employeeLastNameTB.Name = "employeeLastNameTB";
             this.employeeLastNameTB.Size = new System.Drawing.Size(190, 20);
@@ -185,7 +180,6 @@
             // employeeFirstNameTB
             // 
             this.employeeFirstNameTB.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.employeeFirstNameTB.ForeColor = System.Drawing.Color.Gray;
             this.employeeFirstNameTB.Location = new System.Drawing.Point(179, 406);
             this.employeeFirstNameTB.Name = "employeeFirstNameTB";
             this.employeeFirstNameTB.Size = new System.Drawing.Size(190, 20);

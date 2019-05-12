@@ -46,21 +46,38 @@ namespace Divine_Hotel_Management_System
             return reservationsDT;
         }
 
+        public Reservation Get(int reservationId)
+        {
+            string queryString = "SELECT * FROM reservations WHERE reservation_ID = '" + reservationId + "'";
+
+            SqlDataAdapter sqlDA = new SqlDataAdapter(queryString, sqlCon);
+            DataTable reservationsDT = new DataTable();
+            sqlDA.Fill(reservationsDT);
+
+            GuestId = int.Parse(reservationsDT.Rows[0]["guest_ID"].ToString().Trim());
+            RoomTypeId = int.Parse(reservationsDT.Rows[0]["room_type_ID"].ToString().Trim());
+            CheckinDate = DateTime.Parse(reservationsDT.Rows[0]["checkin_date"].ToString().Trim());
+            CheckoutDate = DateTime.Parse(reservationsDT.Rows[0]["checkout_date"].ToString().Trim());
+            NumberOfPeople = reservationsDT.Rows[0]["number_of_people"].ToString().Trim();
+            TotalAmount = int.Parse(reservationsDT.Rows[0]["total_amount"].ToString().Trim());
+
+            return this;
+        }
         public DataTable GuestsComboBox()
         {
-            DataTable guestIdDT = new DataTable();
+            DataTable guestDT = new DataTable();
             try
             {
                 string queryString = "SELECT * FROM guests";
 
                 SqlDataAdapter sqlDA = new SqlDataAdapter(queryString, sqlCon);
-                sqlDA.Fill(guestIdDT);
+                sqlDA.Fill(guestDT);
             }
             catch (Exception e)
             {
                 MessageBox.Show(e.Message);
             }
-            return guestIdDT;
+            return guestDT;
         }
 
         public DataTable RoomTypeComboBox()
@@ -78,24 +95,6 @@ namespace Divine_Hotel_Management_System
                 MessageBox.Show(e.Message);
             }
             return roomTypeDT;
-        }
-
-        public Reservation Get(int reservationId)
-        {
-            string queryString = "SELECT * FROM reservations WHERE reservation_ID = '" + reservationId + "'";
-
-            SqlDataAdapter sqlDA = new SqlDataAdapter(queryString, sqlCon);
-            DataTable reservationsDT = new DataTable();
-            sqlDA.Fill(reservationsDT);
-
-            GuestId = int.Parse(reservationsDT.Rows[0]["guest_ID"].ToString().Trim());
-            RoomTypeId = int.Parse(reservationsDT.Rows[0]["room_type"].ToString().Trim());
-            CheckinDate = DateTime.Parse(reservationsDT.Rows[0]["checkin_date"].ToString().Trim());
-            CheckoutDate = DateTime.Parse(reservationsDT.Rows[0]["checkout_date"].ToString().Trim());
-            NumberOfPeople = reservationsDT.Rows[0]["number_of_people"].ToString().Trim();
-            TotalAmount = int.Parse(reservationsDT.Rows[0]["total_amount"].ToString().Trim());
-
-            return this;
         }
 
         public void Insert()
@@ -130,7 +129,7 @@ namespace Divine_Hotel_Management_System
 
         public void Update(int reservationId)
         {
-            string queryString = "UPDATE reservations SET guest_ID = '" + GuestId + "', room_type_ID = '" + RoomTypeId + "', checkin_date = '" + CheckinDate + "', checkout_date = '" + CheckoutDate + "', number_of_people = '" + NumberOfPeople + "', totla_amount = '" + TotalAmount + "' WHERE reservation_ID = '" + reservationId + "'";
+            string queryString = "UPDATE reservations SET guest_ID = '" + GuestId + "', room_type_ID = '" + RoomTypeId + "', checkin_date = '" + CheckinDate + "', checkout_date = '" + CheckoutDate + "', number_of_people = '" + NumberOfPeople + "', total_amount = '" + TotalAmount + "' WHERE reservation_ID = '" + reservationId + "'";
 
             SqlCommand sqlCom = new SqlCommand(queryString, sqlCon);
             try

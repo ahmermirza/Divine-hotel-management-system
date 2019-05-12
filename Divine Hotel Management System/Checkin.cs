@@ -44,72 +44,43 @@ namespace Divine_Hotel_Management_System
             return checkinDT;
         }
 
-        public DataTable GuestIDComboBox()
+        public DataTable ReservationsComboBox()
         {
-            DataTable guestIdDT = new DataTable();
+            DataTable reservationsDT = new DataTable();
             try
             {
-                string queryString = "SELECT reservation_ID FROM reservations";
+                string queryString = "SELECT * FROM reservations";
 
                 SqlDataAdapter sqlDA = new SqlDataAdapter(queryString, sqlCon);
-                sqlDA.Fill(guestIdDT);
+                sqlDA.Fill(reservationsDT);
             }
             catch (Exception e)
             {
                 MessageBox.Show(e.Message);
             }
-            return guestIdDT;
+            return reservationsDT;
         }
 
-        public Checkin Get(int checkinId)
+        public DataTable RoomsComboBox(int roomTypeId)
         {
-            string queryString = "SELECT * FROM checkins WHERE checkin_ID = '" + checkinId + "'";
-
-            SqlDataAdapter sqlDA = new SqlDataAdapter(queryString, sqlCon);
-            DataTable checkinDT = new DataTable();
-            sqlDA.Fill(checkinDT);
-
-            ReservationId = int.Parse(checkinDT.Rows[0]["reservation_ID"].ToString().Trim());
-            RoomId = int.Parse(checkinDT.Rows[0]["room_ID"].ToString().Trim());
-            CheckinDate = DateTime.Parse(checkinDT.Rows[0]["checkin_time"].ToString().Trim());
-            AmountPaid = int.Parse(checkinDT.Rows[0]["amount_paid"].ToString().Trim());
-
-            return this;
-        }
-
-        public void Insert()
-        {
-            string queryString = "INSERT INTO checkins (reservation_ID, room_ID, checkin_time, amount_paid) VALUES('" + ReservationId + "', '" + RoomId + "', '" + CheckinDate + "', '" + AmountPaid + "')";
-
-            SqlCommand sqlCom = new SqlCommand(queryString, sqlCon);
+            DataTable roomsDT = new DataTable();
             try
             {
-                sqlCom.ExecuteNonQuery();
+                string queryString = "SELECT * FROM rooms WHERE occupied = '0' AND room_type_ID = '"+ roomTypeId + "'";
+
+                SqlDataAdapter sqlDA = new SqlDataAdapter(queryString, sqlCon);
+                sqlDA.Fill(roomsDT);
             }
             catch (Exception e)
             {
                 MessageBox.Show(e.Message);
             }
+            return roomsDT;
         }
 
-        public void Delete(int checkinId)
+        public void Insert(int roomId)
         {
-            string queryString = "DELETE FROM checkins WHERE checkin_ID = '" + checkinId + "'";
-
-            SqlCommand sqlCom = new SqlCommand(queryString, sqlCon);
-            try
-            {
-                sqlCom.ExecuteNonQuery();
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show(e.Message);
-            }
-        }
-
-        public void Update(int checkinId)
-        {
-            string queryString = "UPDATE checkins SET reservation_ID = '" + ReservationId + "', room_ID = '" + RoomId + "', checkin_time = '" + CheckinDate + "', amount_paid = '" + AmountPaid + "' WHERE checkin_ID = '" + checkinId + "'";
+            string queryString = "INSERT INTO checkins (reservation_ID, room_ID, checkin_time, amount_paid) VALUES('" + ReservationId + "', '" + RoomId + "', '" + CheckinDate + "', '" + AmountPaid + "') ; UPDATE rooms SET occupied = '1' WHERE room_ID = '" + roomId + "'";
 
             SqlCommand sqlCom = new SqlCommand(queryString, sqlCon);
             try

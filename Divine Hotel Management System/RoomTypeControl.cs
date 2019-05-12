@@ -18,17 +18,6 @@ namespace Divine_Hotel_Management_System
         }
         bool recordSelected;
 
-        private void BackToRoomsB_Click(object sender, EventArgs e)
-        {
-            if (!mainForm.Instance.controlsContainer.Controls.ContainsKey("RoomControl"))
-            {
-                RoomControl room = new RoomControl();
-                room.Dock = DockStyle.Fill;
-                mainForm.Instance.controlsContainer.Controls.Add(room);
-            }
-            mainForm.Instance.controlsContainer.Controls["RoomControl"].BringToFront();
-        }
-
         private void RoomTypeControl_Load(object sender, EventArgs e)
         {
             ReloadData();
@@ -129,6 +118,17 @@ namespace Divine_Hotel_Management_System
             roomDescriptionTB.Text = "";
             roomBedsCB.Text = "Select Number of Beds";
             roomBasePriceTB.Text = "";
+        }
+
+        private void BackToRoomsB_Click(object sender, EventArgs e)
+        {
+            if (!mainForm.Instance.controlsContainer.Controls.ContainsKey("RoomControl"))
+            {
+                RoomControl room = new RoomControl();
+                room.Dock = DockStyle.Fill;
+                mainForm.Instance.controlsContainer.Controls.Add(room);
+            }
+            mainForm.Instance.controlsContainer.Controls["RoomControl"].BringToFront();
         }
     }
 }

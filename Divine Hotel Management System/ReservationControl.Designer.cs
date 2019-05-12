@@ -53,6 +53,7 @@
             // 
             this.resTotalAmountTB.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.resTotalAmountTB.BackColor = System.Drawing.Color.White;
+            this.resTotalAmountTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.resTotalAmountTB.Location = new System.Drawing.Point(548, 446);
             this.resTotalAmountTB.Name = "resTotalAmountTB";
             this.resTotalAmountTB.ReadOnly = true;

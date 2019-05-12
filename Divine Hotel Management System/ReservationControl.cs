@@ -19,32 +19,21 @@ namespace Divine_Hotel_Management_System
             resCheckinDTP.Value = DateTime.Now;
             resCheckoutDTP.MinDate = DateTime.Now;
             resCheckoutDTP.Value = DateTime.Now;
-            resRoomTypeCB.DisplayMember = "room_type_ID";
-            resRoomTypeCB.SelectedItem = null;
-            resRoomTypeCB.SelectedText = "Select Room ID";
-            resRoomTypeCB.ValueMember = "base_price";
         }
-        bool recordSelected;
         int daysCount;
         int totalCharges;
         int basePrice;
         DateTime checkinDate;
         DateTime checkoutDate;
         TimeSpan daysSpan;
-
-        private void amenityB_Click(object sender, EventArgs e)
-        {
-            if (!mainForm.Instance.controlsContainer.Controls.ContainsKey("AmenityControl"))
-            {
-                AmenityControl amenity = new AmenityControl();
-                amenity.Dock = DockStyle.Fill;
-                mainForm.Instance.controlsContainer.Controls.Add(amenity);
-            }
-            mainForm.Instance.controlsContainer.Controls["AmenityControl"].BringToFront();
-        }
+        bool recordSelected;
 
         private void ReservationControl_Load(object sender, EventArgs e)
         {
+            resRoomTypeCB.DisplayMember = "room_type_ID";
+            resRoomTypeCB.SelectedItem = null;
+            resRoomTypeCB.SelectedText = "Select Room ID";
+            resRoomTypeCB.ValueMember = "base_price";
             ReloadData();
             reservationDGV.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             resGuestsIDCB.DisplayMember = "guest_ID";
@@ -68,10 +57,14 @@ namespace Divine_Hotel_Management_System
             reservation.Get(int.Parse(reservationId));
             resGuestsIDCB.Text = reservation.GuestId.ToString().Trim();
             resRoomTypeCB.Text = reservation.RoomTypeId.ToString().Trim();
-            resCheckinDTP.Text = reservation.CheckinDate.ToLongDateString().Trim();
-            resCheckoutDTP.Text = reservation.CheckoutDate.ToLongDateString().Trim();
+            resCheckinDTP.MinDate = DateTime.Parse(reservation.CheckinDate.ToLongDateString().Trim());
+            resCheckinDTP.Value = DateTime.Parse(reservation.CheckinDate.ToLongDateString().Trim());
+            resCheckoutDTP.Value = DateTime.Parse(reservation.CheckoutDate.ToLongDateString().Trim());
             resPeopleNumCB.Text = reservation.NumberOfPeople.ToString().Trim();
             resTotalAmountTB.Text = reservation.TotalAmount.ToString().Trim();
+            resCheckinDTP.Enabled = false;
+            addResB.Enabled = false;
+            resDeleteB.Enabled = false;
         }
 
         private void addResB_Click(object sender, EventArgs e)
@@ -79,6 +72,10 @@ namespace Divine_Hotel_Management_System
             if (resGuestsIDCB.Text == "Select Guest ID" || resRoomTypeCB.Text == "Select Room Type" || resPeopleNumCB.Text == "Select Number of People" || resTotalAmountTB.Text == "0.00")
             {
                 MessageBox.Show("Please enter the missing detail to add a new reservation!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else if (checkinDate > checkoutDate)
+            {
+                MessageBox.Show("Checkout date must be greater than checkin date!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -139,6 +136,9 @@ namespace Divine_Hotel_Management_System
                 reservation.CloseConnection();
                 ResetForm();
                 ReloadData();
+                resCheckinDTP.Enabled = true;
+                addResB.Enabled = true;
+                resDeleteB.Enabled = true;
                 MessageBox.Show("Record updated successfully!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 recordSelected = false;
             }
@@ -162,7 +162,6 @@ namespace Divine_Hotel_Management_System
 
         private void resRoomTypeCB_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
             basePrice = int.Parse(resRoomTypeCB.SelectedValue.ToString().Trim());
             daysSpan = checkoutDate.Subtract(checkinDate);
             daysCount = daysSpan.Days;
@@ -187,6 +186,17 @@ namespace Divine_Hotel_Management_System
             daysCount = daysSpan.Days;
             totalCharges = daysCount * (basePrice);
             resTotalAmountTB.Text = totalCharges.ToString().Trim();
+        }
+
+        private void amenityB_Click(object sender, EventArgs e)
+        {
+            if (!mainForm.Instance.controlsContainer.Controls.ContainsKey("AmenityControl"))
+            {
+                AmenityControl amenity = new AmenityControl();
+                amenity.Dock = DockStyle.Fill;
+                mainForm.Instance.controlsContainer.Controls.Add(amenity);
+            }
+            mainForm.Instance.controlsContainer.Controls["AmenityControl"].BringToFront();
         }
     }
 }

@@ -14,6 +14,7 @@ namespace Divine_Hotel_Management_System
         public int RoomId;
         public int RoomTypeId;
         public string FloorNumber;
+        public bool Occupied = false;
 
         public string conString = "Server=LENOVO-PC\\SQLEXPRESS;Database=DHMSdatabase;Integrated Security=True";
         SqlConnection sqlCon;
@@ -49,16 +50,33 @@ namespace Divine_Hotel_Management_System
             SqlDataAdapter sqlDA = new SqlDataAdapter(queryString, sqlCon);
             DataTable roomsDT = new DataTable();
             sqlDA.Fill(roomsDT);
-
+            RoomId = int.Parse(roomsDT.Rows[0]["room_ID"].ToString().Trim());
             RoomTypeId = int.Parse(roomsDT.Rows[0]["room_type_ID"].ToString().Trim());
             FloorNumber = roomsDT.Rows[0]["floor_number"].ToString().Trim();
             
             return this;
         }
 
+        public DataTable RoomTypeComboBox()
+        {
+            DataTable roomTypeDT = new DataTable();
+            try
+            {
+                string queryString = "SELECT * FROM room_types";
+
+                SqlDataAdapter sqlDA = new SqlDataAdapter(queryString, sqlCon);
+                sqlDA.Fill(roomTypeDT);
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+            return roomTypeDT;
+        }
+
         public void Insert()
         {
-            string queryString = "INSERT INTO rooms (room_ID, room_type_ID, floor_number) VALUES('" + RoomId + "', '" + RoomTypeId + "', '" + FloorNumber + "')";
+            string queryString = "INSERT INTO rooms (room_ID, room_type_ID, floor_number, occupied) VALUES('" + RoomId + "', '" + RoomTypeId + "', '" + FloorNumber + "', '" + Occupied + "')";
 
             SqlCommand sqlCom = new SqlCommand(queryString, sqlCon);
             try
