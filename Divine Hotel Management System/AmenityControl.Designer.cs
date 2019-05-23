@@ -29,18 +29,17 @@
         private void InitializeComponent()
         {
             this.amenityDGV = new System.Windows.Forms.DataGridView();
-            this.amenityCostTB = new System.Windows.Forms.TextBox();
-            this.amenityCostL = new System.Windows.Forms.Label();
-            this.amenityResIDCB = new System.Windows.Forms.ComboBox();
-            this.amenityResIDL = new System.Windows.Forms.Label();
+            this.amenityPriceTB = new System.Windows.Forms.TextBox();
+            this.amenityPriceL = new System.Windows.Forms.Label();
+            this.amenityNameL = new System.Windows.Forms.Label();
             this.amenityL = new System.Windows.Forms.Label();
-            this.resetAmenityB = new System.Windows.Forms.Button();
-            this.amenityQuantityL = new System.Windows.Forms.Label();
             this.addAmenityB = new System.Windows.Forms.Button();
-            this.amenityInventoryIDL = new System.Windows.Forms.Label();
-            this.amenityQuantityTB = new System.Windows.Forms.TextBox();
-            this.amenityInventoryIDCB = new System.Windows.Forms.ComboBox();
             this.reservationB = new System.Windows.Forms.Button();
+            this.amenityDeleteB = new System.Windows.Forms.Button();
+            this.amenityUpdateB = new System.Windows.Forms.Button();
+            this.amenityNameTB = new System.Windows.Forms.TextBox();
+            this.amenityDescriptionTB = new System.Windows.Forms.TextBox();
+            this.amenityDescriptionL = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.amenityDGV)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,50 +52,38 @@
             this.amenityDGV.Name = "amenityDGV";
             this.amenityDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.amenityDGV.Size = new System.Drawing.Size(680, 200);
-            this.amenityDGV.TabIndex = 59;
+            this.amenityDGV.TabIndex = 11;
+            this.amenityDGV.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.amenityDGV_MouseDoubleClick);
             // 
-            // amenityCostTB
+            // amenityPriceTB
             // 
-            this.amenityCostTB.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.amenityCostTB.ForeColor = System.Drawing.Color.Gray;
-            this.amenityCostTB.Location = new System.Drawing.Point(548, 402);
-            this.amenityCostTB.Name = "amenityCostTB";
-            this.amenityCostTB.Size = new System.Drawing.Size(190, 20);
-            this.amenityCostTB.TabIndex = 57;
-            this.amenityCostTB.Text = "Enter Cost Here";
+            this.amenityPriceTB.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.amenityPriceTB.Location = new System.Drawing.Point(548, 402);
+            this.amenityPriceTB.Name = "amenityPriceTB";
+            this.amenityPriceTB.Size = new System.Drawing.Size(190, 20);
+            this.amenityPriceTB.TabIndex = 14;
             // 
-            // amenityCostL
+            // amenityPriceL
             // 
-            this.amenityCostL.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.amenityCostL.AutoSize = true;
-            this.amenityCostL.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.amenityCostL.Location = new System.Drawing.Point(486, 401);
-            this.amenityCostL.Name = "amenityCostL";
-            this.amenityCostL.Size = new System.Drawing.Size(46, 21);
-            this.amenityCostL.TabIndex = 56;
-            this.amenityCostL.Text = "Cost";
+            this.amenityPriceL.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.amenityPriceL.AutoSize = true;
+            this.amenityPriceL.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.amenityPriceL.Location = new System.Drawing.Point(486, 401);
+            this.amenityPriceL.Name = "amenityPriceL";
+            this.amenityPriceL.Size = new System.Drawing.Size(48, 21);
+            this.amenityPriceL.TabIndex = 56;
+            this.amenityPriceL.Text = "Price";
             // 
-            // amenityResIDCB
+            // amenityNameL
             // 
-            this.amenityResIDCB.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.amenityResIDCB.ForeColor = System.Drawing.Color.Gray;
-            this.amenityResIDCB.FormattingEnabled = true;
-            this.amenityResIDCB.Location = new System.Drawing.Point(218, 404);
-            this.amenityResIDCB.Name = "amenityResIDCB";
-            this.amenityResIDCB.Size = new System.Drawing.Size(190, 21);
-            this.amenityResIDCB.TabIndex = 54;
-            this.amenityResIDCB.Text = "Select Reservation Number";
-            // 
-            // amenityResIDL
-            // 
-            this.amenityResIDL.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.amenityResIDL.AutoSize = true;
-            this.amenityResIDL.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.amenityResIDL.Location = new System.Drawing.Point(54, 402);
-            this.amenityResIDL.Name = "amenityResIDL";
-            this.amenityResIDL.Size = new System.Drawing.Size(163, 21);
-            this.amenityResIDL.TabIndex = 55;
-            this.amenityResIDL.Text = "Reservation Number";
+            this.amenityNameL.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.amenityNameL.AutoSize = true;
+            this.amenityNameL.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.amenityNameL.Location = new System.Drawing.Point(54, 402);
+            this.amenityNameL.Name = "amenityNameL";
+            this.amenityNameL.Size = new System.Drawing.Size(53, 21);
+            this.amenityNameL.TabIndex = 55;
+            this.amenityNameL.Text = "Name";
             // 
             // amenityL
             // 
@@ -110,68 +97,16 @@
             this.amenityL.TabIndex = 53;
             this.amenityL.Text = "Amenity Management";
             // 
-            // resetAmenityB
-            // 
-            this.resetAmenityB.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.resetAmenityB.Location = new System.Drawing.Point(624, 441);
-            this.resetAmenityB.Name = "resetAmenityB";
-            this.resetAmenityB.Size = new System.Drawing.Size(67, 26);
-            this.resetAmenityB.TabIndex = 51;
-            this.resetAmenityB.Text = "Reset";
-            this.resetAmenityB.UseVisualStyleBackColor = true;
-            // 
-            // amenityQuantityL
-            // 
-            this.amenityQuantityL.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.amenityQuantityL.AutoSize = true;
-            this.amenityQuantityL.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.amenityQuantityL.Location = new System.Drawing.Point(54, 484);
-            this.amenityQuantityL.Name = "amenityQuantityL";
-            this.amenityQuantityL.Size = new System.Drawing.Size(73, 21);
-            this.amenityQuantityL.TabIndex = 52;
-            this.amenityQuantityL.Text = "Quantity";
-            // 
             // addAmenityB
             // 
             this.addAmenityB.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.addAmenityB.Location = new System.Drawing.Point(490, 441);
+            this.addAmenityB.Location = new System.Drawing.Point(496, 440);
             this.addAmenityB.Name = "addAmenityB";
-            this.addAmenityB.Size = new System.Drawing.Size(117, 26);
-            this.addAmenityB.TabIndex = 50;
+            this.addAmenityB.Size = new System.Drawing.Size(90, 25);
+            this.addAmenityB.TabIndex = 15;
             this.addAmenityB.Text = "Add Amenity";
             this.addAmenityB.UseVisualStyleBackColor = true;
-            // 
-            // amenityInventoryIDL
-            // 
-            this.amenityInventoryIDL.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.amenityInventoryIDL.AutoSize = true;
-            this.amenityInventoryIDL.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.amenityInventoryIDL.Location = new System.Drawing.Point(54, 443);
-            this.amenityInventoryIDL.Name = "amenityInventoryIDL";
-            this.amenityInventoryIDL.Size = new System.Drawing.Size(105, 21);
-            this.amenityInventoryIDL.TabIndex = 48;
-            this.amenityInventoryIDL.Text = "Inventory ID";
-            // 
-            // amenityQuantityTB
-            // 
-            this.amenityQuantityTB.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.amenityQuantityTB.ForeColor = System.Drawing.Color.Gray;
-            this.amenityQuantityTB.Location = new System.Drawing.Point(218, 488);
-            this.amenityQuantityTB.Name = "amenityQuantityTB";
-            this.amenityQuantityTB.Size = new System.Drawing.Size(190, 20);
-            this.amenityQuantityTB.TabIndex = 61;
-            this.amenityQuantityTB.Text = "Enter Quantity Here";
-            // 
-            // amenityInventoryIDCB
-            // 
-            this.amenityInventoryIDCB.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.amenityInventoryIDCB.ForeColor = System.Drawing.Color.Gray;
-            this.amenityInventoryIDCB.FormattingEnabled = true;
-            this.amenityInventoryIDCB.Location = new System.Drawing.Point(218, 445);
-            this.amenityInventoryIDCB.Name = "amenityInventoryIDCB";
-            this.amenityInventoryIDCB.Size = new System.Drawing.Size(190, 21);
-            this.amenityInventoryIDCB.TabIndex = 62;
-            this.amenityInventoryIDCB.Text = "Select Inventory ID";
+            this.addAmenityB.Click += new System.EventHandler(this.addAmenityB_Click);
             // 
             // reservationB
             // 
@@ -181,30 +116,79 @@
             this.reservationB.Location = new System.Drawing.Point(605, 30);
             this.reservationB.Name = "reservationB";
             this.reservationB.Size = new System.Drawing.Size(133, 33);
-            this.reservationB.TabIndex = 63;
+            this.reservationB.TabIndex = 10;
             this.reservationB.Text = "Go to Reservation";
             this.reservationB.UseVisualStyleBackColor = false;
             this.reservationB.Click += new System.EventHandler(this.reservationB_Click);
+            // 
+            // amenityDeleteB
+            // 
+            this.amenityDeleteB.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.amenityDeleteB.Location = new System.Drawing.Point(592, 440);
+            this.amenityDeleteB.Name = "amenityDeleteB";
+            this.amenityDeleteB.Size = new System.Drawing.Size(70, 25);
+            this.amenityDeleteB.TabIndex = 16;
+            this.amenityDeleteB.Text = "Delete";
+            this.amenityDeleteB.UseVisualStyleBackColor = true;
+            this.amenityDeleteB.Click += new System.EventHandler(this.amenityDeleteB_Click);
+            // 
+            // amenityUpdateB
+            // 
+            this.amenityUpdateB.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.amenityUpdateB.Location = new System.Drawing.Point(668, 440);
+            this.amenityUpdateB.Name = "amenityUpdateB";
+            this.amenityUpdateB.Size = new System.Drawing.Size(70, 25);
+            this.amenityUpdateB.TabIndex = 17;
+            this.amenityUpdateB.Text = "Update";
+            this.amenityUpdateB.UseVisualStyleBackColor = true;
+            this.amenityUpdateB.Click += new System.EventHandler(this.amenityUpdateB_Click);
+            // 
+            // amenityNameTB
+            // 
+            this.amenityNameTB.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.amenityNameTB.Location = new System.Drawing.Point(158, 403);
+            this.amenityNameTB.Name = "amenityNameTB";
+            this.amenityNameTB.Size = new System.Drawing.Size(190, 20);
+            this.amenityNameTB.TabIndex = 12;
+            // 
+            // amenityDescriptionTB
+            // 
+            this.amenityDescriptionTB.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.amenityDescriptionTB.Location = new System.Drawing.Point(158, 445);
+            this.amenityDescriptionTB.Name = "amenityDescriptionTB";
+            this.amenityDescriptionTB.Size = new System.Drawing.Size(190, 20);
+            this.amenityDescriptionTB.TabIndex = 13;
+            // 
+            // amenityDescriptionL
+            // 
+            this.amenityDescriptionL.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.amenityDescriptionL.AutoSize = true;
+            this.amenityDescriptionL.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.amenityDescriptionL.Location = new System.Drawing.Point(54, 444);
+            this.amenityDescriptionL.Name = "amenityDescriptionL";
+            this.amenityDescriptionL.Size = new System.Drawing.Size(96, 21);
+            this.amenityDescriptionL.TabIndex = 67;
+            this.amenityDescriptionL.Text = "Description";
             // 
             // AmenityControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.amenityDescriptionTB);
+            this.Controls.Add(this.amenityDescriptionL);
+            this.Controls.Add(this.amenityNameTB);
+            this.Controls.Add(this.amenityUpdateB);
+            this.Controls.Add(this.amenityDeleteB);
             this.Controls.Add(this.reservationB);
-            this.Controls.Add(this.amenityInventoryIDCB);
-            this.Controls.Add(this.amenityQuantityTB);
             this.Controls.Add(this.amenityDGV);
-            this.Controls.Add(this.amenityCostTB);
-            this.Controls.Add(this.amenityCostL);
-            this.Controls.Add(this.amenityResIDCB);
-            this.Controls.Add(this.amenityResIDL);
+            this.Controls.Add(this.amenityPriceTB);
+            this.Controls.Add(this.amenityPriceL);
+            this.Controls.Add(this.amenityNameL);
             this.Controls.Add(this.amenityL);
-            this.Controls.Add(this.resetAmenityB);
-            this.Controls.Add(this.amenityQuantityL);
             this.Controls.Add(this.addAmenityB);
-            this.Controls.Add(this.amenityInventoryIDL);
             this.Name = "AmenityControl";
             this.Size = new System.Drawing.Size(800, 600);
+            this.Load += new System.EventHandler(this.AmenityControl_Load);
             ((System.ComponentModel.ISupportInitialize)(this.amenityDGV)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -214,17 +198,16 @@
         #endregion
 
         private System.Windows.Forms.DataGridView amenityDGV;
-        private System.Windows.Forms.TextBox amenityCostTB;
-        private System.Windows.Forms.Label amenityCostL;
-        private System.Windows.Forms.ComboBox amenityResIDCB;
-        private System.Windows.Forms.Label amenityResIDL;
+        private System.Windows.Forms.TextBox amenityPriceTB;
+        private System.Windows.Forms.Label amenityPriceL;
+        private System.Windows.Forms.Label amenityNameL;
         private System.Windows.Forms.Label amenityL;
-        private System.Windows.Forms.Button resetAmenityB;
-        private System.Windows.Forms.Label amenityQuantityL;
         private System.Windows.Forms.Button addAmenityB;
-        private System.Windows.Forms.Label amenityInventoryIDL;
-        private System.Windows.Forms.TextBox amenityQuantityTB;
-        private System.Windows.Forms.ComboBox amenityInventoryIDCB;
         private System.Windows.Forms.Button reservationB;
+        private System.Windows.Forms.Button amenityDeleteB;
+        private System.Windows.Forms.Button amenityUpdateB;
+        private System.Windows.Forms.TextBox amenityNameTB;
+        private System.Windows.Forms.TextBox amenityDescriptionTB;
+        private System.Windows.Forms.Label amenityDescriptionL;
     }
 }

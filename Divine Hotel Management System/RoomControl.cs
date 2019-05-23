@@ -23,9 +23,9 @@ namespace Divine_Hotel_Management_System
             ReloadData();
             roomDGV.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             roomDGV.Columns[3].ReadOnly = true;
-            roomTypeCB.DisplayMember = "room_type_ID";
+            roomTypeCB.DisplayMember = "room_type_name";
             roomTypeCB.SelectedItem = null;
-            roomTypeCB.SelectedText = "Select Room ID";
+            roomTypeCB.SelectedText = "Select Room Type";
         }
 
         private void ReloadData()
@@ -42,7 +42,7 @@ namespace Divine_Hotel_Management_System
             Room room = new Room();
             room.Get(int.Parse(roomId));
             roomNumberTB.Text = room.RoomId.ToString().Trim();
-            roomTypeCB.Text = room.RoomTypeId.ToString().Trim();
+            roomTypeCB.Text = room.RoomType;
             roomFloorNumCB.Text = room.FloorNumber;
             addRoomB.Enabled = false;
             roomDeleteB.Enabled = false;
@@ -58,7 +58,7 @@ namespace Divine_Hotel_Management_System
             {
                 Room room = new Room();
                 room.RoomId = int.Parse(roomNumberTB.Text);
-                room.RoomTypeId = int.Parse(roomTypeCB.Text);
+                room.RoomType = roomTypeCB.Text;
                 room.FloorNumber = roomFloorNumCB.Text;
                 room.Insert();
                 room.CloseConnection();
@@ -100,7 +100,7 @@ namespace Divine_Hotel_Management_System
             {
                 Room room = new Room();
                 room.RoomId = int.Parse(roomNumberTB.Text);
-                room.RoomTypeId = int.Parse(roomTypeCB.Text);
+                room.RoomType = roomTypeCB.Text;
                 room.FloorNumber = roomFloorNumCB.Text;
                 int roomId = (int)roomDGV.SelectedRows[0].Cells[0].Value;
                 room.Update(roomId);

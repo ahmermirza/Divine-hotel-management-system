@@ -57,7 +57,7 @@
             this.mainResB.Location = new System.Drawing.Point(0, 46);
             this.mainResB.Name = "mainResB";
             this.mainResB.Size = new System.Drawing.Size(195, 46);
-            this.mainResB.TabIndex = 1;
+            this.mainResB.TabIndex = 2;
             this.mainResB.Text = "Reservation";
             this.mainResB.UseVisualStyleBackColor = false;
             this.mainResB.Click += new System.EventHandler(this.mainResB_Click);
@@ -71,7 +71,7 @@
             this.mainCheckinB.Location = new System.Drawing.Point(0, 92);
             this.mainCheckinB.Name = "mainCheckinB";
             this.mainCheckinB.Size = new System.Drawing.Size(195, 46);
-            this.mainCheckinB.TabIndex = 2;
+            this.mainCheckinB.TabIndex = 3;
             this.mainCheckinB.Text = "Check-in";
             this.mainCheckinB.UseVisualStyleBackColor = false;
             this.mainCheckinB.Click += new System.EventHandler(this.mainCheckinB_Click);
@@ -85,7 +85,7 @@
             this.mainCheckoutB.Location = new System.Drawing.Point(0, 138);
             this.mainCheckoutB.Name = "mainCheckoutB";
             this.mainCheckoutB.Size = new System.Drawing.Size(195, 46);
-            this.mainCheckoutB.TabIndex = 3;
+            this.mainCheckoutB.TabIndex = 4;
             this.mainCheckoutB.Text = "Check-out";
             this.mainCheckoutB.UseVisualStyleBackColor = false;
             this.mainCheckoutB.Click += new System.EventHandler(this.mainCheckoutB_Click);
@@ -122,7 +122,7 @@
             this.mainFoodB.Location = new System.Drawing.Point(0, 312);
             this.mainFoodB.Name = "mainFoodB";
             this.mainFoodB.Size = new System.Drawing.Size(195, 46);
-            this.mainFoodB.TabIndex = 0;
+            this.mainFoodB.TabIndex = 8;
             this.mainFoodB.Text = "Menu";
             this.mainFoodB.UseVisualStyleBackColor = false;
             this.mainFoodB.Click += new System.EventHandler(this.mainFoodB_Click);
@@ -150,7 +150,7 @@
             this.mainRoomB.Location = new System.Drawing.Point(0, 272);
             this.mainRoomB.Name = "mainRoomB";
             this.mainRoomB.Size = new System.Drawing.Size(195, 46);
-            this.mainRoomB.TabIndex = 4;
+            this.mainRoomB.TabIndex = 7;
             this.mainRoomB.Text = "Rooms";
             this.mainRoomB.UseVisualStyleBackColor = false;
             this.mainRoomB.Click += new System.EventHandler(this.mainRoomB_Click);
@@ -164,7 +164,7 @@
             this.mainEmployeeB.Location = new System.Drawing.Point(0, 230);
             this.mainEmployeeB.Name = "mainEmployeeB";
             this.mainEmployeeB.Size = new System.Drawing.Size(195, 46);
-            this.mainEmployeeB.TabIndex = 10;
+            this.mainEmployeeB.TabIndex = 6;
             this.mainEmployeeB.Text = "Employees";
             this.mainEmployeeB.UseVisualStyleBackColor = false;
             this.mainEmployeeB.Click += new System.EventHandler(this.mainEmployeeB_Click);
@@ -178,7 +178,7 @@
             this.mainInventoryB.Location = new System.Drawing.Point(0, 184);
             this.mainInventoryB.Name = "mainInventoryB";
             this.mainInventoryB.Size = new System.Drawing.Size(195, 46);
-            this.mainInventoryB.TabIndex = 11;
+            this.mainInventoryB.TabIndex = 5;
             this.mainInventoryB.Text = "Inventory";
             this.mainInventoryB.UseVisualStyleBackColor = false;
             this.mainInventoryB.Click += new System.EventHandler(this.mainInventoryB_Click);
@@ -212,7 +212,7 @@
             this.buttonsPanel.Location = new System.Drawing.Point(0, 227);
             this.buttonsPanel.Name = "buttonsPanel";
             this.buttonsPanel.Size = new System.Drawing.Size(184, 525);
-            this.buttonsPanel.TabIndex = 13;
+            this.buttonsPanel.TabIndex = 0;
             // 
             // mainGuestB
             // 
@@ -223,7 +223,7 @@
             this.mainGuestB.Location = new System.Drawing.Point(0, 0);
             this.mainGuestB.Name = "mainGuestB";
             this.mainGuestB.Size = new System.Drawing.Size(195, 46);
-            this.mainGuestB.TabIndex = 12;
+            this.mainGuestB.TabIndex = 1;
             this.mainGuestB.Text = "Guests";
             this.mainGuestB.UseVisualStyleBackColor = false;
             this.mainGuestB.Click += new System.EventHandler(this.mainGuestB_Click);
@@ -250,6 +250,7 @@
             this.Name = "mainForm";
             this.Text = "Divine Hotel Management System (DHMS)";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.mainForm_FormClosing);
             this.Load += new System.EventHandler(this.mainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.logoPB)).EndInit();
             this.picturePanel.ResumeLayout(false);

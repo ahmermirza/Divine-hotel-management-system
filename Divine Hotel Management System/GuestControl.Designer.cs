@@ -53,7 +53,7 @@
             this.guestDGV.Name = "guestDGV";
             this.guestDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.guestDGV.Size = new System.Drawing.Size(680, 200);
-            this.guestDGV.TabIndex = 62;
+            this.guestDGV.TabIndex = 0;
             this.guestDGV.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.guestDGV_MouseDoubleClick);
             // 
             // guestCNICTB
@@ -78,10 +78,10 @@
             // guestDeleteB
             // 
             this.guestDeleteB.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.guestDeleteB.Location = new System.Drawing.Point(582, 439);
+            this.guestDeleteB.Location = new System.Drawing.Point(582, 442);
             this.guestDeleteB.Name = "guestDeleteB";
             this.guestDeleteB.Size = new System.Drawing.Size(75, 25);
-            this.guestDeleteB.TabIndex = 59;
+            this.guestDeleteB.TabIndex = 6;
             this.guestDeleteB.Text = "Delete";
             this.guestDeleteB.UseVisualStyleBackColor = true;
             this.guestDeleteB.Click += new System.EventHandler(this.guestDeleteB_Click);
@@ -101,10 +101,10 @@
             // addGuestB
             // 
             this.addGuestB.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.addGuestB.Location = new System.Drawing.Point(476, 439);
+            this.addGuestB.Location = new System.Drawing.Point(496, 442);
             this.addGuestB.Name = "addGuestB";
-            this.addGuestB.Size = new System.Drawing.Size(100, 25);
-            this.addGuestB.TabIndex = 57;
+            this.addGuestB.Size = new System.Drawing.Size(80, 25);
+            this.addGuestB.TabIndex = 5;
             this.addGuestB.Text = "Add Guest";
             this.addGuestB.UseVisualStyleBackColor = true;
             this.addGuestB.Click += new System.EventHandler(this.addGuestB_Click);
@@ -169,10 +169,10 @@
             // guestUpdateB
             // 
             this.guestUpdateB.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.guestUpdateB.Location = new System.Drawing.Point(663, 439);
+            this.guestUpdateB.Location = new System.Drawing.Point(663, 442);
             this.guestUpdateB.Name = "guestUpdateB";
             this.guestUpdateB.Size = new System.Drawing.Size(75, 25);
-            this.guestUpdateB.TabIndex = 63;
+            this.guestUpdateB.TabIndex = 7;
             this.guestUpdateB.Text = "Update";
             this.guestUpdateB.UseVisualStyleBackColor = true;
             this.guestUpdateB.Click += new System.EventHandler(this.guestUpdateB_Click);

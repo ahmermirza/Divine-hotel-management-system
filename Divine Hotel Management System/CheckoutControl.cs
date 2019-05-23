@@ -18,11 +18,17 @@ namespace Divine_Hotel_Management_System
             checkoutDTP.MinDate = DateTime.Now;
             checkoutDTP.Value = DateTime.Now;
         }
-        bool recordSelected;
 
         private void CheckoutControl_Load(object sender, EventArgs e)
         {
+            checkoutRoomNumCB.DisplayMember = "room_ID";
+            checkoutRoomNumCB.SelectedItem = null;
+            checkoutRoomNumCB.SelectedText = "Select Room Number";
+            //checkoutRoomNumCB.ValueMember = "checkin_ID";
+
             ReloadData();
+            ResetForm();
+
             checkoutDGV.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
@@ -30,18 +36,56 @@ namespace Divine_Hotel_Management_System
         {
             Checkout checkout = new Checkout();
             checkoutDGV.DataSource = checkout.ListAll();
+            checkoutRoomNumCB.DataSource = checkout.RoomsComboBox();
         }
 
-        private void checkoutDGV_MouseDoubleClick(object sender, MouseEventArgs e)
+        private void checkoutB_Click(object sender, EventArgs e)
         {
-            recordSelected = true;
-            string checkoutId = checkoutDGV.SelectedRows[0].Cells[0].Value.ToString();
-            Checkout checkout = new Checkout();
-            checkout.Get(int.Parse(checkoutId));
-            checkoutCheckinNumCB.Text = checkout.CheckinId.ToString().Trim();
-            checkoutRoomNumCB.Text = checkout.RoomId.ToString().Trim();
-            checkoutDTP.Text = checkout.CheckoutDate.ToLongDateString().Trim();
-            checkinAmountPaidTB.Text = checkout.AmountPaid.ToString().Trim();
+            if (checkoutRoomNumCB.Text == "Select Room Number" || checkoutCheckinNumTB.Text == "" || checkoutTotalAmountTB.Text == "0" || checkoutAmountPaidTB.Text == "0" || checkoutRemainingTB.Text == "0")
+            {
+                MessageBox.Show("Please enter the missing detail to make a checkout!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else
+            {
+                Checkout checkout = new Checkout();
+                checkout.RoomId = int.Parse(checkoutRoomNumCB.Text);
+                checkout.CheckinId = int.Parse(checkoutCheckinNumTB.Text);
+                checkout.CheckoutDate = DateTime.Parse(checkoutDTP.Text);
+                checkout.TotalAmount = int.Parse(checkoutTotalAmountTB.Text);
+                checkout.AmountPaid = int.Parse(checkoutAmountPaidTB.Text);
+                checkout.Remaining = int.Parse(checkoutRemainingTB.Text);
+                checkout.Insert(checkout.RoomId);
+                checkout.CloseConnection();
+
+                ResetForm();
+                ReloadData();
+            }
+        }
+
+        private void ResetForm()
+        {
+            checkoutRoomNumCB.Text = "Select Room Number";
+            checkoutCheckinNumTB.Text = "";
+            checkoutDTP.MinDate = DateTime.Now;
+            checkoutDTP.Value = DateTime.Now;
+            checkoutTotalAmountTB.Text = "0";
+            checkoutAmountPaidTB.Text = "0";
+            checkoutRemainingTB.Text = "0";
+        }
+
+        private void checkoutRoomNumCB_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var selectedRow = (checkoutRoomNumCB.SelectedItem as DataRowView);
+
+            checkoutCheckinNumTB.Text = selectedRow["checkin_ID"].ToString().Trim();
+
+            int totalAmount = int.Parse(selectedRow["total_amount"].ToString().Trim());
+            int amountPaid = int.Parse(selectedRow["amount_paid"].ToString().Trim());
+            int remaining = amountPaid - totalAmount;
+
+            checkoutTotalAmountTB.Text = totalAmount.ToString().Trim();
+            checkoutAmountPaidTB.Text = amountPaid.ToString().Trim();
+            checkoutRemainingTB.Text = remaining.ToString().Trim();
         }
     }
 }

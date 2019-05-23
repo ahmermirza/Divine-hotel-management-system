@@ -13,10 +13,11 @@ namespace Divine_Hotel_Management_System
     {
         public int ReservationId;
         public int GuestId;
-        public int RoomTypeId;
+        public string RoomType;
         public DateTime CheckinDate;
         public DateTime CheckoutDate;
         public string NumberOfPeople;
+        public string Amenities = "";
         public int TotalAmount;
 
         public string conString = "Server=LENOVO-PC\\SQLEXPRESS;Database=DHMSdatabase;Integrated Security=True";
@@ -55,7 +56,7 @@ namespace Divine_Hotel_Management_System
             sqlDA.Fill(reservationsDT);
 
             GuestId = int.Parse(reservationsDT.Rows[0]["guest_ID"].ToString().Trim());
-            RoomTypeId = int.Parse(reservationsDT.Rows[0]["room_type_ID"].ToString().Trim());
+            RoomType = reservationsDT.Rows[0]["room_type_name"].ToString().Trim();
             CheckinDate = DateTime.Parse(reservationsDT.Rows[0]["checkin_date"].ToString().Trim());
             CheckoutDate = DateTime.Parse(reservationsDT.Rows[0]["checkout_date"].ToString().Trim());
             NumberOfPeople = reservationsDT.Rows[0]["number_of_people"].ToString().Trim();
@@ -97,11 +98,30 @@ namespace Divine_Hotel_Management_System
             return roomTypeDT;
         }
 
+        public DataTable AmenitiesCLB()
+        {
+            DataTable amenityDT = new DataTable();
+            try
+            {
+                string queryString = "SELECT * FROM amenities";
+
+                SqlDataAdapter sqlDA = new SqlDataAdapter(queryString, sqlCon);
+                sqlDA.Fill(amenityDT);
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+            return amenityDT;
+        }
+
         public void Insert()
         {
-            string queryString = "INSERT INTO reservations (guest_ID, room_type_ID, checkin_date, checkout_date, number_of_people, total_amount) VALUES('" + GuestId + "','" + RoomTypeId + "', '" + CheckinDate + "', '" + CheckoutDate + "','" + NumberOfPeople + "','" + TotalAmount + "')";
+            string queryString = "INSERT INTO reservations(guest_ID, room_type_name, checkin_date, checkout_date, number_of_people, amenities, total_amount) VALUES('" + GuestId + "', '" + RoomType + "', '" + CheckinDate + "', '" + CheckoutDate + "', '" + NumberOfPeople + "', '" + Amenities + "', '" + TotalAmount + "')";
 
             SqlCommand sqlCom = new SqlCommand(queryString, sqlCon);
+            sqlCom.Parameters.AddWithValue("@amenities", Amenities);
+            
             try
             {
                 sqlCom.ExecuteNonQuery();
@@ -129,7 +149,7 @@ namespace Divine_Hotel_Management_System
 
         public void Update(int reservationId)
         {
-            string queryString = "UPDATE reservations SET guest_ID = '" + GuestId + "', room_type_ID = '" + RoomTypeId + "', checkin_date = '" + CheckinDate + "', checkout_date = '" + CheckoutDate + "', number_of_people = '" + NumberOfPeople + "', total_amount = '" + TotalAmount + "' WHERE reservation_ID = '" + reservationId + "'";
+            string queryString = "UPDATE reservations SET room_type_name = '" + RoomType + "', checkin_date = '" + CheckinDate + "', checkout_date = '" + CheckoutDate + "', number_of_people = '" + NumberOfPeople + "', total_amount = '" + TotalAmount + "' WHERE reservation_ID = '" + reservationId + "'";
 
             SqlCommand sqlCom = new SqlCommand(queryString, sqlCon);
             try

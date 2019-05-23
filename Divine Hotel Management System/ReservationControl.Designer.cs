@@ -46,27 +46,29 @@
             this.amenityB = new System.Windows.Forms.Button();
             this.resUpdateB = new System.Windows.Forms.Button();
             this.reservationDGV = new System.Windows.Forms.DataGridView();
+            this.resAmenitiesCLB = new System.Windows.Forms.CheckedListBox();
+            this.resAmenitiesL = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.reservationDGV)).BeginInit();
             this.SuspendLayout();
             // 
             // resTotalAmountTB
             // 
             this.resTotalAmountTB.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.resTotalAmountTB.BackColor = System.Drawing.Color.White;
-            this.resTotalAmountTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.resTotalAmountTB.Location = new System.Drawing.Point(548, 446);
+            this.resTotalAmountTB.BackColor = System.Drawing.Color.PowderBlue;
+            this.resTotalAmountTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.resTotalAmountTB.Location = new System.Drawing.Point(567, 505);
             this.resTotalAmountTB.Name = "resTotalAmountTB";
             this.resTotalAmountTB.ReadOnly = true;
-            this.resTotalAmountTB.Size = new System.Drawing.Size(190, 20);
-            this.resTotalAmountTB.TabIndex = 6;
-            this.resTotalAmountTB.Text = "0.00";
+            this.resTotalAmountTB.Size = new System.Drawing.Size(171, 21);
+            this.resTotalAmountTB.TabIndex = 8;
+            this.resTotalAmountTB.Text = "0";
             // 
             // resTotalAmountL
             // 
             this.resTotalAmountL.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.resTotalAmountL.AutoSize = true;
             this.resTotalAmountL.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.resTotalAmountL.Location = new System.Drawing.Point(394, 446);
+            this.resTotalAmountL.Location = new System.Drawing.Point(449, 505);
             this.resTotalAmountL.Name = "resTotalAmountL";
             this.resTotalAmountL.Size = new System.Drawing.Size(112, 21);
             this.resTotalAmountL.TabIndex = 40;
@@ -76,11 +78,12 @@
             // 
             this.resGuestsIDCB.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.resGuestsIDCB.FormattingEnabled = true;
-            this.resGuestsIDCB.Location = new System.Drawing.Point(166, 403);
+            this.resGuestsIDCB.Location = new System.Drawing.Point(204, 403);
             this.resGuestsIDCB.Name = "resGuestsIDCB";
             this.resGuestsIDCB.Size = new System.Drawing.Size(190, 21);
-            this.resGuestsIDCB.TabIndex = 1;
+            this.resGuestsIDCB.TabIndex = 2;
             this.resGuestsIDCB.Text = "Select Guest ID";
+            this.resGuestsIDCB.SelectedIndexChanged += new System.EventHandler(this.resGuestsIDCB_SelectedIndexChanged);
             // 
             // resGuestsIDL
             // 
@@ -108,10 +111,10 @@
             // resDeleteB
             // 
             this.resDeleteB.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.resDeleteB.Location = new System.Drawing.Point(592, 480);
+            this.resDeleteB.Location = new System.Drawing.Point(592, 533);
             this.resDeleteB.Name = "resDeleteB";
             this.resDeleteB.Size = new System.Drawing.Size(70, 25);
-            this.resDeleteB.TabIndex = 8;
+            this.resDeleteB.TabIndex = 10;
             this.resDeleteB.Text = "Delete";
             this.resDeleteB.UseVisualStyleBackColor = true;
             this.resDeleteB.Click += new System.EventHandler(this.resDeleteB_Click);
@@ -120,10 +123,10 @@
             // 
             this.resRoomTypeCB.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.resRoomTypeCB.FormattingEnabled = true;
-            this.resRoomTypeCB.Location = new System.Drawing.Point(166, 444);
+            this.resRoomTypeCB.Location = new System.Drawing.Point(204, 437);
             this.resRoomTypeCB.Name = "resRoomTypeCB";
             this.resRoomTypeCB.Size = new System.Drawing.Size(190, 21);
-            this.resRoomTypeCB.TabIndex = 2;
+            this.resRoomTypeCB.TabIndex = 3;
             this.resRoomTypeCB.Text = "Select Room Type";
             this.resRoomTypeCB.SelectedIndexChanged += new System.EventHandler(this.resRoomTypeCB_SelectedIndexChanged);
             // 
@@ -132,7 +135,7 @@
             this.resRoomTypeL.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.resRoomTypeL.AutoSize = true;
             this.resRoomTypeL.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.resRoomTypeL.Location = new System.Drawing.Point(54, 443);
+            this.resRoomTypeL.Location = new System.Drawing.Point(54, 437);
             this.resRoomTypeL.Name = "resRoomTypeL";
             this.resRoomTypeL.Size = new System.Drawing.Size(100, 21);
             this.resRoomTypeL.TabIndex = 36;
@@ -141,10 +144,10 @@
             // addResB
             // 
             this.addResB.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.addResB.Location = new System.Drawing.Point(476, 480);
+            this.addResB.Location = new System.Drawing.Point(476, 533);
             this.addResB.Name = "addResB";
             this.addResB.Size = new System.Drawing.Size(110, 25);
-            this.addResB.TabIndex = 7;
+            this.addResB.TabIndex = 9;
             this.addResB.Text = "Add Reservation";
             this.addResB.UseVisualStyleBackColor = true;
             this.addResB.Click += new System.EventHandler(this.addResB_Click);
@@ -153,28 +156,28 @@
             // 
             this.resCheckoutDTP.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.resCheckoutDTP.CustomFormat = "";
-            this.resCheckoutDTP.Location = new System.Drawing.Point(166, 525);
+            this.resCheckoutDTP.Location = new System.Drawing.Point(204, 504);
             this.resCheckoutDTP.Name = "resCheckoutDTP";
             this.resCheckoutDTP.Size = new System.Drawing.Size(190, 20);
-            this.resCheckoutDTP.TabIndex = 4;
+            this.resCheckoutDTP.TabIndex = 5;
             this.resCheckoutDTP.ValueChanged += new System.EventHandler(this.resCheckoutDTP_ValueChanged);
             // 
             // resCheckinDTP
             // 
             this.resCheckinDTP.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.resCheckinDTP.CustomFormat = "";
-            this.resCheckinDTP.Location = new System.Drawing.Point(166, 485);
+            this.resCheckinDTP.Location = new System.Drawing.Point(204, 471);
             this.resCheckinDTP.Name = "resCheckinDTP";
             this.resCheckinDTP.Size = new System.Drawing.Size(190, 20);
-            this.resCheckinDTP.TabIndex = 3;
+            this.resCheckinDTP.TabIndex = 4;
             this.resCheckinDTP.ValueChanged += new System.EventHandler(this.resCheckinDTP_ValueChanged);
             // 
             // resPeopleNumL
             // 
-            this.resPeopleNumL.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.resPeopleNumL.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.resPeopleNumL.AutoSize = true;
             this.resPeopleNumL.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.resPeopleNumL.Location = new System.Drawing.Point(394, 409);
+            this.resPeopleNumL.Location = new System.Drawing.Point(54, 537);
             this.resPeopleNumL.Name = "resPeopleNumL";
             this.resPeopleNumL.Size = new System.Drawing.Size(147, 21);
             this.resPeopleNumL.TabIndex = 31;
@@ -185,7 +188,7 @@
             this.resCheckoutL.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.resCheckoutL.AutoSize = true;
             this.resCheckoutL.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.resCheckoutL.Location = new System.Drawing.Point(54, 525);
+            this.resCheckoutL.Location = new System.Drawing.Point(54, 503);
             this.resCheckoutL.Name = "resCheckoutL";
             this.resCheckoutL.Size = new System.Drawing.Size(88, 21);
             this.resCheckoutL.TabIndex = 29;
@@ -196,7 +199,7 @@
             this.resCheckinL.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.resCheckinL.AutoSize = true;
             this.resCheckinL.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.resCheckinL.Location = new System.Drawing.Point(54, 484);
+            this.resCheckinL.Location = new System.Drawing.Point(54, 470);
             this.resCheckinL.Name = "resCheckinL";
             this.resCheckinL.Size = new System.Drawing.Size(77, 21);
             this.resCheckinL.TabIndex = 27;
@@ -204,7 +207,7 @@
             // 
             // resPeopleNumCB
             // 
-            this.resPeopleNumCB.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.resPeopleNumCB.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.resPeopleNumCB.FormattingEnabled = true;
             this.resPeopleNumCB.Items.AddRange(new object[] {
             "1",
@@ -221,16 +224,11 @@
             "12",
             "13",
             "14",
-            "15",
-            "16",
-            "17",
-            "18",
-            "19",
-            "20"});
-            this.resPeopleNumCB.Location = new System.Drawing.Point(548, 411);
+            "15"});
+            this.resPeopleNumCB.Location = new System.Drawing.Point(204, 537);
             this.resPeopleNumCB.Name = "resPeopleNumCB";
             this.resPeopleNumCB.Size = new System.Drawing.Size(190, 21);
-            this.resPeopleNumCB.TabIndex = 5;
+            this.resPeopleNumCB.TabIndex = 6;
             this.resPeopleNumCB.Text = "Select Number of People";
             // 
             // amenityB
@@ -241,7 +239,7 @@
             this.amenityB.Location = new System.Drawing.Point(605, 30);
             this.amenityB.Name = "amenityB";
             this.amenityB.Size = new System.Drawing.Size(133, 33);
-            this.amenityB.TabIndex = 49;
+            this.amenityB.TabIndex = 0;
             this.amenityB.Text = "Go to Amenity";
             this.amenityB.UseVisualStyleBackColor = false;
             this.amenityB.Click += new System.EventHandler(this.amenityB_Click);
@@ -249,10 +247,10 @@
             // resUpdateB
             // 
             this.resUpdateB.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.resUpdateB.Location = new System.Drawing.Point(668, 480);
+            this.resUpdateB.Location = new System.Drawing.Point(668, 533);
             this.resUpdateB.Name = "resUpdateB";
             this.resUpdateB.Size = new System.Drawing.Size(70, 25);
-            this.resUpdateB.TabIndex = 9;
+            this.resUpdateB.TabIndex = 11;
             this.resUpdateB.Text = "Update";
             this.resUpdateB.UseVisualStyleBackColor = true;
             this.resUpdateB.Click += new System.EventHandler(this.resUpdateB_Click);
@@ -266,13 +264,39 @@
             this.reservationDGV.Name = "reservationDGV";
             this.reservationDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.reservationDGV.Size = new System.Drawing.Size(680, 200);
-            this.reservationDGV.TabIndex = 43;
+            this.reservationDGV.TabIndex = 1;
             this.reservationDGV.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.reservationDGV_MouseDoubleClick);
+            // 
+            // resAmenitiesCLB
+            // 
+            this.resAmenitiesCLB.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.resAmenitiesCLB.BackColor = System.Drawing.SystemColors.Control;
+            this.resAmenitiesCLB.CheckOnClick = true;
+            this.resAmenitiesCLB.FormattingEnabled = true;
+            this.resAmenitiesCLB.Location = new System.Drawing.Point(567, 403);
+            this.resAmenitiesCLB.Name = "resAmenitiesCLB";
+            this.resAmenitiesCLB.Size = new System.Drawing.Size(171, 94);
+            this.resAmenitiesCLB.TabIndex = 7;
+            this.resAmenitiesCLB.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.resAmenitiesCLB_ItemCheck);
+            this.resAmenitiesCLB.SelectedIndexChanged += new System.EventHandler(this.resAmenitiesCLB_SelectedIndexChanged);
+            // 
+            // resAmenitiesL
+            // 
+            this.resAmenitiesL.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.resAmenitiesL.AutoSize = true;
+            this.resAmenitiesL.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.resAmenitiesL.Location = new System.Drawing.Point(400, 403);
+            this.resAmenitiesL.Name = "resAmenitiesL";
+            this.resAmenitiesL.Size = new System.Drawing.Size(164, 21);
+            this.resAmenitiesL.TabIndex = 42;
+            this.resAmenitiesL.Text = "Amenities (Optional)";
             // 
             // ReservationControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.resAmenitiesL);
+            this.Controls.Add(this.resAmenitiesCLB);
             this.Controls.Add(this.resUpdateB);
             this.Controls.Add(this.amenityB);
             this.Controls.Add(this.reservationDGV);
@@ -320,5 +344,7 @@
         private System.Windows.Forms.Button amenityB;
         private System.Windows.Forms.Button resUpdateB;
         private System.Windows.Forms.DataGridView reservationDGV;
+        private System.Windows.Forms.CheckedListBox resAmenitiesCLB;
+        private System.Windows.Forms.Label resAmenitiesL;
     }
 }

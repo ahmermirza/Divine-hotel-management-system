@@ -30,6 +30,20 @@ namespace Divine_Hotel_Management_System
             menuDGV.DataSource = menu.ListAll();
         }
 
+        private void menuDGV_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            recordSelected = true;
+
+            string menuId = menuDGV.SelectedRows[0].Cells[0].Value.ToString();
+            Menu menu = new Menu();
+            menu.Get(int.Parse(menuId));
+            menuItemTB.Text = menu.ItemName;
+            menuPriceTB.Text = menu.Price.ToString().Trim();
+
+            addMenuB.Enabled = false;
+            menuDeleteB.Enabled = false;
+        }
+
         private void addMenuB_Click(object sender, EventArgs e)
         {
             if (menuItemTB.Text == "" || menuPriceTB.Text == "")
@@ -43,6 +57,7 @@ namespace Divine_Hotel_Management_System
                 menu.Price = int.Parse(menuPriceTB.Text);
                 menu.Insert();
                 menu.CloseConnection();
+
                 ResetForm();
                 ReloadData();
             }
@@ -64,6 +79,7 @@ namespace Divine_Hotel_Management_System
                     int menuId = (int)menuDGV.SelectedRows[0].Cells[0].Value;
                     menu.Delete(menuId);
                     menu.CloseConnection();
+
                     ResetForm();
                     ReloadData();
                 }
@@ -85,8 +101,13 @@ namespace Divine_Hotel_Management_System
                 int menuId = (int)menuDGV.SelectedRows[0].Cells[0].Value;
                 menu.Update(menuId);
                 menu.CloseConnection();
+
                 ResetForm();
                 ReloadData();
+
+                addMenuB.Enabled = true;
+                menuDeleteB.Enabled = true;
+
                 MessageBox.Show("Menu Item updated successfully!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 recordSelected = false;
             }

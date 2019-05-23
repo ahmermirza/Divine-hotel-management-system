@@ -33,6 +33,7 @@ namespace Divine_Hotel_Management_System
         private void inventoryDGV_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             recordSelected = true;
+
             string inventoryId = inventoryDGV.SelectedRows[0].Cells[0].Value.ToString();
             Inventory inventory = new Inventory();
             inventory.Get(int.Parse(inventoryId));
@@ -41,6 +42,9 @@ namespace Divine_Hotel_Management_System
             inventoryQuantityTB.Text = inventory.Quantity.ToString().Trim();
             inventoryCostTB.Text = inventory.Cost.ToString().Trim();
             inventoryPurchaseDTP.Text = inventory.PurchaseDate.ToLongDateString().Trim();
+
+            addInventoryB.Enabled = false;
+            inventoryDeleteB.Enabled = false;
         }
 
         private void addInventoryB_Click(object sender, EventArgs e)
@@ -59,6 +63,7 @@ namespace Divine_Hotel_Management_System
                 inventory.PurchaseDate = DateTime.Parse(inventoryPurchaseDTP.Text);
                 inventory.Insert();
                 inventory.CloseConnection();
+
                 ResetForm();
                 ReloadData();
             }
@@ -80,6 +85,7 @@ namespace Divine_Hotel_Management_System
                     int inventoryId = (int)inventoryDGV.SelectedRows[0].Cells[0].Value;
                     inventory.Delete(inventoryId);
                     inventory.CloseConnection();
+
                     ResetForm();
                     ReloadData();
                 }
@@ -104,8 +110,13 @@ namespace Divine_Hotel_Management_System
                 int inventoryId = (int)inventoryDGV.SelectedRows[0].Cells[0].Value;
                 inventory.Update(inventoryId);
                 inventory.CloseConnection();
+
                 ResetForm();
                 ReloadData();
+
+                addInventoryB.Enabled = true;
+                inventoryDeleteB.Enabled = true;
+
                 MessageBox.Show("Record updated successfully!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 recordSelected = false;
             }

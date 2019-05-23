@@ -12,7 +12,7 @@ namespace Divine_Hotel_Management_System
     class Room
     {
         public int RoomId;
-        public int RoomTypeId;
+        public string RoomType;
         public string FloorNumber;
         public bool Occupied = false;
 
@@ -51,7 +51,7 @@ namespace Divine_Hotel_Management_System
             DataTable roomsDT = new DataTable();
             sqlDA.Fill(roomsDT);
             RoomId = int.Parse(roomsDT.Rows[0]["room_ID"].ToString().Trim());
-            RoomTypeId = int.Parse(roomsDT.Rows[0]["room_type_ID"].ToString().Trim());
+            RoomType = roomsDT.Rows[0]["room_type_name"].ToString().Trim();
             FloorNumber = roomsDT.Rows[0]["floor_number"].ToString().Trim();
             
             return this;
@@ -76,7 +76,7 @@ namespace Divine_Hotel_Management_System
 
         public void Insert()
         {
-            string queryString = "INSERT INTO rooms (room_ID, room_type_ID, floor_number, occupied) VALUES('" + RoomId + "', '" + RoomTypeId + "', '" + FloorNumber + "', '" + Occupied + "')";
+            string queryString = "INSERT INTO rooms (room_ID, room_type_name, floor_number, occupied) VALUES('" + RoomId + "', '" + RoomType + "', '" + FloorNumber + "', '" + Occupied + "')";
 
             SqlCommand sqlCom = new SqlCommand(queryString, sqlCon);
             try
@@ -106,7 +106,7 @@ namespace Divine_Hotel_Management_System
 
         public void Update(int roomId)
         {
-            string queryString = "UPDATE rooms SET room_ID = '" + RoomId + "', room_type_ID = '" + RoomTypeId + "', floor_number = '" + FloorNumber + "' WHERE room_ID = '" + roomId + "'";
+            string queryString = "UPDATE rooms SET room_ID = '" + RoomId + "', room_type_name = '" + RoomType + "', floor_number = '" + FloorNumber + "' WHERE room_ID = '" + roomId + "'";
 
             SqlCommand sqlCom = new SqlCommand(queryString, sqlCon);
             try

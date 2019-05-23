@@ -28,9 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.checkinAmountPaidL = new System.Windows.Forms.Label();
-            this.checkinAmountPaidTB = new System.Windows.Forms.TextBox();
-            this.checkoutCheckinNumCB = new System.Windows.Forms.ComboBox();
+            this.checkoutAmountPaidL = new System.Windows.Forms.Label();
+            this.checkoutAmountPaidTB = new System.Windows.Forms.TextBox();
             this.checkoutCheckinNumL = new System.Windows.Forms.Label();
             this.checkoutL = new System.Windows.Forms.Label();
             this.checkoutRoomNumCB = new System.Windows.Forms.ComboBox();
@@ -39,49 +38,47 @@
             this.checkoutDTPL = new System.Windows.Forms.Label();
             this.checkoutRoomNumL = new System.Windows.Forms.Label();
             this.checkoutDGV = new System.Windows.Forms.DataGridView();
+            this.checkoutCheckinNumTB = new System.Windows.Forms.TextBox();
+            this.checkoutTotalAmountL = new System.Windows.Forms.Label();
+            this.checkoutTotalAmountTB = new System.Windows.Forms.TextBox();
+            this.checkoutRemainingL = new System.Windows.Forms.Label();
+            this.checkoutRemainingTB = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.checkoutDGV)).BeginInit();
             this.SuspendLayout();
             // 
-            // checkinAmountPaidL
+            // checkoutAmountPaidL
             // 
-            this.checkinAmountPaidL.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.checkinAmountPaidL.AutoSize = true;
-            this.checkinAmountPaidL.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkinAmountPaidL.Location = new System.Drawing.Point(430, 405);
-            this.checkinAmountPaidL.Name = "checkinAmountPaidL";
-            this.checkinAmountPaidL.Size = new System.Drawing.Size(108, 21);
-            this.checkinAmountPaidL.TabIndex = 44;
-            this.checkinAmountPaidL.Text = "Amount Paid";
+            this.checkoutAmountPaidL.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.checkoutAmountPaidL.AutoSize = true;
+            this.checkoutAmountPaidL.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkoutAmountPaidL.Location = new System.Drawing.Point(449, 443);
+            this.checkoutAmountPaidL.Name = "checkoutAmountPaidL";
+            this.checkoutAmountPaidL.Size = new System.Drawing.Size(108, 21);
+            this.checkoutAmountPaidL.TabIndex = 44;
+            this.checkoutAmountPaidL.Text = "Amount Paid";
             // 
-            // checkinAmountPaidTB
+            // checkoutAmountPaidTB
             // 
-            this.checkinAmountPaidTB.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.checkinAmountPaidTB.Location = new System.Drawing.Point(548, 406);
-            this.checkinAmountPaidTB.Name = "checkinAmountPaidTB";
-            this.checkinAmountPaidTB.Size = new System.Drawing.Size(190, 20);
-            this.checkinAmountPaidTB.TabIndex = 43;
-            this.checkinAmountPaidTB.Text = "0.00";
-            // 
-            // checkoutCheckinNumCB
-            // 
-            this.checkoutCheckinNumCB.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.checkoutCheckinNumCB.FormattingEnabled = true;
-            this.checkoutCheckinNumCB.Location = new System.Drawing.Point(205, 405);
-            this.checkoutCheckinNumCB.Name = "checkoutCheckinNumCB";
-            this.checkoutCheckinNumCB.Size = new System.Drawing.Size(190, 21);
-            this.checkoutCheckinNumCB.TabIndex = 41;
-            this.checkoutCheckinNumCB.Text = "Select Check-in Number";
+            this.checkoutAmountPaidTB.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.checkoutAmountPaidTB.BackColor = System.Drawing.Color.LightGreen;
+            this.checkoutAmountPaidTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkoutAmountPaidTB.Location = new System.Drawing.Point(568, 444);
+            this.checkoutAmountPaidTB.Name = "checkoutAmountPaidTB";
+            this.checkoutAmountPaidTB.ReadOnly = true;
+            this.checkoutAmountPaidTB.Size = new System.Drawing.Size(170, 21);
+            this.checkoutAmountPaidTB.TabIndex = 6;
+            this.checkoutAmountPaidTB.Text = "0";
             // 
             // checkoutCheckinNumL
             // 
             this.checkoutCheckinNumL.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.checkoutCheckinNumL.AutoSize = true;
             this.checkoutCheckinNumL.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkoutCheckinNumL.Location = new System.Drawing.Point(54, 404);
+            this.checkoutCheckinNumL.Location = new System.Drawing.Point(54, 443);
             this.checkoutCheckinNumL.Name = "checkoutCheckinNumL";
-            this.checkoutCheckinNumL.Size = new System.Drawing.Size(142, 21);
+            this.checkoutCheckinNumL.Size = new System.Drawing.Size(136, 21);
             this.checkoutCheckinNumL.TabIndex = 42;
-            this.checkoutCheckinNumL.Text = "Check-in Number";
+            this.checkoutCheckinNumL.Text = "Checkin Number";
             // 
             // checkoutL
             // 
@@ -99,36 +96,38 @@
             // 
             this.checkoutRoomNumCB.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.checkoutRoomNumCB.FormattingEnabled = true;
-            this.checkoutRoomNumCB.Location = new System.Drawing.Point(205, 446);
+            this.checkoutRoomNumCB.Location = new System.Drawing.Point(196, 405);
             this.checkoutRoomNumCB.Name = "checkoutRoomNumCB";
             this.checkoutRoomNumCB.Size = new System.Drawing.Size(190, 21);
-            this.checkoutRoomNumCB.TabIndex = 35;
+            this.checkoutRoomNumCB.TabIndex = 2;
             this.checkoutRoomNumCB.Text = "Select Room Number";
+            this.checkoutRoomNumCB.SelectedIndexChanged += new System.EventHandler(this.checkoutRoomNumCB_SelectedIndexChanged);
             // 
             // checkoutB
             // 
             this.checkoutB.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.checkoutB.Location = new System.Drawing.Point(548, 446);
+            this.checkoutB.Location = new System.Drawing.Point(548, 526);
             this.checkoutB.Name = "checkoutB";
             this.checkoutB.Size = new System.Drawing.Size(75, 25);
-            this.checkoutB.TabIndex = 38;
+            this.checkoutB.TabIndex = 8;
             this.checkoutB.Text = "Check-out";
             this.checkoutB.UseVisualStyleBackColor = true;
+            this.checkoutB.Click += new System.EventHandler(this.checkoutB_Click);
             // 
             // checkoutDTP
             // 
             this.checkoutDTP.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.checkoutDTP.Location = new System.Drawing.Point(205, 487);
+            this.checkoutDTP.Location = new System.Drawing.Point(196, 487);
             this.checkoutDTP.Name = "checkoutDTP";
             this.checkoutDTP.Size = new System.Drawing.Size(190, 20);
-            this.checkoutDTP.TabIndex = 37;
+            this.checkoutDTP.TabIndex = 4;
             // 
             // checkoutDTPL
             // 
             this.checkoutDTPL.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.checkoutDTPL.AutoSize = true;
             this.checkoutDTPL.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkoutDTPL.Location = new System.Drawing.Point(54, 484);
+            this.checkoutDTPL.Location = new System.Drawing.Point(54, 483);
             this.checkoutDTPL.Name = "checkoutDTPL";
             this.checkoutDTPL.Size = new System.Drawing.Size(88, 21);
             this.checkoutDTPL.TabIndex = 39;
@@ -139,7 +138,7 @@
             this.checkoutRoomNumL.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.checkoutRoomNumL.AutoSize = true;
             this.checkoutRoomNumL.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkoutRoomNumL.Location = new System.Drawing.Point(54, 444);
+            this.checkoutRoomNumL.Location = new System.Drawing.Point(54, 403);
             this.checkoutRoomNumL.Name = "checkoutRoomNumL";
             this.checkoutRoomNumL.Size = new System.Drawing.Size(122, 21);
             this.checkoutRoomNumL.TabIndex = 36;
@@ -154,17 +153,76 @@
             this.checkoutDGV.Name = "checkoutDGV";
             this.checkoutDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.checkoutDGV.Size = new System.Drawing.Size(680, 200);
-            this.checkoutDGV.TabIndex = 45;
-            this.checkoutDGV.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.checkoutDGV_MouseDoubleClick);
+            this.checkoutDGV.TabIndex = 1;
+            // 
+            // checkoutCheckinNumTB
+            // 
+            this.checkoutCheckinNumTB.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.checkoutCheckinNumTB.BackColor = System.Drawing.Color.White;
+            this.checkoutCheckinNumTB.Location = new System.Drawing.Point(196, 445);
+            this.checkoutCheckinNumTB.Name = "checkoutCheckinNumTB";
+            this.checkoutCheckinNumTB.ReadOnly = true;
+            this.checkoutCheckinNumTB.Size = new System.Drawing.Size(190, 20);
+            this.checkoutCheckinNumTB.TabIndex = 3;
+            // 
+            // checkoutTotalAmountL
+            // 
+            this.checkoutTotalAmountL.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.checkoutTotalAmountL.AutoSize = true;
+            this.checkoutTotalAmountL.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkoutTotalAmountL.Location = new System.Drawing.Point(449, 402);
+            this.checkoutTotalAmountL.Name = "checkoutTotalAmountL";
+            this.checkoutTotalAmountL.Size = new System.Drawing.Size(112, 21);
+            this.checkoutTotalAmountL.TabIndex = 48;
+            this.checkoutTotalAmountL.Text = "Total Amount";
+            // 
+            // checkoutTotalAmountTB
+            // 
+            this.checkoutTotalAmountTB.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.checkoutTotalAmountTB.BackColor = System.Drawing.Color.PowderBlue;
+            this.checkoutTotalAmountTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkoutTotalAmountTB.Location = new System.Drawing.Point(568, 404);
+            this.checkoutTotalAmountTB.Name = "checkoutTotalAmountTB";
+            this.checkoutTotalAmountTB.ReadOnly = true;
+            this.checkoutTotalAmountTB.Size = new System.Drawing.Size(170, 21);
+            this.checkoutTotalAmountTB.TabIndex = 5;
+            this.checkoutTotalAmountTB.Text = "0";
+            // 
+            // checkoutRemainingL
+            // 
+            this.checkoutRemainingL.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.checkoutRemainingL.AutoSize = true;
+            this.checkoutRemainingL.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkoutRemainingL.Location = new System.Drawing.Point(449, 484);
+            this.checkoutRemainingL.Name = "checkoutRemainingL";
+            this.checkoutRemainingL.Size = new System.Drawing.Size(88, 21);
+            this.checkoutRemainingL.TabIndex = 50;
+            this.checkoutRemainingL.Text = "Remaining";
+            // 
+            // checkoutRemainingTB
+            // 
+            this.checkoutRemainingTB.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.checkoutRemainingTB.BackColor = System.Drawing.Color.Bisque;
+            this.checkoutRemainingTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkoutRemainingTB.Location = new System.Drawing.Point(568, 485);
+            this.checkoutRemainingTB.Name = "checkoutRemainingTB";
+            this.checkoutRemainingTB.ReadOnly = true;
+            this.checkoutRemainingTB.Size = new System.Drawing.Size(170, 21);
+            this.checkoutRemainingTB.TabIndex = 7;
+            this.checkoutRemainingTB.Text = "0";
             // 
             // CheckoutControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.checkoutRemainingL);
+            this.Controls.Add(this.checkoutRemainingTB);
+            this.Controls.Add(this.checkoutTotalAmountL);
+            this.Controls.Add(this.checkoutTotalAmountTB);
+            this.Controls.Add(this.checkoutCheckinNumTB);
             this.Controls.Add(this.checkoutDGV);
-            this.Controls.Add(this.checkinAmountPaidL);
-            this.Controls.Add(this.checkinAmountPaidTB);
-            this.Controls.Add(this.checkoutCheckinNumCB);
+            this.Controls.Add(this.checkoutAmountPaidL);
+            this.Controls.Add(this.checkoutAmountPaidTB);
             this.Controls.Add(this.checkoutCheckinNumL);
             this.Controls.Add(this.checkoutL);
             this.Controls.Add(this.checkoutRoomNumCB);
@@ -183,9 +241,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Label checkinAmountPaidL;
-        private System.Windows.Forms.TextBox checkinAmountPaidTB;
-        private System.Windows.Forms.ComboBox checkoutCheckinNumCB;
+        private System.Windows.Forms.Label checkoutAmountPaidL;
+        private System.Windows.Forms.TextBox checkoutAmountPaidTB;
         private System.Windows.Forms.Label checkoutCheckinNumL;
         private System.Windows.Forms.Label checkoutL;
         private System.Windows.Forms.ComboBox checkoutRoomNumCB;
@@ -194,5 +251,10 @@
         private System.Windows.Forms.Label checkoutDTPL;
         private System.Windows.Forms.Label checkoutRoomNumL;
         private System.Windows.Forms.DataGridView checkoutDGV;
+        private System.Windows.Forms.TextBox checkoutCheckinNumTB;
+        private System.Windows.Forms.Label checkoutTotalAmountL;
+        private System.Windows.Forms.TextBox checkoutTotalAmountTB;
+        private System.Windows.Forms.Label checkoutRemainingL;
+        private System.Windows.Forms.TextBox checkoutRemainingTB;
     }
 }

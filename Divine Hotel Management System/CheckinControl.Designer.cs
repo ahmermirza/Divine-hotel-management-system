@@ -39,6 +39,8 @@
             this.checkinResNumCB = new System.Windows.Forms.ComboBox();
             this.checkinDTP = new System.Windows.Forms.DateTimePicker();
             this.checkinDGV = new System.Windows.Forms.DataGridView();
+            this.checkinTotalAmountL = new System.Windows.Forms.Label();
+            this.checkinTotalAmountTB = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.checkinDGV)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,19 +71,19 @@
             // 
             this.checkinRoomNumCB.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.checkinRoomNumCB.FormattingEnabled = true;
-            this.checkinRoomNumCB.Location = new System.Drawing.Point(224, 444);
+            this.checkinRoomNumCB.Location = new System.Drawing.Point(219, 444);
             this.checkinRoomNumCB.Name = "checkinRoomNumCB";
             this.checkinRoomNumCB.Size = new System.Drawing.Size(190, 21);
-            this.checkinRoomNumCB.TabIndex = 26;
+            this.checkinRoomNumCB.TabIndex = 3;
             this.checkinRoomNumCB.Text = "Select Room Number";
             // 
             // checkinB
             // 
             this.checkinB.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.checkinB.Location = new System.Drawing.Point(548, 444);
+            this.checkinB.Location = new System.Drawing.Point(568, 480);
             this.checkinB.Name = "checkinB";
             this.checkinB.Size = new System.Drawing.Size(75, 25);
-            this.checkinB.TabIndex = 31;
+            this.checkinB.TabIndex = 7;
             this.checkinB.Text = "Check-in";
             this.checkinB.UseVisualStyleBackColor = true;
             this.checkinB.Click += new System.EventHandler(this.checkinB_Click);
@@ -102,7 +104,7 @@
             this.checkinAmountPaidL.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.checkinAmountPaidL.AutoSize = true;
             this.checkinAmountPaidL.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkinAmountPaidL.Location = new System.Drawing.Point(434, 405);
+            this.checkinAmountPaidL.Location = new System.Drawing.Point(448, 443);
             this.checkinAmountPaidL.Name = "checkinAmountPaidL";
             this.checkinAmountPaidL.Size = new System.Drawing.Size(108, 21);
             this.checkinAmountPaidL.TabIndex = 32;
@@ -111,10 +113,15 @@
             // checkinAmountPaidTB
             // 
             this.checkinAmountPaidTB.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.checkinAmountPaidTB.Location = new System.Drawing.Point(548, 406);
+            this.checkinAmountPaidTB.BackColor = System.Drawing.Color.LightGreen;
+            this.checkinAmountPaidTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkinAmountPaidTB.Location = new System.Drawing.Point(568, 444);
             this.checkinAmountPaidTB.Name = "checkinAmountPaidTB";
-            this.checkinAmountPaidTB.Size = new System.Drawing.Size(190, 20);
-            this.checkinAmountPaidTB.TabIndex = 28;
+            this.checkinAmountPaidTB.Size = new System.Drawing.Size(170, 21);
+            this.checkinAmountPaidTB.TabIndex = 6;
+            this.checkinAmountPaidTB.Text = "0";
+            this.checkinAmountPaidTB.Enter += new System.EventHandler(this.checkinAmountPaidTB_Enter);
+            this.checkinAmountPaidTB.Leave += new System.EventHandler(this.checkinAmountPaidTB_Leave);
             // 
             // checkinResNumL
             // 
@@ -131,20 +138,19 @@
             // 
             this.checkinResNumCB.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.checkinResNumCB.FormattingEnabled = true;
-            this.checkinResNumCB.Location = new System.Drawing.Point(224, 404);
+            this.checkinResNumCB.Location = new System.Drawing.Point(219, 404);
             this.checkinResNumCB.Name = "checkinResNumCB";
             this.checkinResNumCB.Size = new System.Drawing.Size(190, 21);
-            this.checkinResNumCB.TabIndex = 20;
-            this.checkinResNumCB.Text = "Select Reservation Number";
+            this.checkinResNumCB.TabIndex = 2;
             this.checkinResNumCB.SelectedIndexChanged += new System.EventHandler(this.checkinResNumCB_SelectedIndexChanged);
             // 
             // checkinDTP
             // 
             this.checkinDTP.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.checkinDTP.Location = new System.Drawing.Point(224, 484);
+            this.checkinDTP.Location = new System.Drawing.Point(219, 484);
             this.checkinDTP.Name = "checkinDTP";
             this.checkinDTP.Size = new System.Drawing.Size(190, 20);
-            this.checkinDTP.TabIndex = 30;
+            this.checkinDTP.TabIndex = 4;
             // 
             // checkinDGV
             // 
@@ -155,12 +161,37 @@
             this.checkinDGV.Name = "checkinDGV";
             this.checkinDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.checkinDGV.Size = new System.Drawing.Size(680, 200);
-            this.checkinDGV.TabIndex = 44;
+            this.checkinDGV.TabIndex = 1;
+            // 
+            // checkinTotalAmountL
+            // 
+            this.checkinTotalAmountL.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.checkinTotalAmountL.AutoSize = true;
+            this.checkinTotalAmountL.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkinTotalAmountL.Location = new System.Drawing.Point(448, 403);
+            this.checkinTotalAmountL.Name = "checkinTotalAmountL";
+            this.checkinTotalAmountL.Size = new System.Drawing.Size(112, 21);
+            this.checkinTotalAmountL.TabIndex = 46;
+            this.checkinTotalAmountL.Text = "Total Amount";
+            // 
+            // checkinTotalAmountTB
+            // 
+            this.checkinTotalAmountTB.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.checkinTotalAmountTB.BackColor = System.Drawing.Color.PowderBlue;
+            this.checkinTotalAmountTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkinTotalAmountTB.Location = new System.Drawing.Point(568, 404);
+            this.checkinTotalAmountTB.Name = "checkinTotalAmountTB";
+            this.checkinTotalAmountTB.ReadOnly = true;
+            this.checkinTotalAmountTB.Size = new System.Drawing.Size(170, 21);
+            this.checkinTotalAmountTB.TabIndex = 5;
+            this.checkinTotalAmountTB.Text = "0";
             // 
             // CheckinControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.checkinTotalAmountL);
+            this.Controls.Add(this.checkinTotalAmountTB);
             this.Controls.Add(this.checkinDGV);
             this.Controls.Add(this.checkinL);
             this.Controls.Add(this.checkinRoomNumL);
@@ -194,5 +225,7 @@
         private System.Windows.Forms.ComboBox checkinResNumCB;
         private System.Windows.Forms.DateTimePicker checkinDTP;
         private System.Windows.Forms.DataGridView checkinDGV;
+        private System.Windows.Forms.Label checkinTotalAmountL;
+        private System.Windows.Forms.TextBox checkinTotalAmountTB;
     }
 }

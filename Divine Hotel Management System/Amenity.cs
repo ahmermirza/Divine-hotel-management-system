@@ -12,10 +12,9 @@ namespace Divine_Hotel_Management_System
     class Amenity
     {
         public int AmenityId;
-        public int InventoryId;
-        public int ReservationId;
-        public int Cost;
-        public int Quantity;
+        public string AmenityName;
+        public string Description;
+        public int Price;
 
         public string conString = "Server=LENOVO-PC\\SQLEXPRESS;Database=DHMSdatabase;Integrated Security=True";
         SqlConnection sqlCon;
@@ -52,17 +51,16 @@ namespace Divine_Hotel_Management_System
             DataTable amenityDT = new DataTable();
             sqlDA.Fill(amenityDT);
 
-            InventoryId = int.Parse(amenityDT.Rows[0]["inventory_ID"].ToString().Trim());
-            ReservationId = int.Parse(amenityDT.Rows[0]["reservation_ID"].ToString().Trim());
-            Cost = int.Parse(amenityDT.Rows[0]["cost"].ToString().Trim());
-            Quantity = int.Parse(amenityDT.Rows[0]["quantity"].ToString().Trim());
+            AmenityName = amenityDT.Rows[0]["amenity_name"].ToString().Trim();
+            Description = amenityDT.Rows[0]["description"].ToString().Trim();
+            Price = int.Parse(amenityDT.Rows[0]["price"].ToString().Trim());
 
             return this;
         }
 
         public void Insert()
         {
-            string queryString = "INSERT INTO amenities (inventory_ID, reservation_ID, cost, quantity) VALUES('" + InventoryId + "', '" + ReservationId + "', '" + Cost + "', '" + Quantity + "')";
+            string queryString = "INSERT INTO amenities (amenity_name, description, price) VALUES('" + AmenityName + "', '" + Description + "', '" + Price + "')";
 
             SqlCommand sqlCom = new SqlCommand(queryString, sqlCon);
             try
@@ -92,7 +90,7 @@ namespace Divine_Hotel_Management_System
 
         public void Update(int amenityId)
         {
-            string queryString = "UPDATE amenities SET inventory_ID = '" + InventoryId + "', reservation_ID = '" + ReservationId + "', cost = '" + Cost + "', quantity = '" + Quantity + "' WHERE amenity_ID = '" + amenityId + "'";
+            string queryString = "UPDATE amenities SET amenity_name = '" + AmenityName + "', description = '" + Description + "', price = '" + Price + "' WHERE amenity_ID = '" + amenityId + "'";
 
             SqlCommand sqlCom = new SqlCommand(queryString, sqlCon);
             try

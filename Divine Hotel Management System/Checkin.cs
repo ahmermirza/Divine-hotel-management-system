@@ -15,6 +15,7 @@ namespace Divine_Hotel_Management_System
         public int ReservationId;
         public int RoomId;
         public DateTime CheckinDate;
+        public int TotalAmount;
         public int AmountPaid;
 
         public string conString = "Server=LENOVO-PC\\SQLEXPRESS;Database=DHMSdatabase;Integrated Security=True";
@@ -61,12 +62,12 @@ namespace Divine_Hotel_Management_System
             return reservationsDT;
         }
 
-        public DataTable RoomsComboBox(int roomTypeId)
+        public DataTable RoomsComboBox(string roomType)
         {
             DataTable roomsDT = new DataTable();
             try
             {
-                string queryString = "SELECT * FROM rooms WHERE occupied = '0' AND room_type_ID = '"+ roomTypeId + "'";
+                string queryString = "SELECT * FROM rooms WHERE occupied = '0' AND room_type_name = '"+ roomType + "'";
 
                 SqlDataAdapter sqlDA = new SqlDataAdapter(queryString, sqlCon);
                 sqlDA.Fill(roomsDT);
@@ -80,7 +81,7 @@ namespace Divine_Hotel_Management_System
 
         public void Insert(int roomId)
         {
-            string queryString = "INSERT INTO checkins (reservation_ID, room_ID, checkin_time, amount_paid) VALUES('" + ReservationId + "', '" + RoomId + "', '" + CheckinDate + "', '" + AmountPaid + "') ; UPDATE rooms SET occupied = '1' WHERE room_ID = '" + roomId + "'";
+            string queryString = "INSERT INTO checkins (reservation_ID, room_ID, checkin_time, total_amount, amount_paid) VALUES('" + ReservationId + "', '" + RoomId + "', '" + CheckinDate + "', '" + TotalAmount + "', '" + AmountPaid + "') ; UPDATE rooms SET occupied = '1' WHERE room_ID = '" + roomId + "'";
 
             SqlCommand sqlCom = new SqlCommand(queryString, sqlCon);
             try

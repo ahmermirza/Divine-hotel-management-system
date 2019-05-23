@@ -26,7 +26,7 @@ namespace Divine_Hotel_Management_System
             }
         }
 
-        private void loginNameTB_Leave(object sender, EventArgs e)
+        private void loginNameTB_Leave_1(object sender, EventArgs e)
         {
             if (loginNameTB.Text == "")
             {
@@ -44,19 +44,23 @@ namespace Divine_Hotel_Management_System
             }
         }
 
-        private void loginPasswordTB_Leave(object sender, EventArgs e)
+        private void loginPasswordTB_Leave_1(object sender, EventArgs e)
         {
             if (loginPasswordTB.Text == "")
             {
                 loginPasswordTB.Text = "Enter password";
-                
+
                 loginPasswordTB.ForeColor = Color.Gray;
             }
         }
 
         private void loginB_Click(object sender, EventArgs e)
         {
-            if (loginNameTB.Text == "ahmer" && loginPasswordTB.Text == "pakistan")
+            this.Hide();
+            mainForm mainF = new mainForm();
+            mainF.ShowDialog();
+
+            /*if (loginNameTB.Text == "ahmer" && loginPasswordTB.Text == "pakistan")
             {
                 this.Hide();
                 mainForm mainF = new mainForm();
@@ -65,7 +69,12 @@ namespace Divine_Hotel_Management_System
             else
             {
                 MessageBox.Show("Username or password incorrect. Try Again!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            }*/
+        }
+
+        private void loginForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.ExitThread();
         }
     }
 }

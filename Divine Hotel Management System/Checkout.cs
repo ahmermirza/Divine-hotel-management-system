@@ -12,10 +12,12 @@ namespace Divine_Hotel_Management_System
     class Checkout
     {
         public int CheckoutId;
-        public int CheckinId;
         public int RoomId;
+        public int CheckinId;
         public DateTime CheckoutDate;
+        public int TotalAmount;
         public int AmountPaid;
+        public int Remaining;
 
         public string conString = "Server=LENOVO-PC\\SQLEXPRESS;Database=DHMSdatabase;Integrated Security=True";
         SqlConnection sqlCon;
@@ -44,55 +46,26 @@ namespace Divine_Hotel_Management_System
             return checkoutDT;
         }
 
-        public Checkout Get(int checkoutId)
+        public DataTable RoomsComboBox()
         {
-            string queryString = "SELECT * FROM checkouts WHERE checkout_ID = '" + checkoutId + "'";
-
-            SqlDataAdapter sqlDA = new SqlDataAdapter(queryString, sqlCon);
-            DataTable checkoutDT = new DataTable();
-            sqlDA.Fill(checkoutDT);
-
-            CheckinId = int.Parse(checkoutDT.Rows[0]["checkin_ID"].ToString().Trim());
-            RoomId = int.Parse(checkoutDT.Rows[0]["room_ID"].ToString().Trim());
-            CheckoutDate = DateTime.Parse(checkoutDT.Rows[0]["checkout_time"].ToString().Trim());
-            AmountPaid = int.Parse(checkoutDT.Rows[0]["amount_paid"].ToString().Trim());
-
-            return this;
-        }
-
-        public void Insert()
-        {
-            string queryString = "INSERT INTO checkouts (checkin_ID, room_ID, checkout_time, amount_paid) VALUES('" + CheckinId + "', '" + RoomId + "', '" + CheckoutDate + "', '" + AmountPaid + "')";
-
-            SqlCommand sqlCom = new SqlCommand(queryString, sqlCon);
+            DataTable roomsDT = new DataTable();
             try
             {
-                sqlCom.ExecuteNonQuery();
+                string queryString = "SELECT * FROM checkins";
+
+                SqlDataAdapter sqlDA = new SqlDataAdapter(queryString, sqlCon);
+                sqlDA.Fill(roomsDT);
             }
             catch (Exception e)
             {
                 MessageBox.Show(e.Message);
             }
+            return roomsDT;
         }
 
-        public void Delete(int checkoutId)
+        public void Insert(int roomId)
         {
-            string queryString = "DELETE FROM checkouts WHERE checkout_ID = '" + checkoutId + "'";
-
-            SqlCommand sqlCom = new SqlCommand(queryString, sqlCon);
-            try
-            {
-                sqlCom.ExecuteNonQuery();
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show(e.Message);
-            }
-        }
-
-        public void Update(int checkoutId)
-        {
-            string queryString = "UPDATE checkouts SET checkin_ID = '" + CheckinId + "', room_ID = '" + RoomId + "', checkout_time = '" + CheckoutDate + "', amount_paid = '" + AmountPaid + "' WHERE checkout_ID = '" + checkoutId + "'";
+            string queryString = "INSERT INTO checkouts (room_ID, checkin_ID, checkout_time, total_amount, amount_paid, remaining) VALUES('" + RoomId + "', '" + CheckinId + "', '" + CheckoutDate + "', '" + TotalAmount + "', '" + AmountPaid + "', '" + Remaining + "'); UPDATE rooms SET occupied = '0' WHERE room_ID = '" + roomId + "'";
 
             SqlCommand sqlCom = new SqlCommand(queryString, sqlCon);
             try

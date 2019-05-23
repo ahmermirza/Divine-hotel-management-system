@@ -143,5 +143,12 @@ namespace Divine_Hotel_Management_System
                 loginF.ShowDialog();
             }
         }
+
+        private void mainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Hide();
+            loginForm loginF = new loginForm();
+            loginF.ShowDialog();
+        }
     }
 }

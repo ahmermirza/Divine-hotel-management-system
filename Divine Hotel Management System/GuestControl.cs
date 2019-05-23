@@ -40,6 +40,8 @@ namespace Divine_Hotel_Management_System
             guestLastNameTB.Text = guest.LastName;
             guestPhoneTB.Text = guest.PhoneNumber;
             guestCNICTB.Text = guest.CnicNumber;
+            addGuestB.Enabled = false;
+            guestDeleteB.Enabled = false;
         }
 
         private void addGuestB_Click(object sender, EventArgs e)
@@ -103,6 +105,8 @@ namespace Divine_Hotel_Management_System
                 guest.CloseConnection();
                 ResetForm();
                 ReloadData();
+                addGuestB.Enabled = true;
+                guestDeleteB.Enabled = true;
                 MessageBox.Show("Record updated successfully!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 recordSelected = false;
             }

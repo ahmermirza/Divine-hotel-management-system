@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.addMenuB = new System.Windows.Forms.Button();
-            this.deleteMenuB = new System.Windows.Forms.Button();
+            this.menuDeleteB = new System.Windows.Forms.Button();
             this.menuL = new System.Windows.Forms.Label();
             this.menuDGV = new System.Windows.Forms.DataGridView();
             this.menuPriceL = new System.Windows.Forms.Label();
             this.MenuItemL = new System.Windows.Forms.Label();
             this.menuItemTB = new System.Windows.Forms.TextBox();
             this.menuPriceTB = new System.Windows.Forms.TextBox();
-            this.updateMenuB = new System.Windows.Forms.Button();
+            this.menuUpdateB = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.menuDGV)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,16 +51,16 @@
             this.addMenuB.UseVisualStyleBackColor = true;
             this.addMenuB.Click += new System.EventHandler(this.addMenuB_Click);
             // 
-            // deleteMenuB
+            // menuDeleteB
             // 
-            this.deleteMenuB.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.deleteMenuB.Location = new System.Drawing.Point(201, 473);
-            this.deleteMenuB.Name = "deleteMenuB";
-            this.deleteMenuB.Size = new System.Drawing.Size(67, 26);
-            this.deleteMenuB.TabIndex = 4;
-            this.deleteMenuB.Text = "Delete";
-            this.deleteMenuB.UseVisualStyleBackColor = true;
-            this.deleteMenuB.Click += new System.EventHandler(this.deleteMenuB_Click);
+            this.menuDeleteB.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.menuDeleteB.Location = new System.Drawing.Point(201, 473);
+            this.menuDeleteB.Name = "menuDeleteB";
+            this.menuDeleteB.Size = new System.Drawing.Size(67, 26);
+            this.menuDeleteB.TabIndex = 4;
+            this.menuDeleteB.Text = "Delete";
+            this.menuDeleteB.UseVisualStyleBackColor = true;
+            this.menuDeleteB.Click += new System.EventHandler(this.deleteMenuB_Click);
             // 
             // menuL
             // 
@@ -83,7 +83,8 @@
             this.menuDGV.Name = "menuDGV";
             this.menuDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.menuDGV.Size = new System.Drawing.Size(680, 200);
-            this.menuDGV.TabIndex = 73;
+            this.menuDGV.TabIndex = 0;
+            this.menuDGV.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.menuDGV_MouseDoubleClick);
             // 
             // menuPriceL
             // 
@@ -110,7 +111,6 @@
             // menuItemTB
             // 
             this.menuItemTB.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.menuItemTB.ForeColor = System.Drawing.Color.Gray;
             this.menuItemTB.Location = new System.Drawing.Point(151, 403);
             this.menuItemTB.Name = "menuItemTB";
             this.menuItemTB.Size = new System.Drawing.Size(190, 20);
@@ -119,35 +119,34 @@
             // menuPriceTB
             // 
             this.menuPriceTB.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.menuPriceTB.ForeColor = System.Drawing.Color.Gray;
             this.menuPriceTB.Location = new System.Drawing.Point(151, 438);
             this.menuPriceTB.Name = "menuPriceTB";
             this.menuPriceTB.Size = new System.Drawing.Size(190, 20);
             this.menuPriceTB.TabIndex = 2;
             // 
-            // updateMenuB
+            // menuUpdateB
             // 
-            this.updateMenuB.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.updateMenuB.Location = new System.Drawing.Point(274, 473);
-            this.updateMenuB.Name = "updateMenuB";
-            this.updateMenuB.Size = new System.Drawing.Size(67, 26);
-            this.updateMenuB.TabIndex = 5;
-            this.updateMenuB.Text = "Update";
-            this.updateMenuB.UseVisualStyleBackColor = true;
-            this.updateMenuB.Click += new System.EventHandler(this.updateMenuB_Click);
+            this.menuUpdateB.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.menuUpdateB.Location = new System.Drawing.Point(274, 473);
+            this.menuUpdateB.Name = "menuUpdateB";
+            this.menuUpdateB.Size = new System.Drawing.Size(67, 26);
+            this.menuUpdateB.TabIndex = 5;
+            this.menuUpdateB.Text = "Update";
+            this.menuUpdateB.UseVisualStyleBackColor = true;
+            this.menuUpdateB.Click += new System.EventHandler(this.updateMenuB_Click);
             // 
             // MenuControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.updateMenuB);
+            this.Controls.Add(this.menuUpdateB);
             this.Controls.Add(this.menuPriceTB);
             this.Controls.Add(this.menuItemTB);
             this.Controls.Add(this.menuPriceL);
             this.Controls.Add(this.MenuItemL);
             this.Controls.Add(this.menuDGV);
             this.Controls.Add(this.menuL);
-            this.Controls.Add(this.deleteMenuB);
+            this.Controls.Add(this.menuDeleteB);
             this.Controls.Add(this.addMenuB);
             this.Name = "MenuControl";
             this.Size = new System.Drawing.Size(800, 600);
@@ -160,13 +159,13 @@
 
         #endregion
         private System.Windows.Forms.Button addMenuB;
-        private System.Windows.Forms.Button deleteMenuB;
+        private System.Windows.Forms.Button menuDeleteB;
         private System.Windows.Forms.Label menuL;
         private System.Windows.Forms.DataGridView menuDGV;
         private System.Windows.Forms.Label menuPriceL;
         private System.Windows.Forms.Label MenuItemL;
         private System.Windows.Forms.TextBox menuItemTB;
         private System.Windows.Forms.TextBox menuPriceTB;
-        private System.Windows.Forms.Button updateMenuB;
+        private System.Windows.Forms.Button menuUpdateB;
     }
 }
