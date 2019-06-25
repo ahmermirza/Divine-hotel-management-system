@@ -52,7 +52,7 @@
             this.amenityDGV.Name = "amenityDGV";
             this.amenityDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.amenityDGV.Size = new System.Drawing.Size(680, 200);
-            this.amenityDGV.TabIndex = 11;
+            this.amenityDGV.TabIndex = 2;
             this.amenityDGV.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.amenityDGV_MouseDoubleClick);
             // 
             // amenityPriceTB
@@ -61,7 +61,8 @@
             this.amenityPriceTB.Location = new System.Drawing.Point(548, 402);
             this.amenityPriceTB.Name = "amenityPriceTB";
             this.amenityPriceTB.Size = new System.Drawing.Size(190, 20);
-            this.amenityPriceTB.TabIndex = 14;
+            this.amenityPriceTB.TabIndex = 5;
+            this.amenityPriceTB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.amenityPriceTB_KeyPress);
             // 
             // amenityPriceL
             // 
@@ -103,7 +104,7 @@
             this.addAmenityB.Location = new System.Drawing.Point(496, 440);
             this.addAmenityB.Name = "addAmenityB";
             this.addAmenityB.Size = new System.Drawing.Size(90, 25);
-            this.addAmenityB.TabIndex = 15;
+            this.addAmenityB.TabIndex = 6;
             this.addAmenityB.Text = "Add Amenity";
             this.addAmenityB.UseVisualStyleBackColor = true;
             this.addAmenityB.Click += new System.EventHandler(this.addAmenityB_Click);
@@ -116,7 +117,7 @@
             this.reservationB.Location = new System.Drawing.Point(605, 30);
             this.reservationB.Name = "reservationB";
             this.reservationB.Size = new System.Drawing.Size(133, 33);
-            this.reservationB.TabIndex = 10;
+            this.reservationB.TabIndex = 1;
             this.reservationB.Text = "Go to Reservation";
             this.reservationB.UseVisualStyleBackColor = false;
             this.reservationB.Click += new System.EventHandler(this.reservationB_Click);
@@ -127,7 +128,7 @@
             this.amenityDeleteB.Location = new System.Drawing.Point(592, 440);
             this.amenityDeleteB.Name = "amenityDeleteB";
             this.amenityDeleteB.Size = new System.Drawing.Size(70, 25);
-            this.amenityDeleteB.TabIndex = 16;
+            this.amenityDeleteB.TabIndex = 7;
             this.amenityDeleteB.Text = "Delete";
             this.amenityDeleteB.UseVisualStyleBackColor = true;
             this.amenityDeleteB.Click += new System.EventHandler(this.amenityDeleteB_Click);
@@ -138,7 +139,7 @@
             this.amenityUpdateB.Location = new System.Drawing.Point(668, 440);
             this.amenityUpdateB.Name = "amenityUpdateB";
             this.amenityUpdateB.Size = new System.Drawing.Size(70, 25);
-            this.amenityUpdateB.TabIndex = 17;
+            this.amenityUpdateB.TabIndex = 8;
             this.amenityUpdateB.Text = "Update";
             this.amenityUpdateB.UseVisualStyleBackColor = true;
             this.amenityUpdateB.Click += new System.EventHandler(this.amenityUpdateB_Click);
@@ -149,7 +150,7 @@
             this.amenityNameTB.Location = new System.Drawing.Point(158, 403);
             this.amenityNameTB.Name = "amenityNameTB";
             this.amenityNameTB.Size = new System.Drawing.Size(190, 20);
-            this.amenityNameTB.TabIndex = 12;
+            this.amenityNameTB.TabIndex = 3;
             // 
             // amenityDescriptionTB
             // 
@@ -157,7 +158,7 @@
             this.amenityDescriptionTB.Location = new System.Drawing.Point(158, 445);
             this.amenityDescriptionTB.Name = "amenityDescriptionTB";
             this.amenityDescriptionTB.Size = new System.Drawing.Size(190, 20);
-            this.amenityDescriptionTB.TabIndex = 13;
+            this.amenityDescriptionTB.TabIndex = 4;
             // 
             // amenityDescriptionL
             // 

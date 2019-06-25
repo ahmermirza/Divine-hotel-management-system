@@ -106,7 +106,7 @@
             // checkoutB
             // 
             this.checkoutB.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.checkoutB.Location = new System.Drawing.Point(548, 526);
+            this.checkoutB.Location = new System.Drawing.Point(568, 526);
             this.checkoutB.Name = "checkoutB";
             this.checkoutB.Size = new System.Drawing.Size(75, 25);
             this.checkoutB.TabIndex = 8;

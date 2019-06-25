@@ -17,11 +17,13 @@ namespace Divine_Hotel_Management_System
             InitializeComponent();
         }
         bool recordSelected;
+        bool roomExists = false;
 
         private void RoomControl_Load(object sender, EventArgs e)
         {
             ReloadData();
             roomDGV.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            roomDGV.Sort(this.roomDGV.Columns["room_ID"], ListSortDirection.Ascending);
             roomDGV.Columns[3].ReadOnly = true;
             roomTypeCB.DisplayMember = "room_type_name";
             roomTypeCB.SelectedItem = null;
@@ -44,26 +46,43 @@ namespace Divine_Hotel_Management_System
             roomNumberTB.Text = room.RoomId.ToString().Trim();
             roomTypeCB.Text = room.RoomType;
             roomFloorNumCB.Text = room.FloorNumber;
+            roomNumberTB.Enabled = false;
             addRoomB.Enabled = false;
             roomDeleteB.Enabled = false;
         }
 
         private void addRoomB_Click(object sender, EventArgs e)
         {
+            string tempRoomColumnValue;    //Temporary variable to store values of the "room_ID" column of the DataGridView
+            foreach (DataGridViewRow row in roomDGV.Rows)
+            {
+                tempRoomColumnValue = row.Cells[0].Value.ToString();
+                if (roomNumberTB.Text == tempRoomColumnValue)
+                {
+                    roomExists = true;
+                }
+            }
+
             if (roomNumberTB.Text == "" || roomTypeCB.Text == "Select Room Type" || roomFloorNumCB.Text == "Select Floor Number")
             {
                 MessageBox.Show("Please enter the missing detail to add a new room!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
+            else if (roomExists)
+            {
+                MessageBox.Show("Sorry! The room number that you've entered is already on the Rooms list. Please enter a new one!");
+                roomNumberTB.Text = "";
+            }
             else
             {
                 Room room = new Room();
-                room.RoomId = int.Parse(roomNumberTB.Text);
+                room.RoomId = int.Parse(roomNumberTB.Text.ToString().Trim());
                 room.RoomType = roomTypeCB.Text;
                 room.FloorNumber = roomFloorNumCB.Text;
                 room.Insert();
                 room.CloseConnection();
                 ResetForm();
                 ReloadData();
+                roomDGV.Sort(this.roomDGV.Columns["room_ID"], ListSortDirection.Ascending);
             }
         }
 
@@ -85,6 +104,7 @@ namespace Divine_Hotel_Management_System
                     room.CloseConnection();
                     ResetForm();
                     ReloadData();
+                    roomDGV.Sort(this.roomDGV.Columns["room_ID"], ListSortDirection.Ascending);
                 }
             }
         }
@@ -107,6 +127,8 @@ namespace Divine_Hotel_Management_System
                 room.CloseConnection();
                 ResetForm();
                 ReloadData();
+                roomDGV.Sort(this.roomDGV.Columns["room_ID"], ListSortDirection.Ascending);
+                roomNumberTB.Enabled = true;
                 addRoomB.Enabled = true;
                 roomDeleteB.Enabled = true;
                 MessageBox.Show("Room updated successfully!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -134,6 +156,15 @@ namespace Divine_Hotel_Management_System
                 mainForm.Instance.controlsContainer.Controls.Add(roomType);
             }
             mainForm.Instance.controlsContainer.Controls["RoomTypeControl"].BringToFront();
+        }
+
+        private void roomNumberTB_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char chr = e.KeyChar;
+            if (!Char.IsNumber(chr) && chr != 8)
+            {
+                e.Handled = true;
+            }
         }
     }
 }

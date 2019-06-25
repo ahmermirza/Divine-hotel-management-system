@@ -52,7 +52,7 @@
             this.roomDGV.Name = "roomDGV";
             this.roomDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.roomDGV.Size = new System.Drawing.Size(680, 200);
-            this.roomDGV.TabIndex = 1;
+            this.roomDGV.TabIndex = 2;
             this.roomDGV.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.roomDGV_MouseDoubleClick);
             // 
             // roomL
@@ -78,7 +78,7 @@
             this.roomFloorNumCB.Location = new System.Drawing.Point(548, 404);
             this.roomFloorNumCB.Name = "roomFloorNumCB";
             this.roomFloorNumCB.Size = new System.Drawing.Size(190, 21);
-            this.roomFloorNumCB.TabIndex = 23;
+            this.roomFloorNumCB.TabIndex = 5;
             this.roomFloorNumCB.Text = "Select Floor Number";
             // 
             // addRoomB
@@ -87,7 +87,7 @@
             this.addRoomB.Location = new System.Drawing.Point(506, 441);
             this.addRoomB.Name = "addRoomB";
             this.addRoomB.Size = new System.Drawing.Size(80, 25);
-            this.addRoomB.TabIndex = 28;
+            this.addRoomB.TabIndex = 6;
             this.addRoomB.Text = "Add Room";
             this.addRoomB.UseVisualStyleBackColor = true;
             this.addRoomB.Click += new System.EventHandler(this.addRoomB_Click);
@@ -97,8 +97,9 @@
             this.roomNumberTB.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.roomNumberTB.Location = new System.Drawing.Point(184, 402);
             this.roomNumberTB.Name = "roomNumberTB";
-            this.roomNumberTB.Size = new System.Drawing.Size(190, 20);
-            this.roomNumberTB.TabIndex = 26;
+            this.roomNumberTB.Size = new System.Drawing.Size(182, 20);
+            this.roomNumberTB.TabIndex = 3;
+            this.roomNumberTB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.roomNumberTB_KeyPress);
             // 
             // roomNumberL
             // 
@@ -123,7 +124,7 @@
             this.roomTypeCB.Location = new System.Drawing.Point(176, 441);
             this.roomTypeCB.Name = "roomTypeCB";
             this.roomTypeCB.Size = new System.Drawing.Size(190, 21);
-            this.roomTypeCB.TabIndex = 22;
+            this.roomTypeCB.TabIndex = 4;
             this.roomTypeCB.Text = "Select Room Type";
             // 
             // roomFloorNumL
@@ -156,7 +157,7 @@
             this.roomTypeB.Location = new System.Drawing.Point(605, 30);
             this.roomTypeB.Name = "roomTypeB";
             this.roomTypeB.Size = new System.Drawing.Size(133, 33);
-            this.roomTypeB.TabIndex = 48;
+            this.roomTypeB.TabIndex = 1;
             this.roomTypeB.Text = "Go to Room Type";
             this.roomTypeB.UseVisualStyleBackColor = false;
             this.roomTypeB.Click += new System.EventHandler(this.RoomTypeB_Click);
@@ -167,7 +168,7 @@
             this.roomDeleteB.Location = new System.Drawing.Point(592, 441);
             this.roomDeleteB.Name = "roomDeleteB";
             this.roomDeleteB.Size = new System.Drawing.Size(70, 25);
-            this.roomDeleteB.TabIndex = 49;
+            this.roomDeleteB.TabIndex = 7;
             this.roomDeleteB.Text = "Delete";
             this.roomDeleteB.UseVisualStyleBackColor = true;
             this.roomDeleteB.Click += new System.EventHandler(this.roomDeleteB_Click);
@@ -178,7 +179,7 @@
             this.roomUpdateB.Location = new System.Drawing.Point(668, 441);
             this.roomUpdateB.Name = "roomUpdateB";
             this.roomUpdateB.Size = new System.Drawing.Size(70, 25);
-            this.roomUpdateB.TabIndex = 50;
+            this.roomUpdateB.TabIndex = 8;
             this.roomUpdateB.Text = "Update";
             this.roomUpdateB.UseVisualStyleBackColor = true;
             this.roomUpdateB.Click += new System.EventHandler(this.roomUpdateB_Click);

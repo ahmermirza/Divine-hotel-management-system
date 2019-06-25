@@ -63,6 +63,7 @@
             this.guestCNICTB.Name = "guestCNICTB";
             this.guestCNICTB.Size = new System.Drawing.Size(190, 20);
             this.guestCNICTB.TabIndex = 4;
+            this.guestCNICTB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.guestCNICTB_KeyPress);
             // 
             // guestCNICL
             // 
@@ -116,6 +117,7 @@
             this.guestPhoneTB.Name = "guestPhoneTB";
             this.guestPhoneTB.Size = new System.Drawing.Size(190, 20);
             this.guestPhoneTB.TabIndex = 3;
+            this.guestPhoneTB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.guestPhoneTB_KeyPress);
             // 
             // guestPhoneL
             // 

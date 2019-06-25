@@ -17,7 +17,7 @@ namespace Divine_Hotel_Management_System
         public string PhoneNumber;
         public string CnicNumber;
 
-        public string conString = "Server=LENOVO-PC\\SQLEXPRESS;Database=DHMSdatabase;Integrated Security=True";
+        public string conString = "Server=LOCALHOST\\SQLEXPRESS;Database=DHMSdatabase;Integrated Security=True";
         SqlConnection sqlCon;
 
         public Guest()

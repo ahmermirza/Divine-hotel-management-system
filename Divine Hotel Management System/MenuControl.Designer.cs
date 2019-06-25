@@ -123,6 +123,7 @@
             this.menuPriceTB.Name = "menuPriceTB";
             this.menuPriceTB.Size = new System.Drawing.Size(190, 20);
             this.menuPriceTB.TabIndex = 2;
+            this.menuPriceTB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.menuPriceTB_KeyPress);
             // 
             // menuUpdateB
             // 

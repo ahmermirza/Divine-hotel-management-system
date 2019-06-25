@@ -130,5 +130,14 @@ namespace Divine_Hotel_Management_System
             }
             mainForm.Instance.controlsContainer.Controls["RoomControl"].BringToFront();
         }
+
+        private void roomBasePriceTB_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char chr = e.KeyChar;
+            if (!Char.IsNumber(chr) && chr != 8)
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

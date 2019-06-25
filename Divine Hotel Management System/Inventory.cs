@@ -18,7 +18,7 @@ namespace Divine_Hotel_Management_System
         public int Cost;
         public DateTime PurchaseDate;
 
-        public string conString = "Server=LENOVO-PC\\SQLEXPRESS;Database=DHMSdatabase;Integrated Security=True";
+        public string conString = "Server=LOCALHOST\\SQLEXPRESS;Database=DHMSdatabase;Integrated Security=True";
         SqlConnection sqlCon;
 
         public Inventory()

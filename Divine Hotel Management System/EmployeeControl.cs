@@ -127,5 +127,32 @@ namespace Divine_Hotel_Management_System
             employeeCNICTB.Text = "";
             employeeSalaryTB.Text = "";
         }
+
+        private void employeePhoneTB_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char chr = e.KeyChar;
+            if (!Char.IsNumber(chr) && chr != 8)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void employeeCNICTB_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char chr = e.KeyChar;
+            if (!Char.IsNumber(chr) && chr != 8)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void employeeSalaryTB_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char chr = e.KeyChar;
+            if (!Char.IsNumber(chr) && chr != 8)
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

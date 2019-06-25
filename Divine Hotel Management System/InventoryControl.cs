@@ -134,5 +134,23 @@ namespace Divine_Hotel_Management_System
             inventoryCostTB.Text = "";
             inventoryPurchaseDTP.Text = "";
         }
+
+        private void inventoryQuantityTB_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char chr = e.KeyChar;
+            if (!Char.IsNumber(chr) && chr != 8)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void inventoryCostTB_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char chr = e.KeyChar;
+            if (!Char.IsNumber(chr) && chr != 8)
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

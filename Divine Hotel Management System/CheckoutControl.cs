@@ -24,7 +24,6 @@ namespace Divine_Hotel_Management_System
             checkoutRoomNumCB.DisplayMember = "room_ID";
             checkoutRoomNumCB.SelectedItem = null;
             checkoutRoomNumCB.SelectedText = "Select Room Number";
-            //checkoutRoomNumCB.ValueMember = "checkin_ID";
 
             ReloadData();
             ResetForm();

@@ -20,7 +20,7 @@ namespace Divine_Hotel_Management_System
         public string Amenities = "";
         public int TotalAmount;
 
-        public string conString = "Server=LENOVO-PC\\SQLEXPRESS;Database=DHMSdatabase;Integrated Security=True";
+        public string conString = "Server=LOCALHOST\\SQLEXPRESS;Database=DHMSdatabase;Integrated Security=True";
         SqlConnection sqlCon;
 
         public Reservation()

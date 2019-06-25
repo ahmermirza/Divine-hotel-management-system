@@ -63,7 +63,7 @@
             this.inventoryDescriptionTB.Location = new System.Drawing.Point(161, 445);
             this.inventoryDescriptionTB.Name = "inventoryDescriptionTB";
             this.inventoryDescriptionTB.Size = new System.Drawing.Size(190, 20);
-            this.inventoryDescriptionTB.TabIndex = 2;
+            this.inventoryDescriptionTB.TabIndex = 3;
             // 
             // inventoryDescriptionL
             // 
@@ -82,7 +82,7 @@
             this.inventoryDeleteB.Location = new System.Drawing.Point(592, 478);
             this.inventoryDeleteB.Name = "inventoryDeleteB";
             this.inventoryDeleteB.Size = new System.Drawing.Size(70, 25);
-            this.inventoryDeleteB.TabIndex = 7;
+            this.inventoryDeleteB.TabIndex = 8;
             this.inventoryDeleteB.Text = "Delete";
             this.inventoryDeleteB.UseVisualStyleBackColor = true;
             this.inventoryDeleteB.Click += new System.EventHandler(this.inventoryDeleteB_Click);
@@ -93,7 +93,7 @@
             this.addInventoryB.Location = new System.Drawing.Point(486, 478);
             this.addInventoryB.Name = "addInventoryB";
             this.addInventoryB.Size = new System.Drawing.Size(100, 25);
-            this.addInventoryB.TabIndex = 6;
+            this.addInventoryB.TabIndex = 7;
             this.addInventoryB.Text = "Add Inventory";
             this.addInventoryB.UseVisualStyleBackColor = true;
             this.addInventoryB.Click += new System.EventHandler(this.addInventoryB_Click);
@@ -104,7 +104,8 @@
             this.inventoryCostTB.Location = new System.Drawing.Point(548, 403);
             this.inventoryCostTB.Name = "inventoryCostTB";
             this.inventoryCostTB.Size = new System.Drawing.Size(190, 20);
-            this.inventoryCostTB.TabIndex = 4;
+            this.inventoryCostTB.TabIndex = 5;
+            this.inventoryCostTB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.inventoryCostTB_KeyPress);
             // 
             // addInventoryCostL
             // 
@@ -126,7 +127,7 @@
             this.inventoryL.Location = new System.Drawing.Point(227, 30);
             this.inventoryL.Name = "inventoryL";
             this.inventoryL.Size = new System.Drawing.Size(343, 40);
-            this.inventoryL.TabIndex = 36;
+            this.inventoryL.TabIndex = 50;
             this.inventoryL.Text = "Inventory Management";
             // 
             // inventoryPurchaseDTP
@@ -135,7 +136,7 @@
             this.inventoryPurchaseDTP.Location = new System.Drawing.Point(548, 441);
             this.inventoryPurchaseDTP.Name = "inventoryPurchaseDTP";
             this.inventoryPurchaseDTP.Size = new System.Drawing.Size(190, 20);
-            this.inventoryPurchaseDTP.TabIndex = 5;
+            this.inventoryPurchaseDTP.TabIndex = 6;
             // 
             // addInventoryDTPL
             // 
@@ -154,7 +155,7 @@
             this.inventoryItemTB.Location = new System.Drawing.Point(161, 406);
             this.inventoryItemTB.Name = "inventoryItemTB";
             this.inventoryItemTB.Size = new System.Drawing.Size(190, 20);
-            this.inventoryItemTB.TabIndex = 1;
+            this.inventoryItemTB.TabIndex = 2;
             // 
             // inventoryItemL
             // 
@@ -176,7 +177,7 @@
             this.inventoryDGV.Name = "inventoryDGV";
             this.inventoryDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.inventoryDGV.Size = new System.Drawing.Size(680, 200);
-            this.inventoryDGV.TabIndex = 45;
+            this.inventoryDGV.TabIndex = 1;
             this.inventoryDGV.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.inventoryDGV_MouseDoubleClick);
             // 
             // inventoryQuantityTB
@@ -185,7 +186,8 @@
             this.inventoryQuantityTB.Location = new System.Drawing.Point(161, 483);
             this.inventoryQuantityTB.Name = "inventoryQuantityTB";
             this.inventoryQuantityTB.Size = new System.Drawing.Size(190, 20);
-            this.inventoryQuantityTB.TabIndex = 3;
+            this.inventoryQuantityTB.TabIndex = 4;
+            this.inventoryQuantityTB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.inventoryQuantityTB_KeyPress);
             // 
             // inventoryUpdateB
             // 
@@ -193,7 +195,7 @@
             this.inventoryUpdateB.Location = new System.Drawing.Point(668, 478);
             this.inventoryUpdateB.Name = "inventoryUpdateB";
             this.inventoryUpdateB.Size = new System.Drawing.Size(70, 25);
-            this.inventoryUpdateB.TabIndex = 8;
+            this.inventoryUpdateB.TabIndex = 9;
             this.inventoryUpdateB.Text = "Update";
             this.inventoryUpdateB.UseVisualStyleBackColor = true;
             this.inventoryUpdateB.Click += new System.EventHandler(this.inventoryUpdateB_Click);

@@ -51,7 +51,7 @@
             this.addRoomTypeB.Location = new System.Drawing.Point(486, 437);
             this.addRoomTypeB.Name = "addRoomTypeB";
             this.addRoomTypeB.Size = new System.Drawing.Size(100, 25);
-            this.addRoomTypeB.TabIndex = 40;
+            this.addRoomTypeB.TabIndex = 7;
             this.addRoomTypeB.Text = "Add Room Type";
             this.addRoomTypeB.UseVisualStyleBackColor = true;
             this.addRoomTypeB.Click += new System.EventHandler(this.addRoomTypeB_Click);
@@ -62,7 +62,7 @@
             this.roomTypeNameTB.Location = new System.Drawing.Point(208, 404);
             this.roomTypeNameTB.Name = "roomTypeNameTB";
             this.roomTypeNameTB.Size = new System.Drawing.Size(190, 20);
-            this.roomTypeNameTB.TabIndex = 38;
+            this.roomTypeNameTB.TabIndex = 3;
             // 
             // roomTypeNameL
             // 
@@ -95,7 +95,7 @@
             this.roomTypeDGV.Name = "roomTypeDGV";
             this.roomTypeDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.roomTypeDGV.Size = new System.Drawing.Size(680, 200);
-            this.roomTypeDGV.TabIndex = 33;
+            this.roomTypeDGV.TabIndex = 2;
             this.roomTypeDGV.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.roomTypeDGV_MouseDoubleClick);
             // 
             // roomBedsL
@@ -121,7 +121,7 @@
             this.roomBedsCB.Location = new System.Drawing.Point(208, 476);
             this.roomBedsCB.Name = "roomBedsCB";
             this.roomBedsCB.Size = new System.Drawing.Size(190, 21);
-            this.roomBedsCB.TabIndex = 37;
+            this.roomBedsCB.TabIndex = 5;
             this.roomBedsCB.Text = "Select Number of Beds";
             // 
             // roomDescriptionTB
@@ -130,7 +130,7 @@
             this.roomDescriptionTB.Location = new System.Drawing.Point(208, 440);
             this.roomDescriptionTB.Name = "roomDescriptionTB";
             this.roomDescriptionTB.Size = new System.Drawing.Size(190, 20);
-            this.roomDescriptionTB.TabIndex = 44;
+            this.roomDescriptionTB.TabIndex = 4;
             // 
             // roomBasePriceTB
             // 
@@ -138,7 +138,8 @@
             this.roomBasePriceTB.Location = new System.Drawing.Point(548, 404);
             this.roomBasePriceTB.Name = "roomBasePriceTB";
             this.roomBasePriceTB.Size = new System.Drawing.Size(190, 20);
-            this.roomBasePriceTB.TabIndex = 45;
+            this.roomBasePriceTB.TabIndex = 6;
+            this.roomBasePriceTB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.roomBasePriceTB_KeyPress);
             // 
             // roomBasePriceL
             // 
@@ -159,7 +160,7 @@
             this.roomB.Location = new System.Drawing.Point(605, 30);
             this.roomB.Name = "roomB";
             this.roomB.Size = new System.Drawing.Size(133, 33);
-            this.roomB.TabIndex = 47;
+            this.roomB.TabIndex = 1;
             this.roomB.Text = "Go to Rooms";
             this.roomB.UseVisualStyleBackColor = false;
             this.roomB.Click += new System.EventHandler(this.BackToRoomsB_Click);
@@ -182,7 +183,7 @@
             this.roomTypeDeleteB.Location = new System.Drawing.Point(592, 437);
             this.roomTypeDeleteB.Name = "roomTypeDeleteB";
             this.roomTypeDeleteB.Size = new System.Drawing.Size(70, 25);
-            this.roomTypeDeleteB.TabIndex = 49;
+            this.roomTypeDeleteB.TabIndex = 8;
             this.roomTypeDeleteB.Text = "Delete";
             this.roomTypeDeleteB.UseVisualStyleBackColor = true;
             this.roomTypeDeleteB.Click += new System.EventHandler(this.roomTypeDeleteB_Click);
@@ -193,7 +194,7 @@
             this.roomTypeUpdateB.Location = new System.Drawing.Point(668, 437);
             this.roomTypeUpdateB.Name = "roomTypeUpdateB";
             this.roomTypeUpdateB.Size = new System.Drawing.Size(70, 25);
-            this.roomTypeUpdateB.TabIndex = 50;
+            this.roomTypeUpdateB.TabIndex = 9;
             this.roomTypeUpdateB.Text = "Update";
             this.roomTypeUpdateB.UseVisualStyleBackColor = true;
             this.roomTypeUpdateB.Click += new System.EventHandler(this.roomTypeUpdateB_Click);

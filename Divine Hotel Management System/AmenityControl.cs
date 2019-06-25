@@ -137,5 +137,14 @@ namespace Divine_Hotel_Management_System
             }
             mainForm.Instance.controlsContainer.Controls["ReservationControl"].BringToFront();
         }
+
+        private void amenityPriceTB_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char chr = e.KeyChar;
+            if (!Char.IsNumber(chr) && chr != 8)
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

@@ -113,5 +113,14 @@ namespace Divine_Hotel_Management_System
                 checkinAmountPaidTB.Text = "0";
             }
         }
+
+        private void checkinAmountPaidTB_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char chr = e.KeyChar;
+            if (!Char.IsNumber(chr) && chr != 8)
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

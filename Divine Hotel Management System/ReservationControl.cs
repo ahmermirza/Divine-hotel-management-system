@@ -88,7 +88,7 @@ namespace Divine_Hotel_Management_System
 
         private void addResB_Click(object sender, EventArgs e)
         {
-            if (resGuestsIDCB.Text == "Select Guest ID" || resRoomTypeCB.Text == "Select Room Type" || resPeopleNumCB.Text == "Select Number of People" || resTotalAmountTB.Text == "0")
+            if (resGuestsIDCB.Text == "Select Guest ID" || resRoomTypeCB.Text == "Select Room Type" || resPeopleNumCB.Text == "Select Number of People" || resTotalAmountTB.Text == "0" || resGuestsIDCB.Text == "")
             {
                 MessageBox.Show("Please enter the missing detail to add a new reservation!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }

@@ -121,6 +121,7 @@
             this.checkinAmountPaidTB.TabIndex = 6;
             this.checkinAmountPaidTB.Text = "0";
             this.checkinAmountPaidTB.Enter += new System.EventHandler(this.checkinAmountPaidTB_Enter);
+            this.checkinAmountPaidTB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.checkinAmountPaidTB_KeyPress);
             this.checkinAmountPaidTB.Leave += new System.EventHandler(this.checkinAmountPaidTB_Leave);
             // 
             // checkinResNumL

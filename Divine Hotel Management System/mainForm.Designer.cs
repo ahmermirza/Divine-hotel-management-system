@@ -40,6 +40,7 @@
             this.mainEmployeeB = new System.Windows.Forms.Button();
             this.mainInventoryB = new System.Windows.Forms.Button();
             this.picturePanel = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.buttonsPanel = new System.Windows.Forms.Panel();
             this.mainGuestB = new System.Windows.Forms.Button();
             this.controlsPanel = new System.Windows.Forms.Panel();
@@ -54,9 +55,9 @@
             this.mainResB.FlatAppearance.BorderSize = 0;
             this.mainResB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.mainResB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mainResB.Location = new System.Drawing.Point(0, 46);
+            this.mainResB.Location = new System.Drawing.Point(0, 43);
             this.mainResB.Name = "mainResB";
-            this.mainResB.Size = new System.Drawing.Size(195, 46);
+            this.mainResB.Size = new System.Drawing.Size(178, 46);
             this.mainResB.TabIndex = 2;
             this.mainResB.Text = "Reservation";
             this.mainResB.UseVisualStyleBackColor = false;
@@ -68,9 +69,9 @@
             this.mainCheckinB.FlatAppearance.BorderSize = 0;
             this.mainCheckinB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.mainCheckinB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mainCheckinB.Location = new System.Drawing.Point(0, 92);
+            this.mainCheckinB.Location = new System.Drawing.Point(0, 89);
             this.mainCheckinB.Name = "mainCheckinB";
-            this.mainCheckinB.Size = new System.Drawing.Size(195, 46);
+            this.mainCheckinB.Size = new System.Drawing.Size(178, 46);
             this.mainCheckinB.TabIndex = 3;
             this.mainCheckinB.Text = "Check-in";
             this.mainCheckinB.UseVisualStyleBackColor = false;
@@ -82,9 +83,9 @@
             this.mainCheckoutB.FlatAppearance.BorderSize = 0;
             this.mainCheckoutB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.mainCheckoutB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mainCheckoutB.Location = new System.Drawing.Point(0, 138);
+            this.mainCheckoutB.Location = new System.Drawing.Point(0, 135);
             this.mainCheckoutB.Name = "mainCheckoutB";
-            this.mainCheckoutB.Size = new System.Drawing.Size(195, 46);
+            this.mainCheckoutB.Size = new System.Drawing.Size(178, 46);
             this.mainCheckoutB.TabIndex = 4;
             this.mainCheckoutB.Text = "Check-out";
             this.mainCheckoutB.UseVisualStyleBackColor = false;
@@ -119,9 +120,9 @@
             this.mainFoodB.FlatAppearance.BorderSize = 0;
             this.mainFoodB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.mainFoodB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mainFoodB.Location = new System.Drawing.Point(0, 312);
+            this.mainFoodB.Location = new System.Drawing.Point(0, 319);
             this.mainFoodB.Name = "mainFoodB";
-            this.mainFoodB.Size = new System.Drawing.Size(195, 46);
+            this.mainFoodB.Size = new System.Drawing.Size(178, 46);
             this.mainFoodB.TabIndex = 8;
             this.mainFoodB.Text = "Menu";
             this.mainFoodB.UseVisualStyleBackColor = false;
@@ -133,9 +134,9 @@
             this.mainLogoutB.FlatAppearance.BorderSize = 0;
             this.mainLogoutB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.mainLogoutB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mainLogoutB.Location = new System.Drawing.Point(0, 353);
+            this.mainLogoutB.Location = new System.Drawing.Point(0, 365);
             this.mainLogoutB.Name = "mainLogoutB";
-            this.mainLogoutB.Size = new System.Drawing.Size(195, 46);
+            this.mainLogoutB.Size = new System.Drawing.Size(178, 46);
             this.mainLogoutB.TabIndex = 9;
             this.mainLogoutB.Text = "Log Out";
             this.mainLogoutB.UseVisualStyleBackColor = false;
@@ -147,9 +148,9 @@
             this.mainRoomB.FlatAppearance.BorderSize = 0;
             this.mainRoomB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.mainRoomB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mainRoomB.Location = new System.Drawing.Point(0, 272);
+            this.mainRoomB.Location = new System.Drawing.Point(0, 273);
             this.mainRoomB.Name = "mainRoomB";
-            this.mainRoomB.Size = new System.Drawing.Size(195, 46);
+            this.mainRoomB.Size = new System.Drawing.Size(178, 46);
             this.mainRoomB.TabIndex = 7;
             this.mainRoomB.Text = "Rooms";
             this.mainRoomB.UseVisualStyleBackColor = false;
@@ -161,9 +162,9 @@
             this.mainEmployeeB.FlatAppearance.BorderSize = 0;
             this.mainEmployeeB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.mainEmployeeB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mainEmployeeB.Location = new System.Drawing.Point(0, 230);
+            this.mainEmployeeB.Location = new System.Drawing.Point(0, 227);
             this.mainEmployeeB.Name = "mainEmployeeB";
-            this.mainEmployeeB.Size = new System.Drawing.Size(195, 46);
+            this.mainEmployeeB.Size = new System.Drawing.Size(178, 46);
             this.mainEmployeeB.TabIndex = 6;
             this.mainEmployeeB.Text = "Employees";
             this.mainEmployeeB.UseVisualStyleBackColor = false;
@@ -175,9 +176,9 @@
             this.mainInventoryB.FlatAppearance.BorderSize = 0;
             this.mainInventoryB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.mainInventoryB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mainInventoryB.Location = new System.Drawing.Point(0, 184);
+            this.mainInventoryB.Location = new System.Drawing.Point(0, 181);
             this.mainInventoryB.Name = "mainInventoryB";
-            this.mainInventoryB.Size = new System.Drawing.Size(195, 46);
+            this.mainInventoryB.Size = new System.Drawing.Size(178, 46);
             this.mainInventoryB.TabIndex = 5;
             this.mainInventoryB.Text = "Inventory";
             this.mainInventoryB.UseVisualStyleBackColor = false;
@@ -188,12 +189,25 @@
             this.picturePanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.picturePanel.BackColor = System.Drawing.Color.Black;
+            this.picturePanel.Controls.Add(this.label1);
             this.picturePanel.Controls.Add(this.logoPB);
             this.picturePanel.Controls.Add(this.mainWelcomeL);
             this.picturePanel.Location = new System.Drawing.Point(0, 0);
             this.picturePanel.Name = "picturePanel";
             this.picturePanel.Size = new System.Drawing.Size(1108, 226);
             this.picturePanel.TabIndex = 12;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.Control;
+            this.label1.Location = new System.Drawing.Point(937, 7);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(162, 16);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Developed by: Ahmer Mirza";
             // 
             // buttonsPanel
             // 
@@ -209,9 +223,9 @@
             this.buttonsPanel.Controls.Add(this.mainEmployeeB);
             this.buttonsPanel.Controls.Add(this.mainCheckinB);
             this.buttonsPanel.Controls.Add(this.mainInventoryB);
-            this.buttonsPanel.Location = new System.Drawing.Point(0, 227);
+            this.buttonsPanel.Location = new System.Drawing.Point(0, 226);
             this.buttonsPanel.Name = "buttonsPanel";
-            this.buttonsPanel.Size = new System.Drawing.Size(184, 525);
+            this.buttonsPanel.Size = new System.Drawing.Size(178, 525);
             this.buttonsPanel.TabIndex = 0;
             // 
             // mainGuestB
@@ -220,9 +234,9 @@
             this.mainGuestB.FlatAppearance.BorderSize = 0;
             this.mainGuestB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.mainGuestB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mainGuestB.Location = new System.Drawing.Point(0, 0);
+            this.mainGuestB.Location = new System.Drawing.Point(0, -3);
             this.mainGuestB.Name = "mainGuestB";
-            this.mainGuestB.Size = new System.Drawing.Size(195, 46);
+            this.mainGuestB.Size = new System.Drawing.Size(178, 46);
             this.mainGuestB.TabIndex = 1;
             this.mainGuestB.Text = "Guests";
             this.mainGuestB.UseVisualStyleBackColor = false;
@@ -276,5 +290,6 @@
         private System.Windows.Forms.Panel buttonsPanel;
         private System.Windows.Forms.Panel controlsPanel;
         private System.Windows.Forms.Button mainGuestB;
+        private System.Windows.Forms.Label label1;
     }
 }

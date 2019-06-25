@@ -54,7 +54,8 @@
             this.employeeCNICTB.Location = new System.Drawing.Point(548, 406);
             this.employeeCNICTB.Name = "employeeCNICTB";
             this.employeeCNICTB.Size = new System.Drawing.Size(190, 20);
-            this.employeeCNICTB.TabIndex = 5;
+            this.employeeCNICTB.TabIndex = 6;
+            this.employeeCNICTB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.employeeCNICTB_KeyPress);
             // 
             // employeeCNICL
             // 
@@ -73,7 +74,7 @@
             this.employeeDeleteB.Location = new System.Drawing.Point(582, 481);
             this.employeeDeleteB.Name = "employeeDeleteB";
             this.employeeDeleteB.Size = new System.Drawing.Size(75, 25);
-            this.employeeDeleteB.TabIndex = 8;
+            this.employeeDeleteB.TabIndex = 9;
             this.employeeDeleteB.Text = "Delete";
             this.employeeDeleteB.UseVisualStyleBackColor = true;
             this.employeeDeleteB.Click += new System.EventHandler(this.employeeDeleteB_Click);
@@ -87,7 +88,7 @@
             this.employeeL.Location = new System.Drawing.Point(224, 30);
             this.employeeL.Name = "employeeL";
             this.employeeL.Size = new System.Drawing.Size(348, 40);
-            this.employeeL.TabIndex = 37;
+            this.employeeL.TabIndex = 58;
             this.employeeL.Text = "Employee Management";
             // 
             // addEmployeeB
@@ -96,7 +97,7 @@
             this.addEmployeeB.Location = new System.Drawing.Point(476, 481);
             this.addEmployeeB.Name = "addEmployeeB";
             this.addEmployeeB.Size = new System.Drawing.Size(100, 25);
-            this.addEmployeeB.TabIndex = 7;
+            this.addEmployeeB.TabIndex = 8;
             this.addEmployeeB.Text = "Add Employee";
             this.addEmployeeB.UseVisualStyleBackColor = true;
             this.addEmployeeB.Click += new System.EventHandler(this.addEmployeeB_Click);
@@ -107,7 +108,8 @@
             this.employeeSalaryTB.Location = new System.Drawing.Point(548, 447);
             this.employeeSalaryTB.Name = "employeeSalaryTB";
             this.employeeSalaryTB.Size = new System.Drawing.Size(190, 20);
-            this.employeeSalaryTB.TabIndex = 6;
+            this.employeeSalaryTB.TabIndex = 7;
+            this.employeeSalaryTB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.employeeSalaryTB_KeyPress);
             // 
             // employeeSalaryL
             // 
@@ -126,7 +128,7 @@
             this.employeeAddressTB.Location = new System.Drawing.Point(179, 523);
             this.employeeAddressTB.Name = "employeeAddressTB";
             this.employeeAddressTB.Size = new System.Drawing.Size(190, 20);
-            this.employeeAddressTB.TabIndex = 4;
+            this.employeeAddressTB.TabIndex = 5;
             // 
             // employeeAddressL
             // 
@@ -145,7 +147,8 @@
             this.employeePhoneTB.Location = new System.Drawing.Point(179, 484);
             this.employeePhoneTB.Name = "employeePhoneTB";
             this.employeePhoneTB.Size = new System.Drawing.Size(190, 20);
-            this.employeePhoneTB.TabIndex = 3;
+            this.employeePhoneTB.TabIndex = 4;
+            this.employeePhoneTB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.employeePhoneTB_KeyPress);
             // 
             // employeePhoneL
             // 
@@ -164,7 +167,7 @@
             this.employeeLastNameTB.Location = new System.Drawing.Point(179, 445);
             this.employeeLastNameTB.Name = "employeeLastNameTB";
             this.employeeLastNameTB.Size = new System.Drawing.Size(190, 20);
-            this.employeeLastNameTB.TabIndex = 2;
+            this.employeeLastNameTB.TabIndex = 3;
             // 
             // employeeLastNameL
             // 
@@ -183,7 +186,7 @@
             this.employeeFirstNameTB.Location = new System.Drawing.Point(179, 406);
             this.employeeFirstNameTB.Name = "employeeFirstNameTB";
             this.employeeFirstNameTB.Size = new System.Drawing.Size(190, 20);
-            this.employeeFirstNameTB.TabIndex = 1;
+            this.employeeFirstNameTB.TabIndex = 2;
             // 
             // employeeFirstNameL
             // 
@@ -205,7 +208,7 @@
             this.employeeDGV.Name = "employeeDGV";
             this.employeeDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.employeeDGV.Size = new System.Drawing.Size(680, 200);
-            this.employeeDGV.TabIndex = 46;
+            this.employeeDGV.TabIndex = 1;
             this.employeeDGV.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.employeeDGV_MouseDoubleClick);
             // 
             // employeeUpdateB
@@ -214,7 +217,7 @@
             this.employeeUpdateB.Location = new System.Drawing.Point(663, 481);
             this.employeeUpdateB.Name = "employeeUpdateB";
             this.employeeUpdateB.Size = new System.Drawing.Size(75, 25);
-            this.employeeUpdateB.TabIndex = 9;
+            this.employeeUpdateB.TabIndex = 10;
             this.employeeUpdateB.Text = "Update";
             this.employeeUpdateB.UseVisualStyleBackColor = true;
             this.employeeUpdateB.Click += new System.EventHandler(this.employeeUpdateB_Click);

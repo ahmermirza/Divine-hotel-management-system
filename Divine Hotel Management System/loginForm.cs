@@ -56,11 +56,7 @@ namespace Divine_Hotel_Management_System
 
         private void loginB_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            mainForm mainF = new mainForm();
-            mainF.ShowDialog();
-
-            /*if (loginNameTB.Text == "ahmer" && loginPasswordTB.Text == "pakistan")
+            if (loginNameTB.Text == "user1" && loginPasswordTB.Text == "3674pk")
             {
                 this.Hide();
                 mainForm mainF = new mainForm();
@@ -69,7 +65,7 @@ namespace Divine_Hotel_Management_System
             else
             {
                 MessageBox.Show("Username or password incorrect. Try Again!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }*/
+            }
         }
 
         private void loginForm_FormClosing(object sender, FormClosingEventArgs e)
